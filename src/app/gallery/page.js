@@ -3,7 +3,7 @@ import { Fancybox } from "@fancyapps/ui";
 import Image from "next/image";
 import { useEffect } from "react";
 
-export default function Gallery() {
+export default function Page() {
   const galleryItems = [
     {
       category: "video",
@@ -92,7 +92,7 @@ export default function Gallery() {
           {galleryItems.map((galleryItem, index) => {
             return (
               <div
-                className="gallery-item"
+                className={`gallery-item ${galleryItem.category}`}
                 key={index}
                 style={{
                   border: `1px solid ${
@@ -104,10 +104,14 @@ export default function Gallery() {
                   <iframe
                     width="560"
                     height="315"
-                    src={galleryItem.src}
-                    title="YouTube video player"
+                    src={`https://www.youtube.com/embed/${new URLSearchParams(
+                      new URL(galleryItem.src).search
+                    ).get("v")}`}
+                    title={galleryItem.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
-                    alt={galleryItem.title}
                   ></iframe>
                 ) : (
                   <a href={galleryItem.src} data-fancybox="gallery">

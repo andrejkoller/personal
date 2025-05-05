@@ -7,8 +7,9 @@ export default function Page() {
     const projectItems = document.querySelectorAll(".project-item");
 
     projectItems.forEach((item) => {
-      const itemCategory = item.querySelector(".category").textContent;
-      if (category === "all" || itemCategory === category) {
+      if (category === "all") {
+        item.style.display = "flex";
+      } else if (item.classList.contains(category)) {
         item.style.display = "flex";
       } else {
         item.style.display = "none";
@@ -86,7 +87,7 @@ export default function Page() {
         <div className="projects-body">
           {projectItems.map((projectItem, index) => (
             <div
-              className="project-item"
+              className={`project-item ${projectItem.category}`}
               key={index}
               style={{
                 border: `1px solid ${
