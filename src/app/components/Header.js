@@ -1,6 +1,18 @@
+"use client";
 import Link from "next/link";
 
 export const Header = () => {
+  const handleOpenMenu = () => {
+    const menuButton = document.getElementById("menuButton");
+    const menu = document.getElementById("menu");
+    const html = document.querySelector("html");
+
+    if (!menu || !menuButton) return;
+
+    menu.classList.add("appear");
+    html.style.overflow = "hidden";
+  };
+
   return (
     <div className="header-container">
       <div className="header-content">
@@ -12,7 +24,13 @@ export const Header = () => {
         </div>
         <div className="menu-button-container">
           <div className="menu-button-content">
-            <h4 id="menuButton">Menu</h4>
+            <button
+              id="menuButton"
+              onClick={handleOpenMenu}
+              className="menu-button"
+            >
+              Menu
+            </button>
             <div className="round-animation-one"></div>
             <div className="round-animation-two"></div>
           </div>
