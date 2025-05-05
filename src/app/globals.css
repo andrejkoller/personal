@@ -252,15 +252,149 @@ a {
   border: none;
 }
 
+/* Link Button */
+.link-button-container .link-button-content {
+  display: flex;
+  z-index: 200;
+}
+
+.link-button-container .link-button-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  height: 100px;
+  width: auto;
+}
+
+.link-button-container .link-button-content h4 {
+  cursor: pointer;
+  font-size: 80px;
+  font-weight: 400;
+  font-family: var(--font-gloock);
+  z-index: 240;
+  margin: 0;
+  background-color: transparent;
+  color: var(--foreground);
+  border: none;
+}
+
 /* Home */
 .home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.home-container .home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.home-container .home-content .video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 100vh;
 }
 
+.home-container .home-content .project-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+  padding: 100px 0;
+}
+
+.home-container .home-content .project-container .project-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-container
+  .home-content
+  .project-container
+  .project-content
+  .project-image {
+  display: contents;
+  width: 100%;
+}
+
+.home-container
+  .home-content
+  .project-container
+  .project-content
+  .project-image
+  img {
+  filter: brightness(0.5);
+  min-width: 50%;
+  min-height: 100%;
+}
+
+.home-container
+  .home-content
+  .project-container
+  .project-content
+  .project-description {
+  width: 100%;
+  margin-top: 200px;
+}
+
+.home-container
+  .home-content
+  .project-container
+  .project-content
+  .project-description
+  h2 {
+  font-size: 70px;
+  font-family: var(--font-cormorant);
+  font-weight: 300;
+  font-variant: small-caps;
+  line-height: 75px;
+  margin-bottom: 20px;
+  margin-top: 0;
+  transform: translateX(-100px);
+}
+
+.home-container
+  .home-content
+  .project-container
+  .project-content
+  .project-description
+  p {
+  font-size: 17px;
+  font-family: var(--font-rubik);
+  line-height: 27px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+}
+
+.home-container
+  .home-content
+  .project-container
+  .project-content
+  .project-description
+  .link-button-container {
+  display: flex;
+  margin-left: 64px;
+  margin-top: 20px;
+}
+
+/* Animations */
 .round-animation-one {
   border: var(--foreground) 0.5px solid;
   animation: border 5s ease-out infinite, borderrotate 6s linear infinite;
