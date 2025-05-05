@@ -295,6 +295,104 @@ a {
   border: none;
 }
 
+.background-music-container {
+  position: absolute;
+  right: 5vw;
+  bottom: 0;
+  z-index: 200;
+}
+
+.background-music-container .play-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--foreground);
+  font-size: 24px;
+  line-height: 33px;
+  font-family: var(--font-cormorant);
+  font-weight: 300;
+  font-variant: small-caps;
+  cursor: pointer;
+}
+
+.background-music-container .pause-button {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--foreground);
+  font-size: 24px;
+  line-height: 33px;
+  font-family: var(--font-cormorant);
+  font-weight: 300;
+  font-variant: small-caps;
+  cursor: pointer;
+}
+
+.background-music-container .play-button.visible,
+.background-music-container .pause-button.visible {
+  display: flex;
+}
+
+.background-music-container .play-button.hidden,
+.background-music-container .pause-button.hidden {
+  display: none;
+}
+
+/* Cookie Banner */
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000000;
+  color: inherit;
+  text-align: center;
+  display: none;
+  z-index: 201;
+}
+
+#cookie-banner.cookie-banner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cookie-banner.cookie-banner-container .cookie-banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 5vw;
+}
+
+#cookie-banner.cookie-banner-container
+  .cookie-banner-content
+  .cookie-info
+  span {
+  font-size: 15px;
+}
+
+#cookie-banner.cookie-banner-container .cookie-banner-content .cookie-info a {
+  font-family: var(--font-cormorant);
+  font-size: 19px;
+}
+
+#cookie-banner.cookie-banner-container .cookie-button-container button {
+  background: transparent;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-cormorant);
+  font-size: 19px;
+}
+
 /* Link Button */
 .link-button-container .link-button-content {
   z-index: 200;

@@ -4,6 +4,7 @@ import { Header } from "./components/Header";
 import { Menu } from "./components/Menu";
 import { Cursor } from "./components/Cursor";
 import { Footer } from "./components/Footer";
+import { CookieBanner } from "./components/CookieBanner";
 
 const cormorant = Cormorant({
   subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
         <Menu />
         <Header />
         <main>{children}</main>
+        <CookieBanner />
         <Footer />
       </body>
     </html>

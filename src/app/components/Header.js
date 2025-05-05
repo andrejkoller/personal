@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { BackgroundMusic } from "./BackgroundMusic";
 
 export const Header = () => {
   const pathname = usePathname();
+  const pathnames = ["/", "/about"];
 
   const handleOpenMenu = () => {
     const menuButton = document.getElementById("menuButton");
@@ -17,7 +19,11 @@ export const Header = () => {
   };
 
   return (
-    <div className={`header-container ${pathname === "/" ? "home" : ""}`}>
+    <div
+      className={`header-container ${
+        pathnames.includes(pathname) ? "home" : ""
+      }`}
+    >
       <div className="header-content">
         <div className={`header-logo ${pathname === "/" ? "home" : ""}`}>
           <Link href="/">
@@ -39,6 +45,11 @@ export const Header = () => {
           </div>
         </div>
       </div>
+      {pathnames.includes(pathname) && (
+        <div className="background-music-container">
+          <BackgroundMusic />
+        </div>
+      )}
     </div>
   );
 };
