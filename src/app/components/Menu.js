@@ -1,7 +1,11 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export const Menu = () => {
+  const pathname = usePathname();
+
   const handleCloseMenu = () => {
     const menuButton = document.getElementById("menuButton");
     const menu = document.getElementById("menu");
@@ -12,6 +16,10 @@ export const Menu = () => {
     menu.classList.remove("appear");
     html.style.overflow = "auto";
   };
+
+  useEffect(() => {
+    handleCloseMenu();
+  }, [pathname]);
 
   return (
     <div id="menu" className="menu-container">

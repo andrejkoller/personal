@@ -7,7 +7,6 @@ export default function Home() {
   const initLineAnimation = () => {
     const line = document.querySelector(".line");
     if (!line) return;
-    // console.log(line); // Removed for production
 
     const checkPosition = () => {
       const position = line.getBoundingClientRect();

@@ -1,4 +1,4 @@
-import { Cormorant, Gloock, Rubik } from "next/font/google";
+import { Cormorant, EB_Garamond, Gloock, Rubik } from "next/font/google";
 import "./globals.css";
 import { Header } from "./components/Header";
 import { Menu } from "./components/Menu";
@@ -9,6 +9,12 @@ const cormorant = Cormorant({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-cormorant",
+});
+
+const garamond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-garamond",
 });
 
 const rubik = Rubik({
@@ -27,9 +33,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${cormorant.variable || ""} ${rubik.variable || ""} ${
-          gloock.variable || ""
-        }`}
+        className={`${cormorant.variable || ""} ${garamond.variable || ""} ${
+          rubik.variable || ""
+        } ${gloock.variable || ""}`}
       >
         <Cursor />
         <Menu />

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export const Header = () => {
-  const pathName = usePathname();
+  const pathname = usePathname();
 
   const handleOpenMenu = () => {
     const menuButton = document.getElementById("menuButton");
@@ -17,9 +17,9 @@ export const Header = () => {
   };
 
   return (
-    <div className={`header-container ${pathName === "/" ? "home" : ""}`}>
+    <div className={`header-container ${pathname === "/" ? "home" : ""}`}>
       <div className="header-content">
-        <div className="header-logo">
+        <div className={`header-logo ${pathname === "/" ? "home" : ""}`}>
           <Link href="/">
             <h3>Pianorgan</h3>
             <h1>Andrej Koller</h1>
