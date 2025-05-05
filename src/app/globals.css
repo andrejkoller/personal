@@ -1,3 +1,5 @@
+@import url("@fancyapps/ui/dist/fancybox/fancybox.css");
+
 :root {
   --background: #080808;
   --foreground: #ead8c2;
@@ -371,6 +373,14 @@ a {
   padding: 0 5vw;
 }
 
+#cookie-banner.cookie-banner-container .cookie-banner-content .cookie-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
 #cookie-banner.cookie-banner-container
   .cookie-banner-content
   .cookie-info
@@ -645,13 +655,25 @@ a {
   .projects-content
   .projects-header
   .projects-header-category
-  h4 {
+  button {
+  cursor: pointer;
   font-size: 24px;
   font-family: var(--font-cormorant);
-  font-weight: 300;
   font-variant: small-caps;
   line-height: 33px;
+  background-color: transparent;
+  color: var(--foreground);
+  border: none;
+  padding: 0;
+}
+
+.projects-container
+  .projects-content
+  .projects-header
+  .projects-header-category
+  h4 {
   margin: 0;
+  font-weight: 300;
 }
 
 #solo h4 {
@@ -670,6 +692,8 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2em;
+  min-height: 80vh;
+  width: 100%;
 }
 
 .projects-container .projects-content .projects-body .project-item {
@@ -694,9 +718,9 @@ a {
   .projects-body
   .project-item
   .project-image
-  image {
-  height: 100%;
+  img {
   width: 100%;
+  height: 500px !important;
 }
 
 .projects-container
@@ -704,7 +728,7 @@ a {
   .projects-body
   .project-item
   .project-title
-  h3 {
+  span {
   font-size: 40px;
   line-height: 45px;
   font-family: var(--font-cormorant);
@@ -747,6 +771,108 @@ a {
   color: inherit;
   margin: 0;
   line-height: 33px;
+}
+
+/* Gallery */
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5vw;
+}
+
+.gallery-container .gallery-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-container .gallery-content .gallery-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-container .gallery-content .gallery-header .gallery-header-title h2 {
+  margin: 50px 0 100px 0;
+  font-size: 70px;
+  font-family: var(--font-cormorant);
+  font-weight: 300;
+  font-variant: small-caps;
+  color: var(--foreground);
+  line-height: 75px;
+}
+
+.gallery-container .gallery-content .gallery-header .gallery-header-category {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  margin: 50px 0 20px 0;
+}
+
+.gallery-container
+  .gallery-content
+  .gallery-header
+  .gallery-header-category
+  button {
+  cursor: pointer;
+  font-size: 24px;
+  font-family: var(--font-cormorant);
+  font-variant: small-caps;
+  line-height: 33px;
+  background-color: transparent;
+  color: var(--foreground);
+  border: none;
+  padding: 0;
+}
+
+.gallery-container
+  .gallery-content
+  .gallery-header
+  .gallery-header-category
+  h4 {
+  margin: 0;
+  font-weight: 300;
+}
+
+#video h4 {
+  border-bottom: 1px solid var(--solo);
+}
+
+#photo h4 {
+  border-bottom: 1px solid var(--ensemble);
+}
+
+#all h4 {
+  border-bottom: 1px solid var(--all);
+}
+
+.gallery-container .gallery-content .gallery-body {
+  min-height: 80vh;
+  width: 100%;
+}
+
+.gallery-container .gallery-content .gallery-body .gallery-item {
+  padding: 25px;
+  margin: 0 15px 25px 15px;
+  width: calc(33.33333% - 1.875rem);
+}
+
+.gallery-container .gallery-content .gallery-body .gallery-item iframe {
+  width: 100%;
+  height: revert-layer;
+}
+
+.gallery-container .gallery-content .gallery-body .gallery-item img {
+  width: 100%;
+  height: auto;
 }
 
 /* Footer */
