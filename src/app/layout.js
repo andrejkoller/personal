@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "./components/Header";
 import { Menu } from "./components/Menu";
 import { Cursor } from "./components/Cursor";
+import { Footer } from "./components/Footer";
 
 const cormorant = Cormorant({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
         <Menu />
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
