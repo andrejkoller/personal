@@ -2,6 +2,7 @@ import { Cormorant, Gloock, Rubik } from "next/font/google";
 import "./globals.css";
 import { Header } from "./components/Header";
 import { Menu } from "./components/Menu";
+import { Cursor } from "./components/Cursor";
 
 const cormorant = Cormorant({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
           gloock.variable || ""
         }`}
       >
+        <Cursor />
         <Menu />
         <Header />
         <main>{children}</main>

@@ -1,7 +1,10 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
+  const pathName = usePathname();
+
   const handleOpenMenu = () => {
     const menuButton = document.getElementById("menuButton");
     const menu = document.getElementById("menu");
@@ -14,7 +17,7 @@ export const Header = () => {
   };
 
   return (
-    <div className="header-container">
+    <div className={`header-container ${pathName === "/" ? "home" : ""}`}>
       <div className="header-content">
         <div className="header-logo">
           <Link href="/">
