@@ -21,8 +21,6 @@ export default function Page() {
     {
       title: "Gymnopédies",
       author: "Érik Satie",
-      description:
-        "Érik Satie composed these three brief and atmospheric compositions in 3/4 time, each of which shares a common theme and structure. When experienced, they release a sentimental longing for the past or the bittersweet unknown. A time and place where you have never been before.",
       category: "solo",
       instrument: "Fortepiano",
       image: "/images/paris_place_de_la_republique_at_twighlight.jpg",
@@ -32,8 +30,6 @@ export default function Page() {
     {
       title: "Oversky",
       author: "Luke Howard",
-      description:
-        'Luke Howard – "Oversky" is an atmospheric piano piece characterized by gentle, floating melodies and a melancholic yet hopeful mood. With its minimalist, neoclassical composition, it evokes the image of a vast sky ("Oversky"), where delicate sounds drift like passing clouds.',
       category: "solo",
       instrument: "Fortepiano",
       image: "/images/mondnacht_am_dnjepr.jpg",
@@ -43,8 +39,6 @@ export default function Page() {
     {
       title: "Les feuilles mortes",
       author: "Jean-Michel Blais",
-      description:
-        "Jean-Michel Blais’ interpretation of Les Feuilles Mortes captures the nostalgic essence of the classic French song while infusing it with his signature contemporary neoclassical style. His delicate touch on the piano brings out the melancholic beauty of falling autumn leaves, evoking a sense of longing and reflection. With soft, flowing melodies and subtle dynamic shifts, the piece feels intimate and cinematic, as if carrying the listener through a quiet, golden-hued autumn afternoon.",
       category: "solo",
       instrument: "Fortepiano",
       image: "/images/street_saverne.jpg",
