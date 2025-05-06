@@ -1,51 +1,72 @@
 "use client";
-import { useEffect } from "react";
+
+import { useEffect, useRef } from "react";
 
 export const Cursor = () => {
-  const initCursor = () => {
-    let cursor = document.querySelector(".cursor");
+  const cursorRef = useRef(null);
+
+  useEffect(() => {
+    const cursor = cursorRef.current;
     if (!cursor) return;
 
-    document.addEventListener("mousemove", (e) => {
+    const moveHandler = (e) => {
       cursor.style.top = `${e.clientY - cursor.offsetHeight / 2}px`;
       cursor.style.left = `${e.clientX - cursor.offsetWidth / 2}px`;
       cursor.style.opacity = "1";
-    });
+    };
 
-    document.addEventListener("mouseleave", () => {
+    const mouseLeaveHandler = () => {
       cursor.style.opacity = "0";
-    });
+    };
 
-    document.addEventListener("mouseenter", () => {
+    const mouseEnterHandler = () => {
       cursor.style.opacity = "1";
-    });
+    };
 
-    document.addEventListener("mousedown", () => {
+    const mouseDownHandler = () => {
       cursor.style.transform = "scale(0.5)";
-    });
+    };
 
-    document.addEventListener("mouseup", () => {
+    const mouseUpHandler = () => {
       cursor.style.transform = "scale(1)";
+    };
+
+    const interactiveElements = document.querySelectorAll(
+      "a, .play-button, .pause-button, #menuButton, #closeButton, #linkButton, #solo, #ensemble, #photo, #video, #all, .inspiration-item, .language-button, .input-submit, input, textarea"
+    );
+
+    const handleEnterInteractive = () => {
+      cursor.style.transform = "scale(0.5)";
+    };
+
+    const handleLeaveInteractive = () => {
+      cursor.style.transform = "scale(1)";
+    };
+
+    document.addEventListener("mousemove", moveHandler);
+    document.addEventListener("mouseleave", mouseLeaveHandler);
+    document.addEventListener("mouseenter", mouseEnterHandler);
+    document.addEventListener("mousedown", mouseDownHandler);
+    document.addEventListener("mouseup", mouseUpHandler);
+
+    interactiveElements.forEach((el) => {
+      el.addEventListener("mouseenter", handleEnterInteractive);
+      el.addEventListener("mouseleave", handleLeaveInteractive);
     });
 
-    document
-      .querySelectorAll(
-        "a, .play-button, .pause-button, #menuButton, #closeButton, #linkButton, #solo, #ensemble, #photo, #video, #all, .inspiration-item, .language-button, .input-submit, input, textarea"
-      )
-      .forEach((item) => {
-        item.addEventListener("mouseenter", () => {
-          cursor.style.transform = "scale(0.5)";
-        });
+    return () => {
+      document.removeEventListener("mousemove", moveHandler);
+      document.removeEventListener("mouseleave", mouseLeaveHandler);
+      document.removeEventListener("mouseenter", mouseEnterHandler);
+      document.removeEventListener("mousedown", mouseDownHandler);
+      document.removeEventListener("mouseup", mouseUpHandler);
 
-        item.addEventListener("mouseleave", () => {
-          cursor.style.transform = "scale(1)";
-        });
+      interactiveElements.forEach((el) => {
+        el.removeEventListener("mouseenter", handleEnterInteractive);
+        el.removeEventListener("mouseleave", handleLeaveInteractive);
       });
-  };
-
-  useEffect(() => {
-    initCursor();
+    };
   }, []);
 
-  return <div className="cursor"></div>;
+  return <div className="cursor" ref={cursorRef}></div>;
 };

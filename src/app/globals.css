@@ -178,26 +178,31 @@ a {
 .menu-container .menu-content .menu-body .projects-link {
   top: 0;
   left: 0vw;
+  position: relative;
 }
 
 .menu-container .menu-content .menu-body .about-link {
   top: 0;
   left: 25vw;
+  position: relative;
 }
 
 .menu-container .menu-content .menu-body .inspiration-link {
   top: 0;
   left: 50vw;
+  position: relative;
 }
 
 .menu-container .menu-content .menu-body .gallery-link {
   top: 0;
   left: 75vw;
+  position: relative;
 }
 
 .menu-container .menu-content .menu-body .contact-link {
-  top: 70%;
+  top: 50vh;
   left: 75vw;
+  position: relative;
 }
 
 .appear {
@@ -1085,15 +1090,27 @@ a {
   font-weight: 300;
 }
 
-#video h4 {
+.gallery-container
+  .gallery-content
+  .gallery-header
+  .gallery-header-category
+  .video {
   border-bottom: 1px solid var(--solo);
 }
 
-#photo h4 {
+.gallery-container
+  .gallery-content
+  .gallery-header
+  .gallery-header-category
+  .photo {
   border-bottom: 1px solid var(--ensemble);
 }
 
-#all h4 {
+.gallery-container
+  .gallery-content
+  .gallery-header
+  .gallery-header-category
+  .all {
   border-bottom: 1px solid var(--all);
 }
 
@@ -1667,7 +1684,9 @@ a {
 /* Animations */
 .round-animation-one {
   border: var(--foreground) 0.5px solid;
-  animation: border 5s ease-out infinite, borderrotate 6s linear infinite;
+  animation:
+    border 5s ease-out infinite,
+    borderrotate 6s linear infinite;
   position: absolute;
   width: 80px;
   height: 80px;
@@ -1676,7 +1695,9 @@ a {
 
 .round-animation-two {
   border: var(--foreground) 0.5px solid;
-  animation: border2 5s ease-out infinite, borderrotate2 5s linear infinite;
+  animation:
+    border2 5s ease-out infinite,
+    borderrotate2 5s linear infinite;
   position: absolute;
   width: 80px;
   height: 80px;
