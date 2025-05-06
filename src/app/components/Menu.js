@@ -65,8 +65,8 @@ export const Menu = () => {
         {/* Navigation */}
         <nav className="menu-body" aria-label="Main menu">
           {links.map(({ href, label, className }) => (
-            <div key={href} className="menu-links">
-              <p className={className}>
+            <div key={href} className={`menu-item ${className}`}>
+              <p>
                 <Link href={href}>{label}</Link>
               </p>
               <div></div>

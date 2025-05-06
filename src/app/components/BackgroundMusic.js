@@ -1,50 +1,37 @@
 "use client";
-import { useEffect } from "react";
+
+import { useEffect, useRef } from "react";
 import SiriWave from "siriwave";
 
 export const BackgroundMusic = () => {
+  const audioRef = useRef(null);
+  const playButtonRef = useRef(null);
+  const pauseButtonRef = useRef(null);
+
   const initBackgroundMusic = () => {
-    const audio = document.getElementById("backgroundMusic");
-    const playButton = document.querySelector(".play-button");
-    const pauseButton = document.querySelector(".pause-button");
-
-    if (!audio || !playButton || !pauseButton) {
-      return;
+    if (audioRef.current) {
+      audioRef.current.volume = 0.2;
     }
-
-    audio.volume = 0.2;
   };
 
   const handlePlayClick = () => {
-    const audio = document.getElementById("backgroundMusic");
-    const playButton = document.querySelector(".play-button");
-    const pauseButton = document.querySelector(".pause-button");
-
-    if (!audio || !playButton || !pauseButton) {
-      return;
+    if (audioRef.current && playButtonRef.current && pauseButtonRef.current) {
+      audioRef.current.play();
+      playButtonRef.current.classList.add("hidden");
+      pauseButtonRef.current.classList.add("visible");
+      playButtonRef.current.classList.remove("visible");
+      pauseButtonRef.current.classList.remove("hidden");
     }
-
-    audio.play();
-    playButton.classList.add("hidden");
-    pauseButton.classList.add("visible");
-    playButton.classList.remove("visible");
-    pauseButton.classList.remove("hidden");
   };
 
   const handlePauseClick = () => {
-    const audio = document.getElementById("backgroundMusic");
-    const playButton = document.querySelector(".play-button");
-    const pauseButton = document.querySelector(".pause-button");
-
-    if (!audio || !playButton || !pauseButton) {
-      return;
+    if (audioRef.current && playButtonRef.current && pauseButtonRef.current) {
+      audioRef.current.pause();
+      playButtonRef.current.classList.remove("hidden");
+      pauseButtonRef.current.classList.remove("visible");
+      playButtonRef.current.classList.add("visible");
+      pauseButtonRef.current.classList.add("hidden");
     }
-
-    audio.pause();
-    playButton.classList.remove("hidden");
-    pauseButton.classList.remove("visible");
-    playButton.classList.add("visible");
-    pauseButton.classList.add("hidden");
   };
 
   const initSiriWave = () => {
@@ -89,16 +76,16 @@ export const BackgroundMusic = () => {
   return (
     <div className="background-music-content">
       <div className="background-music-button-container">
-        <button className="play-button" onClick={handlePlayClick}>
+        <button className="play-button" ref={playButtonRef} onClick={handlePlayClick}>
           <span>Listen</span>
           <span id="siriWave1"></span>
         </button>
-        <button className="pause-button" onClick={handlePauseClick}>
+        <button className="pause-button" ref={pauseButtonRef} onClick={handlePauseClick}>
           <span>Pause</span>
           <span id="siriWave2"></span>
         </button>
       </div>
-      <audio id="backgroundMusic" loop>
+      <audio id="backgroundMusic" ref={audioRef} loop>
         <source src="/audios/gymnopedie_nr_3.wav" type="audio/wav" />
       </audio>
     </div>
