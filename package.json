@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fancyapps/ui": "^5.0.36",
+    "imagesloaded": "^5.0.0",
     "isotope-layout": "^3.0.6",
     "magnific-popup": "^1.2.0",
     "masonry-layout": "^4.2.2",

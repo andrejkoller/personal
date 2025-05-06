@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect } from "react";
+import imagesLoaded from "imagesloaded";
 
 export default function Page() {
   const inspirationItems = [
@@ -225,6 +226,13 @@ export default function Page() {
       title: "'Saint Mary's Curch'",
       artCategory: "Expressionism",
     },
+    {
+      category: "art",
+      image: "/images/path_in_the_wheat_fields.jpg",
+      artist: "Claude Monet, 1882",
+      title: "'Path in the Wheat at Pourville'",
+      artCategory: "Impressionism",
+    },
   ];
 
   useEffect(() => {
@@ -234,10 +242,26 @@ export default function Page() {
     import("masonry-layout").then((Masonry) => {
       const masonry = new Masonry.default(grid, {
         itemSelector: ".inspiration-item",
-        percentPosition: false,
+        percentPosition: true,
       });
 
-      masonry.layout();
+      const imagesPromise = new Promise((resolve) => {
+        imagesLoaded(grid, resolve);
+      });
+
+      const iframes = grid.querySelectorAll("iframe");
+      const iframesPromise = Promise.all(
+        Array.from(iframes).map(
+          (iframe) =>
+            new Promise((resolve) => {
+              iframe.addEventListener("load", resolve);
+            })
+        )
+      );
+
+      Promise.all([imagesPromise, iframesPromise]).then(() => {
+        masonry.layout();
+      });
 
       return () => {
         masonry.destroy();
@@ -271,8 +295,10 @@ export default function Page() {
                 <div className="art-item">
                   <Image
                     src={item.image}
-                    width={250}
-                    height={250}
+                    layout="responsive"
+                    width={800}
+                    height={600}
+                    quality={100}
                     alt={item.title}
                   />
                   <p>{item.artist}</p>

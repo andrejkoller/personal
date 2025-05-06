@@ -39,11 +39,19 @@ export default function RootLayout({ children }) {
         } ${gloock.variable || ""}`}
       >
         <Cursor />
-        <Menu />
-        <Header />
-        <main>{children}</main>
+        <nav id="menuContent" className="menu">
+          <Menu />
+        </nav>
+        <header id="headerContent" className="header">
+          <Header />
+        </header>
+        <main id="mainContent" className="main">
+          {children}
+        </main>
         <CookieBanner />
-        <Footer />
+        <footer id="footerContent" className="footer">
+          <Footer />
+        </footer>
       </body>
     </html>
   );

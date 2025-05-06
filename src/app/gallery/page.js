@@ -2,6 +2,7 @@
 import { Fancybox } from "@fancyapps/ui";
 import Image from "next/image";
 import { useEffect } from "react";
+import imagesLoaded from "imagesloaded";
 
 export default function Page() {
   const galleryItems = [
@@ -41,7 +42,23 @@ export default function Page() {
         percentPosition: true,
       });
 
-      masonry.layout();
+      const imagesPromise = new Promise((resolve) => {
+        imagesLoaded(grid, resolve);
+      });
+
+      const iframes = grid.querySelectorAll("iframe");
+      const iframesPromise = Promise.all(
+        Array.from(iframes).map(
+          (iframe) =>
+            new Promise((resolve) => {
+              iframe.addEventListener("load", resolve);
+            })
+        )
+      );
+
+      Promise.all([imagesPromise, iframesPromise]).then(() => {
+        masonry.layout();
+      });
 
       Fancybox.bind("[data-fancybox='gallery']", {
         Thumbs: false,
@@ -117,8 +134,10 @@ export default function Page() {
                   <a href={galleryItem.src} data-fancybox="gallery">
                     <Image
                       src={galleryItem.src}
-                      height={500}
-                      width={500}
+                      layout="responsive"
+                      width={800}
+                      height={600}
+                      quality={100}
                       alt={galleryItem.title}
                     />
                   </a>
