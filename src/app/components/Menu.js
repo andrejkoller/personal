@@ -19,6 +19,7 @@ export const Menu = () => {
 
   useEffect(() => {
     handleCloseMenu();
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname]);
 
   return (

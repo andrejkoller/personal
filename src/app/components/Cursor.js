@@ -30,7 +30,7 @@ export const Cursor = () => {
 
     document
       .querySelectorAll(
-        "a, .play-button, .pause-button, #menuButton, #closeButton, #linkButton, #solo, #ensemble, #photo, #video, #all, .inspiration-item"
+        "a, .play-button, .pause-button, #menuButton, #closeButton, #linkButton, #solo, #ensemble, #photo, #video, #all, .inspiration-item, .language-button, .input-submit, input, textarea"
       )
       .forEach((item) => {
         item.addEventListener("mouseenter", () => {

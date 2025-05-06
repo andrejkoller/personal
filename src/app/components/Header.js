@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BackgroundMusic } from "./BackgroundMusic";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const Header = () => {
   const pathname = usePathname();
@@ -45,6 +46,11 @@ export const Header = () => {
           </div>
         </div>
       </div>
+      {pathname === "/" && (
+        <div className="language-switcher-container">
+          <LanguageSwitcher />
+        </div>
+      )}
       {pathnames.includes(pathname) && (
         <div className="background-music-container">
           <BackgroundMusic />

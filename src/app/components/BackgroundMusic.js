@@ -48,8 +48,14 @@ export const BackgroundMusic = () => {
   };
 
   const initSiriWave = () => {
+    const container1 = document.getElementById("siriWave1");
+    const container2 = document.getElementById("siriWave2");
+
+    if (container1) container1.innerHTML = "";
+    if (container2) container2.innerHTML = "";
+
     const instance1 = new SiriWave({
-      container: document.getElementById("siriWave1"),
+      container: container1,
       width: 65,
       height: 40,
       speed: 0.1,
@@ -65,7 +71,7 @@ export const BackgroundMusic = () => {
     });
 
     const instance2 = new SiriWave({
-      container: document.getElementById("siriWave2"),
+      container: container2,
       width: 57,
       height: 40,
       speed: 0.1,

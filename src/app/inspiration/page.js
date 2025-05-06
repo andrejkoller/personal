@@ -233,6 +233,11 @@ export default function Page() {
       title: "'Path in the Wheat at Pourville'",
       artCategory: "Impressionism",
     },
+    {
+      category: "video",
+      src: "https://www.youtube.com/watch?v=_2L311Makxc",
+      title: "Erik Satie - Caresse",
+    },
   ];
 
   useEffect(() => {
