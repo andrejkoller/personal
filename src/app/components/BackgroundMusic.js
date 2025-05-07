@@ -7,6 +7,10 @@ export const BackgroundMusic = () => {
   const audioRef = useRef(null);
   const playButtonRef = useRef(null);
   const pauseButtonRef = useRef(null);
+  const siriWave1Ref = useRef(null);
+  const siriWave2Ref = useRef(null);
+  const siriWave1ContainerRef = useRef(null);
+  const siriWave2ContainerRef = useRef(null);
 
   const initBackgroundMusic = () => {
     if (audioRef.current) {
@@ -35,54 +39,77 @@ export const BackgroundMusic = () => {
   };
 
   const initSiriWave = () => {
-    const instance1 = new SiriWave({
-      container: document.getElementById("siriWave1"),
-      width: 65,
-      height: 40,
-      speed: 0.1,
-      color: "#EAD8C2",
-      amplitude: 0.4,
-      curveDefinition: [
-        {
-          attenuation: 3,
-          lineWidth: 1,
-          opacity: 1,
-        },
-      ],
-    });
+    if (!siriWave1Ref.current) {
+      siriWave1Ref.current = new SiriWave({
+        container: siriWave1ContainerRef.current,
+        width: 65,
+        height: 40,
+        speed: 0.1,
+        color: "#EAD8C2",
+        amplitude: 0.4,
+        curveDefinition: [
+          {
+            attenuation: 3,
+            lineWidth: 1,
+            opacity: 1,
+          },
+        ],
+      });
+    }
 
-    const instance2 = new SiriWave({
-      container: document.getElementById("siriWave2"),
-      width: 57,
-      height: 40,
-      speed: 0.1,
-      color: "#EAD8C2",
-      amplitude: 3,
-      curveDefinition: [
-        {
-          attenuation: 3,
-          lineWidth: 1,
-          opacity: 1,
-        },
-      ],
-    });
+    if (!siriWave2Ref.current) {
+      siriWave2Ref.current = new SiriWave({
+        container: siriWave2ContainerRef.current,
+        width: 57,
+        height: 40,
+        speed: 0.1,
+        color: "#EAD8C2",
+        amplitude: 3,
+        curveDefinition: [
+          {
+            attenuation: 3,
+            lineWidth: 1,
+            opacity: 1,
+          },
+        ],
+      });
+    }
   };
 
   useEffect(() => {
     initBackgroundMusic();
     initSiriWave();
+
+    return () => {
+      if (siriWave1Ref.current) {
+        siriWave1Ref.current.dispose();
+        siriWave1Ref.current = null;
+      }
+      if (siriWave2Ref.current) {
+        siriWave2Ref.current.dispose();
+        siriWave2Ref.current = null;
+      }
+    };
   }, []);
 
   return (
     <div className="background-music-content">
       <div className="background-music-button-container">
-        <button className="play-button" ref={playButtonRef} onClick={handlePlayClick}>
+        <button
+          className="play-button"
+          ref={playButtonRef}
+          onClick={handlePlayClick}
+        >
           <span>Listen</span>
-          <span id="siriWave1"></span>
+          <span ref={siriWave1ContainerRef}></span>
         </button>
-        <button className="pause-button" ref={pauseButtonRef} onClick={handlePauseClick}>
+        <button
+          className="pause-button"
+          ref={pauseButtonRef}
+          onClick={handlePauseClick}
+        >
           <span>Pause</span>
-          <span id="siriWave2"></span>
+          <span ref={siriWave2ContainerRef}></span>
         </button>
       </div>
       <audio id="backgroundMusic" ref={audioRef} loop>

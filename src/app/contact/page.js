@@ -43,7 +43,6 @@ export default function Page() {
               </div>
             </form>
           </div>
-          <div className="contact-image"></div>
         </div>
       </div>
     </div>

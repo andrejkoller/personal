@@ -21,6 +21,11 @@ const galleryItems = [
 export default function Page() {
   const [filter, setFilter] = useState("all");
 
+  const getYoutubeId = (url) => {
+    const u = new URL(url);
+    return u.searchParams.get("v") || u.pathname.split("/").pop();
+  };
+
   const filteredItems = useMemo(() => {
     return galleryItems.filter(
       (item) => filter === "all" || item.category === filter
@@ -31,14 +36,17 @@ export default function Page() {
     const grid = document.querySelector(".gallery-body");
     if (!grid) return;
 
-    import("masonry-layout").then((Masonry) => {
-      const masonry = new Masonry.default(grid, {
+    let masonryInstance;
+
+    const initMasonryAndFancybox = async () => {
+      const Masonry = await import("masonry-layout");
+      masonryInstance = new Masonry.default(grid, {
         itemSelector: ".gallery-item",
         percentPosition: true,
       });
 
       const imagesPromise = new Promise((resolve) => {
-        imagesLoaded(grid, resolve);
+        imagesLoaded(grid, { background: true }, () => resolve());
       });
 
       const iframes = grid.querySelectorAll("iframe");
@@ -51,22 +59,36 @@ export default function Page() {
         )
       );
 
-      Promise.all([imagesPromise, iframesPromise]).then(() => {
-        masonry.layout();
-      });
+      await Promise.all([imagesPromise, iframesPromise]);
 
-      Fancybox.bind("[data-fancybox='gallery']", {
-        Thumbs: false,
-        Toolbar: {
-          display: ["zoom", "fullscreen", "close"],
-        },
-      });
+      const galleryItems = grid.querySelectorAll("[data-fancybox='gallery']");
+      if (galleryItems.length > 0) {
+        Fancybox.bind("[data-fancybox='gallery']", {
+          Thumbs: false,
+          Image: {
+            zoom: true,
+            Panzoom: {
+              maxScale: 2,
+              minScale: 0.5,
+              contain: "inside",
+              fill: false,
+            },
+          },
+          Toolbar: {
+            display: ["zoom", "cover", "close"],
+          },
+        });
+      }
 
-      return () => {
-        Fancybox.unbind("[data-fancybox='gallery']");
-        masonry.destroy();
-      };
-    });
+      masonryInstance.layout();
+    };
+
+    initMasonryAndFancybox();
+
+    return () => {
+      Fancybox.unbind("[data-fancybox='gallery']");
+      if (masonryInstance) masonryInstance.destroy();
+    };
   }, [filter]);
 
   return (
@@ -84,7 +106,13 @@ export default function Page() {
                 onClick={() => setFilter(category)}
                 aria-label={`Show ${category} items`}
               >
-                <h4>{category.charAt(0).toUpperCase() + category.slice(1)}s</h4>
+                <h4 aria-label={`Show ${category} items`}>
+                  {category === "all"
+                    ? category.charAt(0).toUpperCase() + category.slice(1)
+                    : category.charAt(0).toUpperCase() +
+                      category.slice(1) +
+                      "s"}
+                </h4>
               </button>
             ))}
           </div>
@@ -104,9 +132,7 @@ export default function Page() {
                 <iframe
                   width="560"
                   height="315"
-                  src={`https://www.youtube.com/embed/${new URLSearchParams(
-                    new URL(galleryItem.src).search
-                  ).get("v")}`}
+                  src={`https://www.youtube.com/embed/${getYoutubeId(galleryItem.src)}`}
                   title={galleryItem.title}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

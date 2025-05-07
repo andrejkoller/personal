@@ -32,7 +32,7 @@ export const Cursor = () => {
     };
 
     const interactiveElements = document.querySelectorAll(
-      "a, .play-button, .pause-button, #menuButton, #closeButton, #linkButton, #solo, #ensemble, #photo, #video, #all, .inspiration-item, .language-button, .input-submit, input, textarea"
+      "a, .play-button, .pause-button, #menuButton, #closeButton, #linkButton, .filter-button, #solo, #ensemble, #photo, #video, #all, .inspiration-item, .language-button, .input-submit, input, textarea"
     );
 
     const handleEnterInteractive = () => {

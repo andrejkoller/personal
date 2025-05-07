@@ -10,9 +10,9 @@
   --solo: #9a4c38;
   --ensemble: #4a1e6a;
   --all: #837c73;
-  --font-cormorant: "Cormorant", serif;
+  --font-cormorant: "Cormorant", sans-serif;
   --font-rubik: "Rubik", sans-serif;
-  --font-gloock: "Gloock", serif;
+  --font-gloock: "Gloock", sans-serif;
 }
 
 html {
@@ -27,6 +27,15 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-rubik), sans-serif;
+}
+
+h2 {
+  font-size: 70px;
+  font-family: var(--font-cormorant);
+  font-weight: 300;
+  font-variant: small-caps;
+  color: var(--foreground);
+  line-height: 75px;
 }
 
 a {
@@ -235,13 +244,6 @@ a {
 }
 
 .header-container .header-content .header-logo.home h3 {
-  font-size: 27px;
-  font-family: var(--font-cormorant);
-  color: var(--foreground);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 45px;
-  font-variant: normal;
   margin: 0;
 }
 
@@ -532,11 +534,6 @@ a {
   .project-content
   .project-description
   h2 {
-  font-size: 70px;
-  font-family: var(--font-cormorant);
-  font-weight: 300;
-  font-variant: small-caps;
-  line-height: 75px;
   margin-top: 200px;
   margin-bottom: 25px;
   margin-left: -150px;
@@ -623,11 +620,6 @@ a {
   .about-content
   .about-description
   h2 {
-  font-size: 70px;
-  font-family: var(--font-cormorant);
-  font-weight: 300;
-  font-variant: small-caps;
-  line-height: 75px;
   margin-top: 200px;
   margin-bottom: 25px;
 }
@@ -681,12 +673,6 @@ a {
   .projects-header-title
   h2 {
   margin: 50px 0 100px 0;
-  font-size: 70px;
-  font-family: var(--font-cormorant);
-  font-weight: 300;
-  font-variant: small-caps;
-  color: var(--foreground);
-  line-height: 75px;
 }
 
 .projects-container
@@ -841,12 +827,6 @@ a {
 }
 
 .project .project-container .project-title-container .project-title h2 {
-  font-size: 70px;
-  font-family: var(--font-cormorant);
-  font-weight: 300;
-  font-variant: small-caps;
-  color: var(--foreground);
-  line-height: 75px;
   margin: 100px 0 25px 0;
   z-index: 100;
   position: relative;
@@ -1047,12 +1027,6 @@ a {
 
 .gallery-container .gallery-content .gallery-header .gallery-header-title h2 {
   margin: 50px 0 100px 0;
-  font-size: 70px;
-  font-family: var(--font-cormorant);
-  font-weight: 300;
-  font-variant: small-caps;
-  color: var(--foreground);
-  line-height: 75px;
 }
 
 .gallery-container .gallery-content .gallery-header .gallery-header-category {
@@ -1166,12 +1140,6 @@ a {
   .inspiration-header
   .inspiration-header-title
   h2 {
-  font-size: 70px;
-  font-family: var(--font-cormorant);
-  font-weight: 300;
-  font-variant: small-caps;
-  color: var(--foreground);
-  line-height: 75px;
   margin: 50px 0 10px 0;
 }
 
@@ -1366,17 +1334,10 @@ a {
 }
 
 .contact-container .contact-content .contact-header .contact-header-title h2 {
-  font-size: 70px;
-  font-family: var(--font-cormorant);
-  font-weight: 300;
-  font-variant: small-caps;
-  color: var(--foreground);
-  line-height: 75px;
   margin: 50px 0 100px;
 }
 
 .contact-container .contact-content .contact-body {
-  min-height: 80vh;
   width: 100%;
   margin: 0 0 150px 0;
   height: 100%;
@@ -1578,7 +1539,7 @@ a {
   width: 100%;
   font-size: 17px;
   line-height: 1.8;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .contact-container
@@ -1600,6 +1561,16 @@ a {
   .contact-form-third-column {
   display: flex;
   align-items: flex-end;
+}
+
+.contact-container
+  .contact-content
+  .contact-body
+  .contact-form
+  form
+  .contact-form-third-column
+  .input-submit {
+  margin-bottom: 16px;
 }
 
 .contact-container

@@ -6,7 +6,7 @@ export const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="language-switcher-content">
+    <ul className="language-switcher-content">
       <button
         onClick={() => handleLanguageChange("en")}
         className="language-button"
@@ -25,6 +25,6 @@ export const LanguageSwitcher = () => {
       >
         <span className="language-button-text">Русский</span>
       </button>
-    </div>
+    </ul>
   );
 };
