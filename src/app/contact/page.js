@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Page() {
   return (
     <div className="contact-container">
@@ -35,10 +37,18 @@ export default function Page() {
                   <label htmlFor="message">Message *</label>
                   <textarea rows="10" required></textarea>
                 </div>
-              </div>
-              <div className="contact-form-third-column">
                 <div className="input-submit">
                   <button type="submit">Send</button>
+                </div>
+              </div>
+              <div className="contact-form-third-column">
+                <div className="contact-image">
+                  <Image
+                    src={"/images/birch_forest.jpg"}
+                    width={500}
+                    height={500}
+                    alt="Birch Forest"
+                  />
                 </div>
               </div>
             </form>

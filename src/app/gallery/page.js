@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
 import { Fancybox } from "@fancyapps/ui";
 import Image from "next/image";
 import imagesLoaded from "imagesloaded";
@@ -19,6 +19,7 @@ const galleryItems = [
 ];
 
 export default function Page() {
+  const galleryRef = useRef(null);
   const [filter, setFilter] = useState("all");
 
   const getYoutubeId = (url) => {
@@ -26,30 +27,30 @@ export default function Page() {
     return u.searchParams.get("v") || u.pathname.split("/").pop();
   };
 
-  const filteredItems = useMemo(() => {
+  const filteredGalleryItems = useMemo(() => {
     return galleryItems.filter(
       (item) => filter === "all" || item.category === filter
     );
   }, [filter]);
 
   useEffect(() => {
-    const grid = document.querySelector(".gallery-body");
-    if (!grid) return;
+    const gallery = galleryRef.current;
+    if (!gallery) return;
 
     let masonryInstance;
 
     const initMasonryAndFancybox = async () => {
       const Masonry = await import("masonry-layout");
-      masonryInstance = new Masonry.default(grid, {
+      masonryInstance = new Masonry.default(gallery, {
         itemSelector: ".gallery-item",
         percentPosition: true,
       });
 
       const imagesPromise = new Promise((resolve) => {
-        imagesLoaded(grid, { background: true }, () => resolve());
+        imagesLoaded(gallery, { background: true }, () => resolve());
       });
 
-      const iframes = grid.querySelectorAll("iframe");
+      const iframes = gallery.querySelectorAll("iframe");
       const iframesPromise = Promise.all(
         Array.from(iframes).map(
           (iframe) =>
@@ -61,7 +62,9 @@ export default function Page() {
 
       await Promise.all([imagesPromise, iframesPromise]);
 
-      const galleryItems = grid.querySelectorAll("[data-fancybox='gallery']");
+      const galleryItems = gallery.querySelectorAll(
+        "[data-fancybox='gallery']"
+      );
       if (galleryItems.length > 0) {
         Fancybox.bind("[data-fancybox='gallery']", {
           Thumbs: false,
@@ -117,8 +120,8 @@ export default function Page() {
             ))}
           </div>
         </div>
-        <div className="gallery-body">
-          {filteredItems.map((galleryItem) => (
+        <div className="gallery-body" ref={galleryRef}>
+          {filteredGalleryItems.map((galleryItem) => (
             <div
               key={galleryItem.src}
               className={`gallery-item ${galleryItem.category}`}

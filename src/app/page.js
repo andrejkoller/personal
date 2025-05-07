@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import { LinkButton } from "./components/LinkButton";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
+  const lineRef = useRef(null);
+
   const initLineAnimation = () => {
-    const line = document.querySelector(".line");
+    const line = lineRef.current;
     if (!line) return;
 
     const checkPosition = () => {
@@ -55,7 +57,7 @@ export default function Home() {
         </div>
       </section>
       <section id="aboutShowcase" className="about-showcase-container">
-        <div className="line"></div>
+        <div className="line" ref={lineRef}></div>
         <div className="about-container">
           <div className="about-content">
             <div className="about-description">

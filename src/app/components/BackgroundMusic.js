@@ -101,7 +101,7 @@ export const BackgroundMusic = () => {
           onClick={handlePlayClick}
         >
           <span>Listen</span>
-          <span ref={siriWave1ContainerRef}></span>
+          <span className="siri-wave" ref={siriWave1ContainerRef}></span>
         </button>
         <button
           className="pause-button"
@@ -109,7 +109,7 @@ export const BackgroundMusic = () => {
           onClick={handlePauseClick}
         >
           <span>Pause</span>
-          <span ref={siriWave2ContainerRef}></span>
+          <span className="siri-wave" ref={siriWave2ContainerRef}></span>
         </button>
       </div>
       <audio id="backgroundMusic" ref={audioRef} loop>
