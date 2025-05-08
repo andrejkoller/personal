@@ -1,27 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect } from "react";
 
-export const Menu = () => {
-  const pathname = usePathname();
-
-  const handleCloseMenu = () => {
-    const menu = document.getElementById("menu");
-    const html = document.documentElement;
-
-    if (!menu) return;
-
-    menu.classList.remove("appear");
-    html.style.overflow = "auto";
-  };
-
-  useEffect(() => {
-    handleCloseMenu();
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, [pathname]);
-
+export const Menu = ({ isMenuOpen, toggleMenu }) => {
   const links = [
     { href: "/projects", label: "Projects", className: "projects-link" },
     { href: "/about", label: "About", className: "about-link" },
@@ -35,7 +16,12 @@ export const Menu = () => {
   ];
 
   return (
-    <div id="menu" className="menu-container" role="dialog" aria-modal="true">
+    <div
+      id="menu"
+      className={`menu-container ${isMenuOpen ? "open" : ""}`}
+      role="dialog"
+      aria-modal="true"
+    >
       <div className="menu-content">
         {/* Header */}
         <div className="menu-header">
@@ -50,7 +36,7 @@ export const Menu = () => {
             <div className="close-button-content">
               <button
                 id="closeButton"
-                onClick={handleCloseMenu}
+                onClick={toggleMenu}
                 aria-label="Close menu"
                 className="close-button"
               >

@@ -204,7 +204,7 @@ a {
   left: 75vw;
 }
 
-.appear {
+.open {
   left: 0vw !important;
 }
 
@@ -310,19 +310,34 @@ a {
 }
 
 /* Background Music */
-.background-music-container {
+.background-music .background-music-container {
   position: absolute;
   right: 5vw;
   bottom: 5vh;
   z-index: 200;
 }
 
-.background-music-container .play-button,
-.pause-button {
+.background-music .background-music-container .background-music-content {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: none;
+  width: auto;
+}
+
+.background-music
+  .background-music-container
+  .background-music-content
+  .background-music-button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.background-music
+  .background-music-container
+  .background-music-content
+  .background-music-button-container
+  button {
   background: none;
   border: none;
   color: var(--foreground);
@@ -335,8 +350,12 @@ a {
   padding: 0;
 }
 
-.background-music-container .play-button .siri-wave,
-.pause-button .siri-wave {
+.background-music
+  .background-music-container
+  .background-music-content
+  .background-music-button-container
+  button
+  .siri-wave {
   display: flex;
   width: 100%;
   height: 1px;
@@ -345,29 +364,48 @@ a {
   left: 0;
 }
 
-.background-music-container .pause-button {
+.background-music
+  .background-music-container
+  .background-music-content
+  .background-music-button-container
+  .pause-button {
   display: none;
 }
 
-.background-music-container .play-button.visible,
-.background-music-container .pause-button.visible {
+.background-music
+  .background-music-content
+  .background-music-button-container
+  .play-button.visible,
+.background-music
+  .background-music-content
+  .background-music-button-container
+  .pause-button.visible {
   display: flex;
 }
 
-.background-music-container .play-button.hidden,
-.background-music-container .pause-button.hidden {
+.background-music
+  .background-music-content
+  .background-music-button-container
+  .play-button.hidden,
+.background-music
+  .background-music-content
+  .background-music-button-container
+  .pause-button.hidden {
   display: none;
 }
 
 /* Language Switcher */
-.language-switcher-container {
+.language-switcher .language-switcher-container {
   position: absolute;
   left: 5vw;
   bottom: 5vh;
   z-index: 200;
 }
 
-.language-switcher-container .language-switcher-content {
+.language-switcher
+  .language-switcher-container
+  .language-switcher-content
+  .languages {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -376,9 +414,10 @@ a {
   gap: 2em;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
-.language-switcher-container .language-switcher-content button {
+.language-switcher .language-switcher-container .language-switcher-content a {
   background: none;
   border: none;
   color: var(--foreground);
@@ -393,19 +432,39 @@ a {
   padding: 0;
 }
 
-.language-switcher-container .language-switcher-content button::after {
+.language-switcher
+  .language-switcher-container
+  .language-switcher-content
+  a::after {
   content: "";
   position: absolute;
   width: 0;
   height: 1px;
-  background-color: var(--foreground);
-  bottom: -5px;
+  background-color: var(--accent);
+  bottom: -10px;
   left: 0;
   transition: width 0.5s ease;
 }
 
-.language-switcher-container .language-switcher-content button:hover::after {
+.language-switcher
+  .language-switcher-container
+  .language-switcher-content
+  a:hover::after {
   width: 100%;
+}
+
+.language-switcher
+  .language-switcher-container
+  .language-switcher-content
+  .languages
+  .active
+  span {
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
 }
 
 /* Cookie Banner */
@@ -435,7 +494,9 @@ a {
   padding: 0 5vw;
 }
 
-#cookie-banner.cookie-banner-container .cookie-banner-content .cookie-info {
+#cookie-banner.cookie-banner-container
+  .cookie-banner-content
+  .cookie-info-container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -445,7 +506,7 @@ a {
 
 #cookie-banner.cookie-banner-container
   .cookie-banner-content
-  .cookie-info
+  .cookie-info-container
   span {
   font-size: 15px;
 }
@@ -1011,7 +1072,7 @@ a {
   font-weight: 300;
   font-variant: small-caps;
   color: var(--foreground);
-  margin: 0 0 15px 0;
+  margin: 0;
 }
 .about-showcase-music-info-container .about-showcase-music-info-text p {
   font-size: 17px;

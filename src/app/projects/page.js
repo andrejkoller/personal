@@ -30,6 +30,22 @@ const projectItems = [
     href: "https://www.andrejkoller.com/projects/les-feuilles-mortes",
   },
   {
+    title: "Gnossiennes",
+    author: "Érik Satie",
+    category: "solo",
+    instrument: "Fortepiano",
+    image: "/images/allee_zum_schlosskammer.jpeg",
+    href: "https://www.andrejkoller.com/projects/gnossiennes",
+  },
+  {
+    title: "Prelude in E Minor",
+    author: "Frédéric Chopin",
+    category: "solo",
+    instrument: "Fortepiano",
+    image: "/images/der_abend.jpg",
+    href: "https://www.andrejkoller.com/projects/prelude-in-e-minor",
+  },
+  {
     title: "Vexations",
     author: "Érik Satie",
     category: "solo",

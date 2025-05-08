@@ -1,30 +1,53 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+
 export const LanguageSwitcher = () => {
-  const handleLanguageChange = (lang) => {
-    const currentUrl = window.location.href;
-    const newUrl = currentUrl.replace(/\/(en|de)\//, `/${lang}/`);
-    window.location.href = newUrl;
-  };
+  const [isLanguageActive, setIsLanguageActive] = useState("en");
 
   return (
-    <ul className="language-switcher-content">
-      <button
-        onClick={() => handleLanguageChange("en")}
-        className="language-button"
-      >
-        <span className="language-button-text">English</span>
-      </button>
-      <button
-        onClick={() => handleLanguageChange("de")}
-        className="language-button"
-      >
-        <span className="language-button-text">Deutsch</span>
-      </button>
-      <button
-        onClick={() => handleLanguageChange("ru")}
-        className="language-button"
-      >
-        <span className="language-button-text">Русский</span>
-      </button>
-    </ul>
+    <div className="language-switcher-container">
+      <div className="language-switcher-content">
+        <ul className="languages">
+          <li>
+            <Link
+              href={"/"}
+              className={`language-button ${
+                isLanguageActive === "en" ? "active" : ""
+              }`}
+              onClick={() => setIsLanguageActive("en")}
+            >
+              English
+              <span></span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={"/de"}
+              className={`language-button ${
+                isLanguageActive === "de" ? "active" : ""
+              }`}
+              onClick={() => setIsLanguageActive("de")}
+            >
+              Deutsch
+              <span></span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={"/ru"}
+              className={`language-button ${
+                isLanguageActive === "ru" ? "active" : ""
+              }`}
+              onClick={() => setIsLanguageActive("ru")}
+            >
+              Русский
+              <span></span>
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
   );
 };

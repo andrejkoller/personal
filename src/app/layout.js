@@ -1,3 +1,5 @@
+"use client";
+
 import { Cormorant, Gloock, Rubik } from "next/font/google";
 import "./globals.css";
 import { Header } from "./components/Header";
@@ -5,6 +7,8 @@ import { Menu } from "./components/Menu";
 import { Cursor } from "./components/Cursor";
 import { Footer } from "./components/Footer";
 import { CookieBanner } from "./components/CookieBanner";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const cormorant = Cormorant({
   subsets: ["latin"],
@@ -25,6 +29,18 @@ const gloock = Gloock({
 });
 
 export default function RootLayout({ children }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [pathname]);
+
   return (
     <html lang="en">
       <body
@@ -33,17 +49,15 @@ export default function RootLayout({ children }) {
         } ${gloock.variable || ""}`}
       >
         <Cursor />
-        <nav id="menuContent" className="menu">
-          <Menu />
+        <nav className="menu">
+          <Menu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         </nav>
-        <header id="headerContent" className="header">
-          <Header />
+        <header className="header">
+          <Header toggleMenu={toggleMenu} />
         </header>
-        <main id="mainContent" className="main">
-          {children}
-        </main>
+        <main className="main">{children}</main>
         <CookieBanner />
-        <footer id="footerContent" className="footer">
+        <footer className="footer">
           <Footer />
         </footer>
       </body>

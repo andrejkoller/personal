@@ -42,7 +42,7 @@ export const BackgroundMusic = () => {
     if (!siriWave1Ref.current) {
       siriWave1Ref.current = new SiriWave({
         container: siriWave1ContainerRef.current,
-        width: 65,
+        width: 59,
         height: 40,
         speed: 0.1,
         color: "#EAD8C2",
@@ -60,7 +60,7 @@ export const BackgroundMusic = () => {
     if (!siriWave2Ref.current) {
       siriWave2Ref.current = new SiriWave({
         container: siriWave2ContainerRef.current,
-        width: 57,
+        width: 54,
         height: 40,
         speed: 0.1,
         color: "#EAD8C2",
@@ -93,28 +93,30 @@ export const BackgroundMusic = () => {
   }, []);
 
   return (
-    <div className="background-music-content">
-      <div className="background-music-button-container">
-        <button
-          className="play-button"
-          ref={playButtonRef}
-          onClick={handlePlayClick}
-        >
-          <span>Listen</span>
-          <span className="siri-wave" ref={siriWave1ContainerRef}></span>
-        </button>
-        <button
-          className="pause-button"
-          ref={pauseButtonRef}
-          onClick={handlePauseClick}
-        >
-          <span>Pause</span>
-          <span className="siri-wave" ref={siriWave2ContainerRef}></span>
-        </button>
+    <div className="background-music-container">
+      <div className="background-music-content">
+        <div className="background-music-button-container">
+          <button
+            className="play-button"
+            ref={playButtonRef}
+            onClick={handlePlayClick}
+          >
+            <span>Listen</span>
+            <span className="siri-wave" ref={siriWave1ContainerRef}></span>
+          </button>
+          <button
+            className="pause-button"
+            ref={pauseButtonRef}
+            onClick={handlePauseClick}
+          >
+            <span>Pause</span>
+            <span className="siri-wave" ref={siriWave2ContainerRef}></span>
+          </button>
+        </div>
+        <audio id="backgroundMusic" ref={audioRef} loop>
+          <source src="/audios/gymnopedie_nr_3.wav" type="audio/wav" />
+        </audio>
       </div>
-      <audio id="backgroundMusic" ref={audioRef} loop>
-        <source src="/audios/gymnopedie_nr_3.wav" type="audio/wav" />
-      </audio>
     </div>
   );
 };

@@ -5,22 +5,12 @@ import { usePathname } from "next/navigation";
 import { BackgroundMusic } from "./BackgroundMusic";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
-export const Header = () => {
+export const Header = ({ toggleMenu }) => {
   const pathname = usePathname();
   const pathnamesWithBackgroundMusic = ["/", "/about"];
   const isHome = pathname === "/";
   const isAbout = pathname === "/about";
   const showMusic = pathnamesWithBackgroundMusic.includes(pathname);
-
-  const handleOpenMenu = () => {
-    const menu = document.getElementById("menu");
-    const html = document.documentElement;
-
-    if (!menu) return;
-
-    menu.classList.add("appear");
-    html.style.overflow = "hidden";
-  };
 
   return (
     <header className={`header-container ${isHome || isAbout ? "home" : ""}`}>
@@ -36,7 +26,7 @@ export const Header = () => {
           <div className="menu-button-content">
             <button
               id="menuButton"
-              onClick={handleOpenMenu}
+              onClick={toggleMenu}
               className="menu-button"
               aria-label="Open navigation menu"
             >
@@ -49,13 +39,13 @@ export const Header = () => {
       </div>
 
       {isHome && (
-        <div className="language-switcher-container">
+        <div className="language-switcher">
           <LanguageSwitcher />
         </div>
       )}
 
       {showMusic && (
-        <div className="background-music-container">
+        <div className="background-music">
           <BackgroundMusic />
         </div>
       )}

@@ -41,7 +41,7 @@ export const CookieBanner = () => {
     isVisible && (
       <div id="cookie-banner" className="cookie-banner-container">
         <div className="cookie-banner-content">
-          <div className="cookie-info">
+          <div className="cookie-info-container">
             <span>
               This website uses cookies due to the integration of YouTube
               videos.

@@ -46,15 +46,17 @@ export default function Page() {
       </section>
       <section className="about-showcase-music-info-container">
         <div className="about-music-info-container">
-          <div className="about-showcase-music-info-title">
-            <p>Audio</p>
-          </div>
-          <div className="about-showcase-music-info-text">
-            <p>
-              Trois Gymnopédies - <br />
-              Gymnopédie No. 3, <br />
-              Éric Satie
-            </p>
+          <div className="about-music-info-content">
+            <div className="about-showcase-music-info-title">
+              <p>Audio</p>
+            </div>
+            <div className="about-showcase-music-info-text">
+              <p>
+                Trois Gymnopédies - <br />
+                Gymnopédie No. 3, <br />
+                Éric Satie
+              </p>
+            </div>
           </div>
         </div>
       </section>
