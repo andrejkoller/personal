@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BackgroundMusic } from "./BackgroundMusic";
-import { LanguageSwitcher } from "./LanguageSwitcher";
+import { BackgroundMusic } from "../BackgroundMusic/BackgroundMusic";
+import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
+import styles from "./Header.module.css";
+import classNames from "classnames";
 
 export const Header = ({ toggleMenu }) => {
   const pathname = usePathname();
@@ -13,21 +15,29 @@ export const Header = ({ toggleMenu }) => {
   const showMusic = pathnamesWithBackgroundMusic.includes(pathname);
 
   return (
-    <header className={`header-container ${isHome || isAbout ? "home" : ""}`}>
-      <div className="header-content">
-        <div className={`header-logo ${isHome ? "home" : ""}`}>
+    <div
+      className={classNames(styles["header-container"], {
+        [styles["home"]]: isHome || isAbout,
+      })}
+    >
+      <div className={styles["header-content"]}>
+        <div
+          className={classNames(styles["header-logo"], {
+            [styles["home"]]: isHome,
+          })}
+        >
           <Link href="/" scroll={false}>
             <h3>Pianorgan</h3>
             <h1>Andrej Koller</h1>
           </Link>
         </div>
 
-        <div className="menu-button-container">
-          <div className="menu-button-content">
+        <div className={styles["menu-button-container"]}>
+          <div className={styles["menu-button-content"]}>
             <button
               id="menuButton"
               onClick={toggleMenu}
-              className="menu-button"
+              className={styles["menu-button"]}
               aria-label="Open navigation menu"
             >
               Menu
@@ -39,16 +49,16 @@ export const Header = ({ toggleMenu }) => {
       </div>
 
       {isHome && (
-        <div className="language-switcher">
+        <div className={styles["language-switcher"]}>
           <LanguageSwitcher />
         </div>
       )}
 
       {showMusic && (
-        <div className="background-music">
+        <div className={styles["background-music"]}>
           <BackgroundMusic />
         </div>
       )}
-    </header>
+    </div>
   );
 };

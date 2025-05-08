@@ -1,21 +1,22 @@
 import Image from "next/image";
+import styles from "../page.module.css";
 
 export default function Page() {
   return (
     <>
-      <div className="project-container">
-        <div className="project-content">
-          <div className="project-title-container">
-            <div className="project-title">
+      <div className={styles["project-container"]}>
+        <div className={styles["project-content"]}>
+          <div className={styles["project-title-container"]}>
+            <div className={styles["project-title"]}>
               <h2>Oversky</h2>
             </div>
-            <div className="project-music-info-container">
+            <div className={styles["project-details"]}>
               <p>Solo</p>
               <p>Fortepiano</p>
             </div>
           </div>
-          <div className="project-description-container">
-            <div className="project-image">
+          <div className={styles["project-description"]}>
+            <div className={styles["project-image"]}>
               <Image
                 src="/images/mondnacht_am_dnjepr.jpg"
                 alt="Mondnacht am Dnjepr"
@@ -23,7 +24,7 @@ export default function Page() {
                 height={500}
               />
             </div>
-            <div className="project-description-text">
+            <div className={styles["project-text"]}>
               <h4>
                 Luke Howard - &quot;Oversky&quot; is an atmospheric piano piece
                 characterized by gentle, floating melodies and a melancholic yet
@@ -35,7 +36,7 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="project-video-container">
+      <div className={styles["project-video-container"]}>
         <span>
           This piece is currently in production. A video performance will be
           available soon.

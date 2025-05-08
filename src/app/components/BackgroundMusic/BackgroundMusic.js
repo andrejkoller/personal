@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import SiriWave from "siriwave";
+import styles from "./BackgroundMusic.module.css";
+import classNames from "classnames";
 
 export const BackgroundMusic = () => {
   const audioRef = useRef(null);
@@ -93,30 +95,44 @@ export const BackgroundMusic = () => {
   }, []);
 
   return (
-    <div className="background-music-container">
-      <div className="background-music-content">
-        <div className="background-music-button-container">
-          <button
-            className="play-button"
-            ref={playButtonRef}
-            onClick={handlePlayClick}
-          >
-            <span>Listen</span>
-            <span className="siri-wave" ref={siriWave1ContainerRef}></span>
-          </button>
-          <button
-            className="pause-button"
-            ref={pauseButtonRef}
-            onClick={handlePauseClick}
-          >
-            <span>Pause</span>
-            <span className="siri-wave" ref={siriWave2ContainerRef}></span>
-          </button>
-        </div>
-        <audio id="backgroundMusic" ref={audioRef} loop>
-          <source src="/audios/gymnopedie_nr_3.wav" type="audio/wav" />
-        </audio>
+    <div className={styles["background-music-container"]}>
+      <div className={styles["background-music-content"]}>
+        <button
+          className={classNames(styles["play-button"], {
+            [styles["hidden"]]:
+              playButtonRef.current?.classList.contains("hidden"),
+            [styles["visible"]]:
+              playButtonRef.current?.classList.contains("visible"),
+          })}
+          ref={playButtonRef}
+          onClick={handlePlayClick}
+        >
+          <span>Listen</span>
+          <span
+            className={styles["siri-wave"]}
+            ref={siriWave1ContainerRef}
+          ></span>
+        </button>
+        <button
+          className={classNames(styles["pause-button"], {
+            [styles["hidden"]]:
+              pauseButtonRef.current?.classList.contains("hidden"),
+            [styles["visible"]]:
+              pauseButtonRef.current?.classList.contains("visible"),
+          })}
+          ref={pauseButtonRef}
+          onClick={handlePauseClick}
+        >
+          <span>Pause</span>
+          <span
+            className={styles["siri-wave"]}
+            ref={siriWave2ContainerRef}
+          ></span>
+        </button>
       </div>
+      <audio id="backgroundMusic" ref={audioRef} loop>
+        <source src="/audios/gymnopedie_nr_3.wav" type="audio/wav" />
+      </audio>
     </div>
   );
 };

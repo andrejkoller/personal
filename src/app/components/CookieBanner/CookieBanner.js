@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import styles from "./CookieBanner.module.css";
+import classNames from "classnames";
+import Link from "next/link";
 
 export const CookieBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,22 +42,26 @@ export const CookieBanner = () => {
 
   return (
     isVisible && (
-      <div id="cookie-banner" className="cookie-banner-container">
-        <div className="cookie-banner-content">
-          <div className="cookie-info-container">
+      <div
+        className={classNames(styles["cookie-banner-container"], {
+          [styles["visible"]]: isVisible,
+        })}
+      >
+        <div className={styles["cookie-banner-content"]}>
+          <div className={styles["cookie-banner-text"]}>
             <span>
               This website uses cookies due to the integration of YouTube
               videos.
             </span>
-            <a
+            <Link
               href="https://policies.google.com/technologies/cookies?hl=en-US"
               target="_blank"
               rel="noopener noreferrer"
             >
               More info
-            </a>
+            </Link>
           </div>
-          <div className="cookie-button-container">
+          <div className={styles["cookie-banner-button"]}>
             <button onClick={handleCloseCookie}>Got It!</button>
           </div>
         </div>

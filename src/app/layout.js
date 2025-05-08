@@ -2,11 +2,11 @@
 
 import { Cormorant, Gloock, Rubik } from "next/font/google";
 import "./globals.css";
-import { Header } from "./components/Header";
-import { Menu } from "./components/Menu";
-import { Cursor } from "./components/Cursor";
-import { Footer } from "./components/Footer";
-import { CookieBanner } from "./components/CookieBanner";
+import { Header } from "./components/Header/Header";
+import { Menu } from "./components/Menu/Menu";
+import { Cursor } from "./components/Cursor/Cursor";
+import { Footer } from "./components/Footer/Footer";
+import { CookieBanner } from "./components/CookieBanner/CookieBanner";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 

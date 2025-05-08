@@ -4,6 +4,8 @@ import { useEffect, useState, useMemo, useRef } from "react";
 import { Fancybox } from "@fancyapps/ui";
 import Image from "next/image";
 import imagesLoaded from "imagesloaded";
+import styles from "./page.module.css";
+import classNames from "classnames";
 
 const galleryItems = [
   {
@@ -40,8 +42,8 @@ export default function Page() {
     let masonryInstance;
 
     const initMasonryAndFancybox = async () => {
-      const Masonry = await import("masonry-layout");
-      masonryInstance = new Masonry.default(gallery, {
+      const masonry = await import("masonry-layout");
+      masonryInstance = new masonry.default(gallery, {
         itemSelector: ".gallery-item",
         percentPosition: true,
       });
@@ -65,6 +67,7 @@ export default function Page() {
       const galleryItems = gallery.querySelectorAll(
         "[data-fancybox='gallery']"
       );
+
       if (galleryItems.length > 0) {
         Fancybox.bind("[data-fancybox='gallery']", {
           Thumbs: false,
@@ -92,24 +95,28 @@ export default function Page() {
       Fancybox.unbind("[data-fancybox='gallery']");
       if (masonryInstance) masonryInstance.destroy();
     };
-  }, [filter]);
+  }, [filter, filteredGalleryItems]);
 
   return (
-    <div className="gallery-container">
-      <div className="gallery-content">
-        <div className="gallery-header">
-          <div className="gallery-header-title">
+    <div className={styles["gallery-container"]}>
+      <div className={styles["gallery-content"]}>
+        <div className={styles["gallery-header"]}>
+          <div className={styles["gallery-header-title"]}>
             <h2>Gallery</h2>
           </div>
-          <div className="gallery-header-category">
+          <div className={styles["gallery-header-category"]}>
             {["video", "photo", "all"].map((category) => (
               <button
                 key={category}
-                className={`filter-button ${category} ${filter === category ? "active" : ""}`}
+                className={classNames(styles["filter-button"], {
+                  [styles["video"]]: category === "video",
+                  [styles["photo"]]: category === "photo",
+                  [styles["all"]]: category === "all",
+                })}
                 onClick={() => setFilter(category)}
                 aria-label={`Show ${category} items`}
               >
-                <h4 aria-label={`Show ${category} items`}>
+                <h4>
                   {category === "all"
                     ? category.charAt(0).toUpperCase() + category.slice(1)
                     : category.charAt(0).toUpperCase() +
@@ -120,11 +127,14 @@ export default function Page() {
             ))}
           </div>
         </div>
-        <div className="gallery-body" ref={galleryRef}>
+        <div className={styles["gallery-body"]} ref={galleryRef}>
           {filteredGalleryItems.map((galleryItem) => (
             <div
               key={galleryItem.src}
-              className={`gallery-item ${galleryItem.category}`}
+              className={classNames(styles["gallery-item"], "gallery-item", {
+                [styles["video"]]: galleryItem.category === "video",
+                [styles["photo"]]: galleryItem.category === "photo",
+              })}
               style={{
                 border: `1px solid ${
                   galleryItem.category === "video" ? "#9a4c38" : "#4a1e6a"

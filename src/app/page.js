@@ -1,10 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { LinkButton } from "./components/LinkButton";
-import { useEffect, useRef } from "react";
+import { LinkButton } from "./components/LinkButton/LinkButton";
+import { useEffect, useRef, useState } from "react";
+import styles from "./page.module.css";
+import classNames from "classnames";
 
 export default function Home() {
+  const [lineAppeared, setLineAppeared] = useState(false);
   const lineRef = useRef(null);
 
   const initLineAnimation = () => {
@@ -15,7 +18,8 @@ export default function Home() {
       const position = line.getBoundingClientRect();
 
       if (position.top < window.innerHeight && position.bottom >= 0) {
-        line.classList.add("appear");
+        line.classList.add(styles["appear"]);
+        setLineAppeared(true);
         window.removeEventListener("scroll", checkPosition);
       }
     };
@@ -34,10 +38,10 @@ export default function Home() {
 
   return (
     <>
-      <section id="projectShowcase" className="project-showcase-container">
-        <div className="project-container">
-          <div className="project-content">
-            <div className="project-image">
+      <section className={styles["project"]}>
+        <div className={styles["project-container"]}>
+          <div className={styles["project-content"]}>
+            <div className={styles["project-image"]}>
               <Image
                 src={"/images/old_battersea_bridge.jpg"}
                 alt="Old Battersea Bridge"
@@ -45,7 +49,7 @@ export default function Home() {
                 height={`${800}`}
               />
             </div>
-            <div className="project-description">
+            <div className={styles["project-description"]}>
               <h2>Fading Hell</h2>
               <p>A music project that I&apos;m currently working on.</p>
               <LinkButton
@@ -56,11 +60,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="aboutShowcase" className="about-showcase-container">
-        <div className="line" ref={lineRef}></div>
-        <div className="about-container">
-          <div className="about-content">
-            <div className="about-description">
+      <section className={styles["about"]}>
+        <div
+          className={classNames(styles["line"], {
+            [styles["appear"]]: lineAppeared,
+          })}
+          ref={lineRef}
+        ></div>
+        <div className={styles["about-container"]}>
+          <div className={styles["about-content"]}>
+            <div className={styles["about-description"]}>
               <h2>About</h2>
               <p>
                 Hello, I am Andrej Koller, a web developer specializing in

@@ -1,0 +1,26 @@
+.link-button-container {
+  z-index: 200;
+  padding-left: 60px;
+  padding-top: 20px;
+}
+
+.link-button-container .link-button-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  height: 100px;
+  width: fit-content;
+}
+
+.link-button-container .link-button-content h4 {
+  cursor: pointer;
+  font-size: 80px;
+  font-weight: 400;
+  font-family: var(--font-gloock);
+  z-index: 240;
+  margin: 0;
+  background-color: transparent;
+  color: var(--foreground);
+  border: none;
+}

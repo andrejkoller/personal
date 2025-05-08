@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import imagesLoaded from "imagesloaded";
+import styles from "./page.module.css";
+import classNames from "classnames";
 
 const inspirationItems = [
   {
@@ -246,14 +248,16 @@ export default function Page() {
     const inspiration = inspirationRef.current;
     if (!inspiration) return;
 
-    import("masonry-layout").then((Masonry) => {
-      const masonry = new Masonry.default(inspiration, {
+    let masonryInstance;
+
+    import("masonry-layout").then((masonry) => {
+      masonryInstance = new masonry.default(inspiration, {
         itemSelector: ".inspiration-item",
         percentPosition: true,
       });
 
       const imagesPromise = new Promise((resolve) => {
-        imagesLoaded(inspiration, resolve);
+        imagesLoaded(inspiration, { background: true }, () => resolve());
       });
 
       const iframes = inspiration.querySelectorAll("iframe");
@@ -267,20 +271,24 @@ export default function Page() {
       );
 
       Promise.all([imagesPromise, iframesPromise]).then(() => {
-        masonry.layout();
+        masonryInstance.layout();
+        console.log(
+          "All images and iframes loaded, layout updated.",
+          masonryInstance
+        );
       });
 
       return () => {
-        masonry.destroy();
+        masonryInstance.destroy();
       };
     }, []);
   });
 
   return (
-    <div className="inspiration-container">
-      <div className="inspiration-content">
-        <div className="inspiration-header">
-          <div className="inspiration-header-title">
+    <div className={styles["inspiration-container"]}>
+      <div className={styles["inspiration-content"]}>
+        <div className={styles["inspiration-header"]}>
+          <div className={styles["inspiration-header-title"]}>
             <h2>Inspiration</h2>
             <p>
               This is a collection of the gems that have sustained me over time:
@@ -289,17 +297,27 @@ export default function Page() {
             </p>
           </div>
         </div>
-        <div className="inspiration-body" ref={inspirationRef}>
+        <div className={styles["inspiration-body"]} ref={inspirationRef}>
           {inspirationItems.map((item, index) => (
-            <div key={index} className="inspiration-item">
+            <div
+              key={index}
+              className={classNames(
+                styles["inspiration-item"],
+                "inspiration-item"
+              )}
+            >
               {item.category === "quote" && (
-                <div className={`quote-item ${item.short ? "short" : ""}`}>
+                <div
+                  className={classNames(styles["quote-item"], {
+                    [styles["short"]]: item.short,
+                  })}
+                >
                   <p>{item.quote}</p>
-                  <p className="quote-author">{item.author}</p>
+                  <p className={styles["quote-author"]}>{item.author}</p>
                 </div>
               )}
               {item.category === "art" && (
-                <div className="art-item">
+                <div className={styles["art-item"]}>
                   <Image
                     src={item.image}
                     layout="responsive"
@@ -314,7 +332,7 @@ export default function Page() {
                 </div>
               )}
               {item.category === "video" && (
-                <div className="video-item">
+                <div className={styles["video-item"]}>
                   <iframe
                     width="560"
                     height="315"

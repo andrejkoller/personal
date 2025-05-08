@@ -2,20 +2,22 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import styles from "./LanguageSwitcher.module.css";
+import classNames from "classnames";
 
 export const LanguageSwitcher = () => {
   const [isLanguageActive, setIsLanguageActive] = useState("en");
 
   return (
-    <div className="language-switcher-container">
-      <div className="language-switcher-content">
-        <ul className="languages">
+    <div className={styles["language-switcher-container"]}>
+      <div className={styles["language-switcher-content"]}>
+        <ul className={styles["language-switcher-list"]}>
           <li>
             <Link
               href={"/"}
-              className={`language-button ${
-                isLanguageActive === "en" ? "active" : ""
-              }`}
+              className={classNames(styles["language-button"], {
+                [styles["active"]]: isLanguageActive === "en",
+              })}
               onClick={() => setIsLanguageActive("en")}
             >
               English
@@ -25,9 +27,9 @@ export const LanguageSwitcher = () => {
           <li>
             <Link
               href={"/de"}
-              className={`language-button ${
-                isLanguageActive === "de" ? "active" : ""
-              }`}
+              className={classNames(styles["language-button"], {
+                [styles["active"]]: isLanguageActive === "de",
+              })}
               onClick={() => setIsLanguageActive("de")}
             >
               Deutsch
@@ -37,9 +39,9 @@ export const LanguageSwitcher = () => {
           <li>
             <Link
               href={"/ru"}
-              className={`language-button ${
-                isLanguageActive === "ru" ? "active" : ""
-              }`}
+              className={classNames(styles["language-button"], {
+                [styles["active"]]: isLanguageActive === "ru",
+              })}
               onClick={() => setIsLanguageActive("ru")}
             >
               Русский

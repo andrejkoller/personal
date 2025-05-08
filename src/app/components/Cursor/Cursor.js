@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import styles from "./Cursor.module.css";
 
 export const Cursor = () => {
   const cursorRef = useRef(null);
@@ -32,7 +33,7 @@ export const Cursor = () => {
     };
 
     const interactiveElements = document.querySelectorAll(
-      "a, .play-button, .pause-button, #menuButton, #closeButton, #linkButton, .filter-button, #solo, #ensemble, #photo, #video, #all, .inspiration-item, .language-button, .input-submit, input, textarea"
+      "a, .play-button, .pause-button, button, #menuButton, #closeButton, #linkButton, .filter-button, #solo, #ensemble, #photo, #video, #all, .inspiration-item, .language-button, .input-submit, input, textarea"
     );
 
     const handleEnterInteractive = () => {
@@ -68,5 +69,5 @@ export const Cursor = () => {
     };
   }, []);
 
-  return <div className="cursor" ref={cursorRef}></div>;
+  return <div className={styles["cursor"]} ref={cursorRef}></div>;
 };
