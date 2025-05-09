@@ -272,10 +272,6 @@ export default function Page() {
 
       Promise.all([imagesPromise, iframesPromise]).then(() => {
         masonryInstance.layout();
-        console.log(
-          "All images and iframes loaded, layout updated.",
-          masonryInstance
-        );
       });
 
       return () => {

@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import SiriWave from "siriwave";
 import styles from "./BackgroundMusic.module.css";
 import classNames from "classnames";
 
 export const BackgroundMusic = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   const audioRef = useRef(null);
   const playButtonRef = useRef(null);
   const pauseButtonRef = useRef(null);
@@ -22,6 +24,7 @@ export const BackgroundMusic = () => {
 
   const handlePlayClick = () => {
     if (audioRef.current && playButtonRef.current && pauseButtonRef.current) {
+      setIsPlaying(true);
       audioRef.current.play();
       playButtonRef.current.classList.add("hidden");
       pauseButtonRef.current.classList.add("visible");
@@ -32,6 +35,7 @@ export const BackgroundMusic = () => {
 
   const handlePauseClick = () => {
     if (audioRef.current && playButtonRef.current && pauseButtonRef.current) {
+      setIsPlaying(false);
       audioRef.current.pause();
       playButtonRef.current.classList.remove("hidden");
       pauseButtonRef.current.classList.remove("visible");
@@ -99,10 +103,8 @@ export const BackgroundMusic = () => {
       <div className={styles["background-music-content"]}>
         <button
           className={classNames(styles["play-button"], {
-            [styles["hidden"]]:
-              playButtonRef.current?.classList.contains("hidden"),
-            [styles["visible"]]:
-              playButtonRef.current?.classList.contains("visible"),
+            [styles["hidden"]]: isPlaying,
+            [styles["visible"]]: !isPlaying,
           })}
           ref={playButtonRef}
           onClick={handlePlayClick}
@@ -115,10 +117,8 @@ export const BackgroundMusic = () => {
         </button>
         <button
           className={classNames(styles["pause-button"], {
-            [styles["hidden"]]:
-              pauseButtonRef.current?.classList.contains("hidden"),
-            [styles["visible"]]:
-              pauseButtonRef.current?.classList.contains("visible"),
+            [styles["hidden"]]: !isPlaying,
+            [styles["visible"]]: isPlaying,
           })}
           ref={pauseButtonRef}
           onClick={handlePauseClick}

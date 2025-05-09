@@ -8,7 +8,7 @@ export default function Page() {
         <div className={styles["project-content"]}>
           <div className={styles["project-title-container"]}>
             <div className={styles["project-title"]}>
-              <h2>Prélude in E Minor</h2>
+              <h2>Prélude in e minor</h2>
             </div>
             <div className={styles["project-details"]}>
               <p>Solo</p>
@@ -20,8 +20,9 @@ export default function Page() {
               <Image
                 src="/images/der_abend.jpg"
                 alt="Der Abend"
-                width={500}
-                height={500}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority
               />
             </div>
             <div className={styles["project-text"]}>

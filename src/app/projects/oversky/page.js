@@ -20,8 +20,9 @@ export default function Page() {
               <Image
                 src="/images/mondnacht_am_dnjepr.jpg"
                 alt="Mondnacht am Dnjepr"
-                width={500}
-                height={500}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority
               />
             </div>
             <div className={styles["project-text"]}>

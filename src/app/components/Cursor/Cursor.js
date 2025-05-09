@@ -2,9 +2,11 @@
 
 import { useEffect, useRef } from "react";
 import styles from "./Cursor.module.css";
+import { usePathname } from "next/navigation";
 
 export const Cursor = () => {
   const cursorRef = useRef(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const cursor = cursorRef.current;
@@ -33,7 +35,7 @@ export const Cursor = () => {
     };
 
     const interactiveElements = document.querySelectorAll(
-      "a, .play-button, .pause-button, button, #menuButton, #closeButton, #linkButton, .filter-button, #solo, #ensemble, #photo, #video, #all, .inspiration-item, .language-button, .input-submit, input, textarea"
+      "a, .play-button, .pause-button, button, #menuButton, #closeButton, #linkButton, .filter-button, #solo, #ensemble, #photo, #video, #all, .project-item, .inspiration-item, .gallery-item, .language-button, .input-submit, input, textarea"
     );
 
     const handleEnterInteractive = () => {
@@ -67,7 +69,7 @@ export const Cursor = () => {
         el.removeEventListener("mouseleave", handleLeaveInteractive);
       });
     };
-  }, []);
+  }, [pathname]);
 
   return <div className={styles["cursor"]} ref={cursorRef}></div>;
 };

@@ -274,3 +274,15 @@
   border: 1px solid var(--video-border-color);
   transition: all 0.5s ease-out;
 }
+
+.contact-container
+  .contact-content
+  .contact-body
+  .contact-form
+  .contact-form-third-column
+  .contact-form-third-column-content
+  .contact-image {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}

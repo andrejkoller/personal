@@ -40,7 +40,7 @@ const projectItems = [
     href: "/projects/gnossiennes",
   },
   {
-    title: "Prélude in E Minor",
+    title: "Prélude in e minor",
     author: "Frédéric Chopin",
     category: "solo",
     instrument: "Fortepiano",
@@ -110,13 +110,16 @@ export default function Page() {
             >
               <div className={styles["project-image-container"]}>
                 <div className={styles["project-image"]}>
-                  <Link href={projectItem.href}>
+                  <Link
+                    href={projectItem.href}
+                    style={{ position: "relative" }}
+                  >
                     <Image
                       src={projectItem.image}
                       alt={projectItem.title}
-                      width={500}
-                      height={500}
-                      layout="responsive"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      priority
                     />
                   </Link>
                 </div>

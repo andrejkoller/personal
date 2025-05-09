@@ -20,8 +20,9 @@ export default function Page() {
               <Image
                 src="/images/grey_and_silver_whistler.webp"
                 alt="Grey and Silver Whistler"
-                width={500}
-                height={500}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority
               />
             </div>
             <div className={styles["project-text"]}>
