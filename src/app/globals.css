@@ -45,10 +45,6 @@ h6 {
 
 h2 {
   font-size: 70px;
-  font-family: var(--font-cormorant);
-  font-weight: 300;
-  font-variant: small-caps;
-  color: var(--foreground);
   line-height: 75px;
 }
 

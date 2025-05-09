@@ -47,6 +47,39 @@
   color: var(--foreground);
 }
 
+.about-thanks-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 50px 0;
+}
+
+.about-thanks-container .about-thanks-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.about-thanks-container .about-thanks-content .about-thanks-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.about-thanks-container .about-thanks-content .about-thanks-text p {
+  font-size: 24px;
+  font-weight: 300;
+  font-family: var(--font-cormorant);
+  font-variant: small-caps;
+  line-height: 33px;
+  color: var(--foreground);
+}
+
 .about-audio-info-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -87,4 +120,18 @@
   line-height: 27px;
   color: var(--foreground);
   margin: 0;
+}
+
+.line {
+  transform: scaleX(0);
+  transform-origin: left;
+  height: 1px;
+  background-color: var(--accent);
+  z-index: 210;
+  width: 100%;
+}
+
+.line.appear {
+  transform: scaleX(1);
+  transition: transform 2s ease-out;
 }

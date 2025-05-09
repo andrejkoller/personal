@@ -121,7 +121,7 @@
   transform: scaleX(0);
   transform-origin: left;
   height: 1px;
-  background-color: #ead8c2;
+  background-color: var(--accent);
   z-index: 210;
   width: 92%;
   margin-left: -10%;

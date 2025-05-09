@@ -49,7 +49,7 @@ export default function Page() {
       });
 
       const imagesPromise = new Promise((resolve) => {
-        imagesLoaded(gallery, { background: true }, () => resolve());
+        imagesLoaded(gallery, { background: false }, () => resolve());
       });
 
       const iframes = gallery.querySelectorAll("iframe");
@@ -81,7 +81,7 @@ export default function Page() {
             },
           },
           Toolbar: {
-            display: ["zoom", "cover", "close"],
+            display: ["zoom", "close"],
           },
         });
       }

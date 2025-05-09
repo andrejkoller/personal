@@ -48,6 +48,12 @@ export const Header = ({ toggleMenu }) => {
         </div>
       </div>
 
+      {isAbout && (
+        <div className={styles["about-header"]}>
+          <h1>About</h1>
+        </div>
+      )}
+
       {isHome && (
         <div className={styles["language-switcher"]}>
           <LanguageSwitcher />

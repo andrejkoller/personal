@@ -1,6 +1,39 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
+import classNames from "classnames";
 
 export default function Page() {
+  const [lineAppeared, setLineAppeared] = useState(false);
+  const lineRef = useRef(null);
+
+  const initLineAnimation = () => {
+    const line = lineRef.current;
+    if (!line) return;
+
+    const checkPosition = () => {
+      const position = line.getBoundingClientRect();
+
+      if (position.top < window.innerHeight && position.bottom >= 0) {
+        line.classList.add(styles["appear"]);
+        setLineAppeared(true);
+        window.removeEventListener("scroll", checkPosition);
+      }
+    };
+
+    window.addEventListener("scroll", checkPosition);
+    checkPosition();
+  };
+
+  useEffect(() => {
+    const animationFrame = requestAnimationFrame(() => {
+      initLineAnimation();
+    });
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, []);
+
   return (
     <>
       <div className={styles["about-container"]}>
@@ -40,6 +73,31 @@ export default function Page() {
                 out—I&apos;m always open to new connections.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles["about-thanks-container"]}>
+        <div className={styles["about-thanks-content"]}>
+          <div className={styles["about-thanks-text"]}>
+            <div
+              className={classNames(styles["line"], {
+                [styles["appear"]]: lineAppeared,
+              })}
+              ref={lineRef}
+            ></div>
+            <div className={styles["about-thanks-text-content"]}>
+              <p>
+                I want to thank everyone who truly listens to me and understands
+                me—especially through my music.
+              </p>
+              <p>Andrej Koller</p>
+            </div>
+            <div
+              className={classNames(styles["line"], {
+                [styles["appear"]]: lineAppeared,
+              })}
+              ref={lineRef}
+            ></div>
           </div>
         </div>
       </div>

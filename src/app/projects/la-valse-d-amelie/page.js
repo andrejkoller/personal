@@ -8,7 +8,10 @@ export default function Page() {
         <div className={styles["project-content"]}>
           <div className={styles["project-title-container"]}>
             <div className={styles["project-title"]}>
-              <h2>Prélude in e minor</h2>
+              <h2>
+                La Valse
+                <br /> d&apos;Amelie
+              </h2>
             </div>
             <div className={styles["project-details"]}>
               <p>Solo</p>
@@ -18,8 +21,8 @@ export default function Page() {
           <div className={styles["project-description"]}>
             <div className={styles["project-image"]}>
               <Image
-                src="/images/der_abend.jpg"
-                alt="Der Abend"
+                src="/images/interior_with_pink_wallpaper.jpg"
+                alt="Interior with Pink Wallpaper"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority
@@ -27,15 +30,13 @@ export default function Page() {
             </div>
             <div className={styles["project-text"]}>
               <h4>
-                Composed in 1839, this short prelude is a masterwork of
-                emotional compression. With just a few mournful chords and a
-                descending melodic line, Chopin evokes a profound sense of
-                resignation, loss, and quiet despair. The piece unfolds like a
-                slow exhale—gentle but inevitable—each harmony deepening the
-                weight of unspoken sorrow. It feels as though time has slowed to
-                a standstill, and the music lingers in a moment of suspended
-                grief, echoing the vulnerability of a soul on the edge of
-                memory.
+                La Valse d&apos;Amelie is a delicate and whimsical piece that
+                captures the essence of a dreamlike waltz. Its gentle melodies
+                and intricate harmonies evoke a sense of nostalgia and longing,
+                as if wandering through a world of memories. The music dances
+                gracefully, inviting the listener to lose themselves in its
+                enchanting rhythm, creating a bittersweet atmosphere that
+                lingers long after the last note fades away.
               </h4>
             </div>
           </div>

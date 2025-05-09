@@ -27,13 +27,13 @@ export default function Page() {
             </div>
             <div className={styles["project-text"]}>
               <h4>
-                Composed around 1893, Vexations is an enigmatic and haunting
-                work written for solo piano. Its slow, dissonant theme—meant to
-                be repeated 840 times—invites the listener into a trance-like
-                state that blurs the line between time and emotion. The piece
-                evokes a sense of quiet introspection, as if wandering endlessly
-                through the corridors of the mind, searching for something lost
-                or never known.
+                Vexations is an enigmatic and haunting work written for solo
+                piano. Its slow, dissonant theme—meant to be repeated 840
+                times—invites the listener into a trance-like state that blurs
+                the line between time and emotion. The piece evokes a sense of
+                quiet introspection, as if wandering endlessly through the
+                corridors of the mind, searching for something lost or never
+                known.
               </h4>
             </div>
           </div>

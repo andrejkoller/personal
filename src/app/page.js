@@ -80,7 +80,7 @@ export default function Home() {
                 Through music, I seek to inspire and motivate others by sharing
                 meaningful and uplifting pieces.
               </p>
-              <LinkButton href="/" isExternal={false} />
+              <LinkButton href="/about" isExternal={false} />
             </div>
           </div>
         </div>

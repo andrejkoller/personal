@@ -40,20 +40,20 @@ const projectItems = [
     href: "/projects/gnossiennes",
   },
   {
-    title: "Prélude in e minor",
-    author: "Frédéric Chopin",
-    category: "solo",
-    instrument: "Fortepiano",
-    image: "/images/der_abend.jpg",
-    href: "/projects/prelude-in-e-minor",
-  },
-  {
     title: "Vexations",
     author: "Érik Satie",
     category: "solo",
     instrument: "Fortepiano",
     image: "/images/grey_and_silver_whistler.webp",
     href: "/projects/vexations",
+  },
+    {
+    title: "La Valse d'Amelie",
+    author: "Yann Tiersen",
+    category: "solo",
+    instrument: "Fortepiano",
+    image: "/images/interior_with_pink_wallpaper.jpg",
+    href: "/projects/la-valse-d-amelie",
   },
 ];
 

@@ -37,6 +37,14 @@ export default function RootLayout({ children }) {
   };
 
   useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isMenuOpen]);
+
+  useEffect(() => {
     setIsMenuOpen(false);
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname]);
