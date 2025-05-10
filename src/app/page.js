@@ -43,8 +43,8 @@ export default function Home() {
           <div className={styles["project-content"]}>
             <div className={styles["project-image"]}>
               <Image
-                src={"/images/old_battersea_bridge.jpg"}
-                alt="Old Battersea Bridge"
+                src={"/images/hades.jpg"}
+                alt="Hades"
                 width={`${800}`}
                 height={`${800}`}
               />

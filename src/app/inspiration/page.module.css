@@ -153,7 +153,7 @@
   .inspiration-item
   .art-item,
 .video-item {
-  border: 1px solid var(--all);
+  border: 1px solid var(--accent);
 }
 
 .inspiration-container

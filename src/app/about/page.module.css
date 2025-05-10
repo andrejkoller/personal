@@ -47,12 +47,44 @@
   color: var(--foreground);
 }
 
+.about-instruments-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.about-instruments-container .about-instruments-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 85vw;
+  height: 600px;
+  margin: 100px 0 150px 0;
+}
+
+.about-instruments-container
+  .about-instruments-content
+  .about-instruments-title
+  h3 {
+  color: var(--foreground);
+}
+
+.about-instruments-container
+  .about-instruments-content
+  .about-instruments-text
+  p {
+  color: var(--foreground);
+}
+
 .about-thanks-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 0 50px 0;
+  margin: 0 0 200px 0;
 }
 
 .about-thanks-container .about-thanks-content {
@@ -60,7 +92,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 75vw;
 }
 
 .about-thanks-container .about-thanks-content .about-thanks-text {
@@ -78,6 +110,14 @@
   font-variant: small-caps;
   line-height: 33px;
   color: var(--foreground);
+}
+
+.about-thanks-container
+  .about-thanks-content
+  .about-thanks-text
+  .about-thanks-text-content {
+  padding: 100px 0 60px 0;
+  width: 100%;
 }
 
 .about-audio-info-container {
@@ -113,6 +153,7 @@
   line-height: 33px;
   margin: 0;
 }
+
 .about-audio-info-container .about-audio-info-content .about-audio-info-text p {
   font-size: 17px;
   font-weight: 400;

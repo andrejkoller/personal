@@ -18,6 +18,11 @@ const galleryItems = [
     src: "/images/city_in_bavaria.jpg",
     title: "City in Bavaria",
   },
+  {
+    category: "photo",
+    src: "/images/church_on_the_mountains.jpg",
+    title: "Church on the Mountains",
+  },
 ];
 
 export default function Page() {

@@ -76,6 +76,21 @@ export default function Page() {
           </div>
         </div>
       </div>
+      <div className={styles["about-instruments-container"]}>
+        <div className={styles["about-instruments-content"]}>
+          <div className={styles["about-instruments-title"]}>
+            <h3>Instruments</h3>
+          </div>
+          <div className={styles["about-instruments-text"]}>
+            <p>
+              <span className={styles["about-instrument"]}>
+                A Yamaha YDP 164B, an 88-key digital piano with fully weighted
+                keys that replicate the feel of an acoustic grand.
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
       <div className={styles["about-thanks-container"]}>
         <div className={styles["about-thanks-content"]}>
           <div className={styles["about-thanks-text"]}>
