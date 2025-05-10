@@ -1,14 +1,16 @@
-"use client";
-
 import { Cormorant, Gloock, Rubik } from "next/font/google";
 import "./globals.css";
-import { Header } from "./components/Header/Header";
-import { Menu } from "./components/Menu/Menu";
-import { Cursor } from "./components/Cursor/Cursor";
-import { Footer } from "./components/Footer/Footer";
-import { CookieBanner } from "./components/CookieBanner/CookieBanner";
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import LayoutClient from "./LayoutClient";
+
+export const metadata = {
+  title: "Andrej Koller",
+  description:
+    "Personal website of Andrej Koller, a web developer and musician.",
+};
+
+export async function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "de" }, { lang: "ru" }];
+}
 
 const cormorant = Cormorant({
   subsets: ["latin"],
@@ -28,46 +30,13 @@ const gloock = Gloock({
   variable: "--font-gloock",
 });
 
-export default function RootLayout({ children }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const pathname = usePathname();
-
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [isMenuOpen]);
-
-  useEffect(() => {
-    setIsMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, [pathname]);
+export default async function RootLayout({ children }) {
+  const fontVars = `${cormorant.variable || ""} ${rubik.variable || ""} ${gloock.variable || ""}`;
 
   return (
     <html lang="en">
-      <body
-        className={`${cormorant.variable || ""} ${
-          rubik.variable || ""
-        } ${gloock.variable || ""}`}
-      >
-        <Cursor />
-        <nav className="menu">
-          <Menu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-        </nav>
-        <header className="header">
-          <Header toggleMenu={toggleMenu} />
-        </header>
-        <main className="main">{children}</main>
-        <CookieBanner />
-        <footer className="footer">
-          <Footer />
-        </footer>
+      <body className={fontVars}>
+        <LayoutClient>{children}</LayoutClient>
       </body>
     </html>
   );

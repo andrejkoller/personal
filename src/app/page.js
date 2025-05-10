@@ -5,10 +5,27 @@ import { LinkButton } from "./components/LinkButton/LinkButton";
 import { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import classNames from "classnames";
+import { getDictionary } from "./lib/getDictionary";
 
-export default function Home() {
+export default function Home({ params }) {
+  const lang = params?.lang || "en";
+
+  const [t, setT] = useState(null);
   const [lineAppeared, setLineAppeared] = useState(false);
   const lineRef = useRef(null);
+
+  useEffect(() => {
+    const fetchDictionary = async () => {
+      try {
+        const dictionary = await getDictionary(lang);
+        setT(dictionary);
+      } catch (error) {
+        console.error("Error fetching dictionary:", error);
+      }
+    };
+
+    fetchDictionary();
+  }, [lang]);
 
   const initLineAnimation = () => {
     const line = lineRef.current;
@@ -50,8 +67,8 @@ export default function Home() {
               />
             </div>
             <div className={styles["project-description"]}>
-              <h2>Fading Hell</h2>
-              <p>A music project that I&apos;m currently working on.</p>
+              <h2>{t?.projectTitle}</h2>
+              <p>{t?.projectDescription}</p>
               <LinkButton
                 href="https://linktr.ee/fadinghell"
                 isExternal={true}
@@ -72,13 +89,9 @@ export default function Home() {
             <div className={styles["about-description"]}>
               <h2>About</h2>
               <p>
-                Hello, I am Andrej Koller, a web developer specializing in
-                frontend and backend development.
+                {t?.aboutDescriptionOne}
                 <br />
-                Aside from coding, I am passionate about playing the piano and
-                organ, aiming to create unique and atmospheric performances.
-                Through music, I seek to inspire and motivate others by sharing
-                meaningful and uplifting pieces.
+                {t?.aboutDescriptionTwo}
               </p>
               <LinkButton href="/about" isExternal={false} />
             </div>
