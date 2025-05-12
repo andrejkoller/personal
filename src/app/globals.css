@@ -81,12 +81,6 @@ a:hover {
   transition: all 0.5s ease-out;
 }
 
-.header,
-.main,
-.footer {
-  margin: 0 5vw;
-}
-
 /* Animations */
 .round-animation-one {
   border: var(--foreground) 0.5px solid;
@@ -97,6 +91,14 @@ a:hover {
   width: 80px;
   height: 80px;
   transition: all 0.5s ease-out;
+}
+
+.header.about {
+  background: url("/images/abtei_im_eichwald.jpg") center / 100% no-repeat;
+}
+
+.footer {
+  margin: 0 5vw;
 }
 
 .round-animation-two {

@@ -81,13 +81,7 @@ export const Menu = ({ isMenuOpen, toggleMenu }) => {
               )}
             >
               <p>
-                <Link
-                  href={
-                    lang === "en" ? `/${link.href}` : `/${lang}/${link.href}`
-                  }
-                >
-                  {link.label}
-                </Link>
+                <Link href={`/${lang}/${link.href}`}>{link.label}</Link>
               </p>
               <div></div>
             </div>

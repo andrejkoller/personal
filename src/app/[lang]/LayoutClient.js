@@ -32,18 +32,22 @@ export default function LayoutClient({ children, propLang }) {
 
   return (
     <TranslationProvider propLang={propLang}>
-      <Cursor />
-      <nav className="menu">
-        <Menu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-      </nav>
-      <header className="header">
-        <Header toggleMenu={toggleMenu} />
-      </header>
-      <main className="main">{children}</main>
-      <CookieBanner />
-      <footer className="footer">
-        <Footer />
-      </footer>
+      <>
+        <Cursor />
+        <nav className="menu">
+          <Menu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        </nav>
+        <header
+          className={`header${pathname.includes("/about") ? " about" : ""}`}
+        >
+          <Header toggleMenu={toggleMenu} />
+        </header>
+        <main className="main">{children}</main>
+        <CookieBanner />
+        <footer className="footer">
+          <Footer />
+        </footer>
+      </>
     </TranslationProvider>
   );
 }

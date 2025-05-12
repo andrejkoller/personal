@@ -11,7 +11,7 @@ export default function Page({ params }) {
   const t = useTranslation(lang);
 
   return (
-    <>
+    <div className={styles["project"]}>
       <div className={styles["project-container"]}>
         <div className={styles["project-content"]}>
           <div className={styles["project-title-container"]}>
@@ -42,6 +42,6 @@ export default function Page({ params }) {
       <div className={styles["project-video-container"]}>
         <span>{t?.project.notification.text}</span>
       </div>
-    </>
+    </div>
   );
 }

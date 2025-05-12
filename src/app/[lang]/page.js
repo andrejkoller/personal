@@ -42,7 +42,7 @@ export default function Home({ params }) {
   }, []);
 
   return (
-    <>
+    <div className={styles["home"]}>
       <section className={styles["project"]}>
         <div className={styles["project-container"]}>
           <div className={styles["project-content"]}>
@@ -75,6 +75,15 @@ export default function Home({ params }) {
         ></div>
         <div className={styles["about-container"]}>
           <div className={styles["about-content"]}>
+            <div className={styles["about-image"]}>
+              <Image
+                src={"/images/odysseus.jpg"}
+                alt="Birch Forest"
+                width={`${800}`}
+                height={`${800}`}
+                priority
+              />
+            </div>
             <div className={styles["about-description"]}>
               <h2>{t?.home.section.about.title}</h2>
               <p>
@@ -87,6 +96,6 @@ export default function Home({ params }) {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

@@ -108,11 +108,7 @@ export default function Page({ params }) {
               <div className={styles["project-image-container"]}>
                 <div className={styles["project-image"]}>
                   <Link
-                    href={
-                      lang === "en"
-                        ? `/${projectItem.href}`
-                        : `/${lang}/${projectItem.href}`
-                    }
+                    href={`/${lang}/${projectItem.href}`}
                     style={{ position: "relative" }}
                   >
                     <Image
@@ -126,13 +122,7 @@ export default function Page({ params }) {
                 </div>
                 <div className={styles["project-title"]}>
                   <h3>
-                    <Link
-                      href={
-                        lang === "en"
-                          ? `/${projectItem.href}`
-                          : `/${lang}/${projectItem.href}`
-                      }
-                    >
+                    <Link href={`/${lang}/${projectItem.href}`}>
                       <span>{projectItem.title}</span>
                     </Link>
                   </h3>

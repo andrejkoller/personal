@@ -106,7 +106,12 @@
         "descriptionTwo": "personal testimonies, and thought-provoking videos."
     },
     "gallery": {
-        "title": "Gallery"
+        "title": "Gallery",
+        "category": {
+            "video": "Video",
+            "photo": "Photo",
+            "all": "All"
+        }
     },
     "contact": {
         "title": "Contact",

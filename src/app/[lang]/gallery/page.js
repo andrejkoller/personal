@@ -139,6 +139,7 @@ export default function Page({ params }) {
                       ? t?.gallery.category[category]
                       : t?.gallery.category[category] + "s"
                     : ""}
+                  {lang === "ru" ? t?.gallery.category[category] : ""}
                 </h4>
               </button>
             ))}

@@ -106,7 +106,12 @@
         "descriptionTwo": "личные свидетельства и провокационные"
     },
     "gallery": {
-        "title": "Галерея"
+        "title": "Галерея",
+        "category": {
+            "video": "Видео",
+            "photo": "Фото",
+            "all": "Все"
+        }
     },
     "contact": {
         "title": "Контакт",
