@@ -49,7 +49,7 @@ export const BackgroundMusic = () => {
     if (!siriWave1Ref.current) {
       siriWave1Ref.current = new SiriWave({
         container: siriWave1ContainerRef.current,
-        width: 59,
+        width: 54,
         height: 40,
         speed: 0.1,
         color: "#EAD8C2",

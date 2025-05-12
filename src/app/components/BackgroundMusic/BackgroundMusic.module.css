@@ -40,6 +40,10 @@
   left: 0;
 }
 
+.background-music-container .background-music-content button .siri-wave canvas {
+  width: 100% !important;
+}
+
 .background-music-container .background-music-content .pause-button {
   display: none;
 }
