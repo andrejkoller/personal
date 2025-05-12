@@ -52,7 +52,7 @@ export const Header = ({ toggleMenu }) => {
 
       {isAbout && (
         <div className={styles["about-header"]}>
-          <h1>{t?.about.title}</h1>
+          <h1>{t?.about.section.introduction.title}</h1>
         </div>
       )}
 

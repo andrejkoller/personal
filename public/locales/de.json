@@ -103,7 +103,47 @@
     "inspiration": {
         "title": "Inspiration",
         "descriptionOne": "Dies ist eine Sammlung der Schätze, die mich im Laufe der Zeit begleitet haben: inspirierende Zitate,",
-        "descriptionTwo": "persönliche Zeugnisse und zum Nachdenken anregende Videos."
+        "descriptionTwo": "persönliche Zeugnisse und zum Nachdenken anregende Videos.",
+        "itemOne": {
+            "quote": "“Vor allem: Lügen Sie sich nicht selbst an. Wer sich selbst belügt und auf seine eigenen Lügen hört, kann die Wahrheit in sich und um sich herum nicht mehr erkennen und verliert dadurch jeglichen Respekt vor sich selbst und anderen. Und ohne Respekt hört er auf zu lieben.”",
+            "author": "Fyodor Dostoevsky, Die Brüder Karamasow"
+        },
+        "itemTwo": {
+            "quote": "“Um Großes zu erreichen, braucht es zwei Dinge: einen Plan und nicht ganz genug Zeit.”",
+            "author": "Leonard Bernstein"
+        },
+        "itemThree": {
+            "quote": "“Licht in die Dunkelheit der Herzen der Menschen zu bringen – das ist die Aufgabe des Künstlers.”",
+            "author": "Robert Schumann"
+        },
+        "itemFour": {
+            "quote": "“Aber wie könnte man leben, wenn man keine Geschichte zu erzählen hat?”",
+            "author": "Fyodor Dostoevsky, Weiße Nächte"
+        },
+        "itemFive": {
+            "quote": "“Wenn du dich verliebst, mögest du mit ihr glücklich sein. Ich brauche ihr nichts zu wünschen, denn sie wird mit dir glücklich sein. Möge dein Himmel immer klar sein, möge dein liebes Lächeln immer strahlend und fröhlich sein, und mögest du ewig gesegnet sein für diesen Moment der Glückseligkeit, den du einem anderen einsamen und dankbaren Herzen geschenkt hast. Reicht so ein Moment nicht für das ganze Leben?”",
+            "author": "Fyodor Dostoevsky, Weiße Nächte"
+        },
+        "itemSix": {
+            "quote": "“Wer ein Leben rettet, rettet die ganze Welt.”",
+            "author": "Stern, Schindlers Liste"
+        },
+        "itemSeven": {
+            "quote": "“Um denken zu können, muss man das Risiko eingehen, anstößig zu sein.”",
+            "author": "Jordan B. Peterson"
+        },
+        "itemEight": {
+            "quote": "“Carpe diem.”",
+            "author": "Quintus Horatius Flaccus"
+        },
+        "itemNine": {
+            "quote": "“Musik ist der Vermittler zwischen dem spirituellen und dem sinnlichen Leben.”",
+            "author": "Ludwig van Beethoven"
+        },
+        "itemTen": {
+            "quote": "“Er war der Verachtete und Gemeine der Menschen, ein Mensch voller Leiden und Schmerzen. Fürwahr, er trug unsere Schmerzen und trug unsere Leiden; doch wir hielten ihn für einen von Gott Gestraften. Doch er wurde für unsere Sünden durchbohrt und für unsere Missetaten zermalmt. Die Strafe lag auf ihm, damit wir Frieden hätten, und durch seine Wunden sind wir geheilt. Wir alle gingen in die Irre wie Schafe; jeder sah seinen eigenen Weg; doch der Herr lud unser aller Sünde auf ihn. Er ward misshandelt und niedergedrückt, doch er tat seinen Mund nicht auf; wie ein Lamm wurde er zur Schlachtbank geführt. Nachdem er gelitten hat, wird er das Licht des Lebens sehen und gesättigt werden. Durch seine Erkenntnis wird mein gerechter Knecht viele rechtfertigen, und er wird ihre Sünden tragen.”",
+            "author": "Jesaja 53, Zusammenfassung"
+        }
     },
     "gallery": {
         "title": "Galerie",
