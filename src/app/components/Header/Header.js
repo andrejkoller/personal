@@ -6,12 +6,14 @@ import { BackgroundMusic } from "../BackgroundMusic/BackgroundMusic";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 import styles from "./Header.module.css";
 import classNames from "classnames";
+import { useTranslationContext } from "@/app/context/TranslationContext";
 
 export const Header = ({ toggleMenu }) => {
+  const { lang, t } = useTranslationContext();
   const pathname = usePathname();
-  const pathnamesWithBackgroundMusic = ["/", "/about"];
-  const isHome = pathname === "/";
-  const isAbout = pathname === "/about";
+  const pathnamesWithBackgroundMusic = [`/${lang}`, "/about", `/${lang}/about`];
+  const isHome = pathname === `/${lang}` || pathname === "/";
+  const isAbout = pathname === `/${lang}/about` || pathname === "/about";
   const showMusic = pathnamesWithBackgroundMusic.includes(pathname);
 
   return (
@@ -26,7 +28,7 @@ export const Header = ({ toggleMenu }) => {
             [styles["home"]]: isHome,
           })}
         >
-          <Link href="/" scroll={false}>
+          <Link href={lang === "en" ? "/" : `/${lang}`} scroll={false}>
             <h3>Pianorgan</h3>
             <h1>Andrej Koller</h1>
           </Link>
@@ -50,19 +52,19 @@ export const Header = ({ toggleMenu }) => {
 
       {isAbout && (
         <div className={styles["about-header"]}>
-          <h1>About</h1>
+          <h1>{t?.about.title}</h1>
         </div>
       )}
 
       {isHome && (
         <div className={styles["language-switcher"]}>
-          <LanguageSwitcher />
+          <LanguageSwitcher lang={lang} />
         </div>
       )}
 
       {showMusic && (
         <div className={styles["background-music"]}>
-          <BackgroundMusic />
+          <BackgroundMusic t={t} />
         </div>
       )}
     </div>

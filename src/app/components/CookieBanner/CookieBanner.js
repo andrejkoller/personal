@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import styles from "./CookieBanner.module.css";
 import classNames from "classnames";
 import Link from "next/link";
+import { useTranslationContext } from "@/app/context/TranslationContext";
 
 export const CookieBanner = () => {
+  const { t } = useTranslationContext();
   const [isVisible, setIsVisible] = useState(false);
-
+  
   const setCookie = (name, value, days) => {
     let expires = "";
     if (days) {
@@ -49,20 +51,19 @@ export const CookieBanner = () => {
       >
         <div className={styles["cookie-banner-content"]}>
           <div className={styles["cookie-banner-text"]}>
-            <span>
-              This website uses cookies due to the integration of YouTube
-              videos.
-            </span>
+            <span>{t?.cookieBanner.text}</span>
             <Link
               href="https://policies.google.com/technologies/cookies?hl=en-US"
               target="_blank"
               rel="noopener noreferrer"
             >
-              More info
+              {t?.cookieBanner.link}
             </Link>
           </div>
           <div className={styles["cookie-banner-button"]}>
-            <button onClick={handleCloseCookie}>Got It!</button>
+            <button onClick={handleCloseCookie}>
+              {t?.cookieBanner.button}
+            </button>
           </div>
         </div>
       </div>

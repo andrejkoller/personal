@@ -1,18 +1,26 @@
+"use client";
+
 import Image from "next/image";
 import styles from "../page.module.css";
+import { useTranslation } from "@/app/hooks/useTranslation";
+import { use } from "react";
 
-export default function Page() {
+export default function Page({ params }) {
+  const unwrappedParams = use(params);
+  const lang = unwrappedParams?.lang || "en";
+  const t = useTranslation(lang);
+
   return (
     <>
       <div className={styles["project-container"]}>
         <div className={styles["project-content"]}>
           <div className={styles["project-title-container"]}>
             <div className={styles["project-title"]}>
-              <h2>Gnossiennes</h2>
+              <h2>{t?.project.gnossiennes.title}</h2>
             </div>
             <div className={styles["project-details"]}>
-              <p>Solo</p>
-              <p>Fortepiano</p>
+              <p>{t?.project.category.solo}</p>
+              <p>{t?.project.instrument.fortePiano}</p>
             </div>
           </div>
           <div className={styles["project-description"]}>
@@ -26,25 +34,13 @@ export default function Page() {
               />
             </div>
             <div className={styles["project-text"]}>
-              <h4>
-                Satie&apos;s Gnossiennes exist in a realm beyond traditional
-                form or time. Without bar lines or conventional tempo, they
-                drift like musical incense—weightless, enigmatic, and inward.
-                The melodies feel ancient and unfamiliar, as though they were
-                unearthed rather than written, and the harmonies wander with an
-                almost ritualistic logic. Silence is not merely a pause here; it
-                becomes a partner to the notes, shaping meaning through absence
-                as much as presence.
-              </h4>
+              <h4>{t?.project.gnossiennes.description}</h4>
             </div>
           </div>
         </div>
       </div>
       <div className={styles["project-video-container"]}>
-        <span>
-          This piece is currently in production. A video performance will be
-          available soon.
-        </span>
+        <span>{t?.project.notification.text}</span>
       </div>
     </>
   );

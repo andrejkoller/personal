@@ -4,10 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import SiriWave from "siriwave";
 import styles from "./BackgroundMusic.module.css";
 import classNames from "classnames";
+import { useTranslationContext } from "@/app/context/TranslationContext";
 
 export const BackgroundMusic = () => {
+  const { t } = useTranslationContext();
   const [isPlaying, setIsPlaying] = useState(false);
-
   const audioRef = useRef(null);
   const playButtonRef = useRef(null);
   const pauseButtonRef = useRef(null);
@@ -109,7 +110,7 @@ export const BackgroundMusic = () => {
           ref={playButtonRef}
           onClick={handlePlayClick}
         >
-          <span>Listen</span>
+          <span>{t?.backgroundMusic.listen}</span>
           <span
             className={styles["siri-wave"]}
             ref={siriWave1ContainerRef}
@@ -123,7 +124,7 @@ export const BackgroundMusic = () => {
           ref={pauseButtonRef}
           onClick={handlePauseClick}
         >
-          <span>Pause</span>
+          <span>{t?.backgroundMusic.pause}</span>
           <span
             className={styles["siri-wave"]}
             ref={siriWave2ContainerRef}

@@ -2,18 +2,19 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { use, useMemo, useState } from "react";
 import styles from "./page.module.css";
 import classNames from "classnames";
+import { useTranslation } from "@/app/hooks/useTranslation";
 
 const projectItems = [
   {
-    title: "Gymnopédies",
+    title: "Trois Gymnopédies",
     author: "Érik Satie",
     category: "solo",
     instrument: "Fortepiano",
     image: "/images/paris_place_de_la_republique_at_twighlight.jpg",
-    href: "/projects/gymnopedies",
+    href: "projects/gymnopedies",
   },
   {
     title: "Oversky",
@@ -21,7 +22,7 @@ const projectItems = [
     category: "solo",
     instrument: "Fortepiano",
     image: "/images/mondnacht_am_dnjepr.jpg",
-    href: "/projects/oversky",
+    href: "projects/oversky",
   },
   {
     title: "Les feuilles mortes",
@@ -29,7 +30,7 @@ const projectItems = [
     category: "solo",
     instrument: "Fortepiano",
     image: "/images/street_saverne.jpg",
-    href: "/projects/les-feuilles-mortes",
+    href: "projects/les-feuilles-mortes",
   },
   {
     title: "Gnossiennes",
@@ -37,7 +38,7 @@ const projectItems = [
     category: "solo",
     instrument: "Fortepiano",
     image: "/images/allee_zum_schlosskammer.jpeg",
-    href: "/projects/gnossiennes",
+    href: "projects/gnossiennes",
   },
   {
     title: "Vexations",
@@ -45,19 +46,15 @@ const projectItems = [
     category: "solo",
     instrument: "Fortepiano",
     image: "/images/grey_and_silver_whistler.webp",
-    href: "/projects/vexations",
-  },
-    {
-    title: "La Valse d'Amelie",
-    author: "Yann Tiersen",
-    category: "solo",
-    instrument: "Fortepiano",
-    image: "/images/interior_with_pink_wallpaper.jpg",
-    href: "/projects/la-valse-d-amelie",
+    href: "projects/vexations",
   },
 ];
 
-export default function Page() {
+export default function Page({ params }) {
+  const unwrappedParams = use(params);
+  const lang = unwrappedParams?.lang || "en";
+  const t = useTranslation(lang);
+
   const [filter, setFilter] = useState("all");
 
   const filteredProjectItems = useMemo(() => {
@@ -71,7 +68,7 @@ export default function Page() {
       <div className={styles["projects-content"]}>
         <div className={styles["projects-header"]}>
           <div className={styles["projects-header-title"]}>
-            <h2>Projects</h2>
+            <h2>{t?.projects.title}</h2>
           </div>
           <div className={styles["projects-header-category"]}>
             {["solo", "ensemble", "all"].map((category) => (
@@ -85,7 +82,7 @@ export default function Page() {
                 onClick={() => setFilter(category)}
                 aria-label={`Show ${category} items`}
               >
-                <h4>{category.charAt(0).toUpperCase() + category.slice(1)}</h4>
+                <h4>{t?.projects.category[category]}</h4>
               </button>
             ))}
           </div>
@@ -111,7 +108,11 @@ export default function Page() {
               <div className={styles["project-image-container"]}>
                 <div className={styles["project-image"]}>
                   <Link
-                    href={projectItem.href}
+                    href={
+                      lang === "en"
+                        ? `/${projectItem.href}`
+                        : `/${lang}/${projectItem.href}`
+                    }
                     style={{ position: "relative" }}
                   >
                     <Image
@@ -125,7 +126,13 @@ export default function Page() {
                 </div>
                 <div className={styles["project-title"]}>
                   <h3>
-                    <Link href={projectItem.href}>
+                    <Link
+                      href={
+                        lang === "en"
+                          ? `/${projectItem.href}`
+                          : `/${lang}/${projectItem.href}`
+                      }
+                    >
                       <span>{projectItem.title}</span>
                     </Link>
                   </h3>
@@ -133,7 +140,9 @@ export default function Page() {
               </div>
               <div className={styles["project-details"]}>
                 <p className={styles["author"]}>{projectItem.author}</p>
-                <p className={styles["category"]}>{projectItem.category}</p>
+                <p className={styles["category"]}>
+                  {t?.projects.category[projectItem.category]}
+                </p>
               </div>
             </div>
           ))}

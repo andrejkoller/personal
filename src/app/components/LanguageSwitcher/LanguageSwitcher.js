@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import styles from "./LanguageSwitcher.module.css";
 import classNames from "classnames";
+import { useTranslationContext } from "@/app/context/TranslationContext";
 
 export const LanguageSwitcher = () => {
-  const [isLanguageActive, setIsLanguageActive] = useState("en");
+  const { lang } = useTranslationContext();
 
   return (
     <div className={styles["language-switcher-container"]}>
@@ -16,9 +16,8 @@ export const LanguageSwitcher = () => {
             <Link
               href={"/"}
               className={classNames(styles["language-button"], {
-                [styles["active"]]: isLanguageActive === "en",
+                [styles["active"]]: lang === "en",
               })}
-              onClick={() => setIsLanguageActive("en")}
             >
               English
               <span></span>
@@ -28,9 +27,8 @@ export const LanguageSwitcher = () => {
             <Link
               href={"/de"}
               className={classNames(styles["language-button"], {
-                [styles["active"]]: isLanguageActive === "de",
+                [styles["active"]]: lang === "de",
               })}
-              onClick={() => setIsLanguageActive("de")}
             >
               Deutsch
               <span></span>
@@ -40,9 +38,8 @@ export const LanguageSwitcher = () => {
             <Link
               href={"/ru"}
               className={classNames(styles["language-button"], {
-                [styles["active"]]: isLanguageActive === "ru",
+                [styles["active"]]: lang === "ru",
               })}
-              onClick={() => setIsLanguageActive("ru")}
             >
               Русский
               <span></span>

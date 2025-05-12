@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { use, useEffect, useRef } from "react";
 import imagesLoaded from "imagesloaded";
 import styles from "./page.module.css";
 import classNames from "classnames";
+import { useTranslation } from "@/app/hooks/useTranslation";
 
 const inspirationItems = [
   {
@@ -229,9 +230,9 @@ const inspirationItems = [
   },
   {
     category: "art",
-    image: "/images/path_in_the_wheat_fields.jpg",
-    artist: "Claude Monet, 1882",
-    title: "'Path in the Wheat at Pourville'",
+    image: "/images/blue_sky.jpg",
+    artist: "Eugène Boudin, 1824 - 1898",
+    title: "'Blue sky, white clouds'",
     artCategory: "Impressionism",
   },
   {
@@ -241,7 +242,11 @@ const inspirationItems = [
   },
 ];
 
-export default function Page() {
+export default function Page({ params }) {
+  const unwrappedParams = use(params);
+  const lang = unwrappedParams?.lang || "en";
+  const t = useTranslation(lang);
+
   const inspirationRef = useRef(null);
 
   useEffect(() => {
@@ -285,11 +290,11 @@ export default function Page() {
       <div className={styles["inspiration-content"]}>
         <div className={styles["inspiration-header"]}>
           <div className={styles["inspiration-header-title"]}>
-            <h2>Inspiration</h2>
+            <h2>{t?.inspiration.title}</h2>
             <p>
-              This is a collection of the gems that have sustained me over time:
-              inspirational quotes,
-              <br /> personal testimonies, and thought-provoking videos.
+              {t?.inspiration.descriptionOne}
+              <br />
+              {t?.inspiration.descriptionTwo}
             </p>
           </div>
         </div>

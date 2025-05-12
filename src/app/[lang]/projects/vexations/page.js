@@ -1,47 +1,46 @@
+"use client";
+
 import Image from "next/image";
 import styles from "../page.module.css";
+import { useTranslation } from "@/app/hooks/useTranslation";
+import { use } from "react";
 
-export default function Page() {
+export default function Page({ params }) {
+  const unwrappedParams = use(params);
+  const lang = unwrappedParams?.lang || "en";
+  const t = useTranslation(lang);
+
   return (
     <>
       <div className={styles["project-container"]}>
         <div className={styles["project-content"]}>
           <div className={styles["project-title-container"]}>
             <div className={styles["project-title"]}>
-              <h2>Oversky</h2>
+              <h2>{t?.project.vexations.title}</h2>
             </div>
             <div className={styles["project-details"]}>
-              <p>Solo</p>
-              <p>Fortepiano</p>
+              <p>{t?.project.category.solo}</p>
+              <p>{t?.project.instrument.fortePiano}</p>
             </div>
           </div>
           <div className={styles["project-description"]}>
             <div className={styles["project-image"]}>
               <Image
-                src="/images/mondnacht_am_dnjepr.jpg"
-                alt="Mondnacht am Dnjepr"
+                src="/images/grey_and_silver_whistler.webp"
+                alt="Grey and Silver Whistler"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority
               />
             </div>
             <div className={styles["project-text"]}>
-              <h4>
-                Luke Howard - &quot;Oversky&quot; is an atmospheric piano piece
-                characterized by gentle, floating melodies and a melancholic yet
-                hopeful mood. With its minimalist, neoclassical composition, it
-                evokes the image of a vast sky (&quot;Oversky&quot;), where
-                delicate sounds drift like passing clouds.
-              </h4>
+              <h4>{t?.project.vexations.description}</h4>
             </div>
           </div>
         </div>
       </div>
       <div className={styles["project-video-container"]}>
-        <span>
-          This piece is currently in production. A video performance will be
-          available soon.
-        </span>
+        <span>{t?.project.notification.text}</span>
       </div>
     </>
   );

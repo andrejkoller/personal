@@ -1,4 +1,3 @@
-// Für Server-Komponenten:
 export const getDictionary = async (locale) => {
   const supported = ["de", "en", "ru"];
   const lang = supported.includes(locale) ? locale : "en";
@@ -7,6 +6,6 @@ export const getDictionary = async (locale) => {
   );
 
   if (!res.ok) throw new Error(`Could not load locale file: ${lang}`);
-  
+
   return res.json();
 };

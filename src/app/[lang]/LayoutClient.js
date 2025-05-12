@@ -1,14 +1,15 @@
 "use client";
 
-import { Header } from "./components/Header/Header";
-import { Menu } from "./components/Menu/Menu";
-import { Cursor } from "./components/Cursor/Cursor";
-import { Footer } from "./components/Footer/Footer";
-import { CookieBanner } from "./components/CookieBanner/CookieBanner";
+import { Header } from "../components/Header/Header";
+import { Menu } from "../components/Menu/Menu";
+import { Cursor } from "../components/Cursor/Cursor";
+import { Footer } from "../components/Footer/Footer";
+import { CookieBanner } from "../components/CookieBanner/CookieBanner";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { TranslationProvider } from "../context/TranslationContext";
 
-export default function LayoutClient({ children }) {
+export default function LayoutClient({ children, propLang }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -30,7 +31,7 @@ export default function LayoutClient({ children }) {
   }, [pathname]);
 
   return (
-    <>
+    <TranslationProvider propLang={propLang}>
       <Cursor />
       <nav className="menu">
         <Menu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
@@ -43,6 +44,6 @@ export default function LayoutClient({ children }) {
       <footer className="footer">
         <Footer />
       </footer>
-    </>
+    </TranslationProvider>
   );
 }

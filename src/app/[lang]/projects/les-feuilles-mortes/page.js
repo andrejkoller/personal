@@ -1,21 +1,26 @@
+"use client";
+
 import Image from "next/image";
 import styles from "../page.module.css";
+import { useTranslation } from "@/app/hooks/useTranslation";
+import { use } from "react";
 
-export default function Page() {
+export default function Page({ params }) {
+  const unwrappedParams = use(params);
+  const lang = unwrappedParams?.lang || "en";
+  const t = useTranslation(lang);
+
   return (
     <>
       <div className={styles["project-container"]}>
         <div className={styles["project-content"]}>
           <div className={styles["project-title-container"]}>
             <div className={styles["project-title"]}>
-              <h2>
-                Les feuilles
-                <br /> mortes
-              </h2>
+              <h2>{t?.project.lesFeuillesMortes.title}</h2>
             </div>
             <div className={styles["project-details"]}>
-              <p>Solo</p>
-              <p>Fortepiano</p>
+              <p>{t?.project.category.solo}</p>
+              <p>{t?.project.instrument.fortePiano}</p>
             </div>
           </div>
           <div className={styles["project-description"]}>
@@ -29,25 +34,13 @@ export default function Page() {
               />
             </div>
             <div className={styles["project-text"]}>
-              <h4>
-                Jean-Michel Blais&apos; interpretation of Les Feuilles Mortes
-                captures the nostalgic essence of the classic French song while
-                infusing it with his signature contemporary neoclassical style.
-                His delicate touch on the piano brings out the melancholic
-                beauty of falling autumn leaves, evoking a sense of longing and
-                reflection. With soft, flowing melodies and subtle dynamic
-                shifts, the piece feels intimate and cinematic, as if carrying
-                the listener through a quiet, golden-hued autumn afternoon.
-              </h4>
+              <h4>{t?.project.lesFeuillesMortes.description}</h4>
             </div>
           </div>
         </div>
       </div>
       <div className={styles["project-video-container"]}>
-        <span>
-          This piece is currently in production. A video performance will be
-          available soon.
-        </span>
+        <span>{t?.project.notification.text}</span>
       </div>
     </>
   );

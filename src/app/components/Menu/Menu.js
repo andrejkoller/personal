@@ -3,18 +3,36 @@
 import Link from "next/link";
 import styles from "./Menu.module.css";
 import classNames from "classnames";
+import { useTranslationContext } from "@/app/context/TranslationContext";
 
 export const Menu = ({ isMenuOpen, toggleMenu }) => {
+  const { lang, t } = useTranslationContext();
   const links = [
-    { href: "/projects", label: "Projects", stylingClass: "projects-link" },
-    { href: "/about", label: "About", stylingClass: "about-link" },
     {
-      href: "/inspiration",
-      label: "Inspiration",
+      href: "projects",
+      label: `${t?.menu.label.projects}`,
+      stylingClass: "projects-link",
+    },
+    {
+      href: "about",
+      label: `${t?.menu.label.about}`,
+      stylingClass: "about-link",
+    },
+    {
+      href: "inspiration",
+      label: `${t?.menu.label.inspiration}`,
       stylingClass: "inspiration-link",
     },
-    { href: "/gallery", label: "Gallery", stylingClass: "gallery-link" },
-    { href: "/contact", label: "Contact", stylingClass: "contact-link" },
+    {
+      href: "gallery",
+      label: `${t?.menu.label.gallery}`,
+      stylingClass: "gallery-link",
+    },
+    {
+      href: "contact",
+      label: `${t?.menu.label.contact}`,
+      stylingClass: "contact-link",
+    },
   ];
 
   return (
@@ -30,7 +48,7 @@ export const Menu = ({ isMenuOpen, toggleMenu }) => {
         {/* Header */}
         <div className={styles["menu-header"]}>
           <div className={styles["menu-logo"]}>
-            <Link href="/" scroll={false}>
+            <Link href={lang === "en" ? "/" : `/${lang}`} scroll={false}>
               <h3>Pianorgan</h3>
               <h1>Andrej Koller</h1>
             </Link>
@@ -63,7 +81,13 @@ export const Menu = ({ isMenuOpen, toggleMenu }) => {
               )}
             >
               <p>
-                <Link href={link.href}>{link.label}</Link>
+                <Link
+                  href={
+                    lang === "en" ? `/${link.href}` : `/${lang}/${link.href}`
+                  }
+                >
+                  {link.label}
+                </Link>
               </p>
               <div></div>
             </div>

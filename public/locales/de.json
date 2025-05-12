@@ -1,6 +1,127 @@
 {
-    "projectTitle": "Fading Hell",
-    "projectDescription": "Ein Musikprojekt, an dem ich gerade arbeite.",
-    "aboutDescriptionOne": "Hallo, ich bin Andrej Koller, ein Webentwickler, spezialisiert auf Frontend- und Backend-Entwicklung.",
-    "aboutDescriptionTwo": "Neben dem Programmieren spiele ich leidenschaftlich gern Klavier und Orgel und strebe danach, einzigartige und stimmungsvolle Darbietungen zu schaffen. Durch Musik möchte ich andere inspirieren und motivieren, indem ich bedeutungsvolle und aufmunternde Stücke teile."
+    "backgroundMusic": {
+        "listen": "Anhören",
+        "pause": "Pause"
+    },
+    "menu": {
+        "label": {
+            "projects": "Projekte",
+            "about": "Über mich",
+            "inspiration": "Inspiration",
+            "gallery": "Galerie",
+            "contact": "Kontakt"
+        }
+    },
+    "cookieBanner": {
+        "text": "Diese Website verwendet Cookies, um sicherzustellen, dass Sie die bestmögliche Erfahrung auf unserer Website machen.",
+        "link": "Mehr Informationen",
+        "button": "Verstanden!"
+    },
+    "footer": {
+        "contact": "Kontaktiere mich"
+    },
+    "home": {
+        "section": {
+            "project": {
+                "title": "Fading Hell",
+                "description": "Ein Musikprojekt, an dem ich gerade arbeite."
+            },
+            "about": {
+                "title": "Über mich",
+                "descriptionOne": "Hallo, ich bin Andrej Koller, ein Webentwickler, spezialisiert auf Frontend- und Backend-Entwicklung.",
+                "descriptionTwo": "Neben dem Programmieren spiele ich leidenschaftlich gern Klavier und Orgel und strebe danach, einzigartige und stimmungsvolle Darbietungen zu schaffen. Durch Musik möchte ich andere inspirieren und motivieren, indem ich bedeutungsvolle und aufmunternde Stücke teile."
+            }
+        }
+    },
+    "about": {
+        "section": {
+            "introduction": {
+                "title": "Über mich",
+                "subtitle": "Eine Brücke zwischen Code, Kreativität und Neugier",
+                "descriptionOne": "Vielen Dank, dass Sie sich die Zeit genommen haben, mehr über mich zu erfahren. Meine Tage sind größtenteils mit Planung und Programmierung ausgefüllt, wobei ich mich auf Webentwicklung und Datenmanagement konzentriere. Ich bin stets bestrebt, mein Wissen zu erweitern, neue Technologien zu entdecken und meine Fähigkeiten zu verfeinern. Wenn Sie sich für die spezifischen Tools und Programmiersprachen interessieren, mit denen ich arbeite, schauen Sie sich gerne mein GitHub-Profil an.",
+                "descriptionTwo": "Wenn Sie neugierig auf meine Projekte sind, empfehle ich Ihnen, meinen GitHub für aktuelle und zukünftige Uploads zu erkunden. Alle relevanten Links finden Sie am Ende jeder Seite.",
+                "descriptionThree": "Neben dem Programmieren spielt Musik eine wichtige Rolle in meinem Leben. Das klassische Klavier- und Orgelspiel ermöglicht es mir, in verschiedene musikalische Welten einzutauchen, die von Komponisten wie Satie, Schumann, Mozart und Chopin geprägt sind. Ich hege eine große Leidenschaft für vergessene und weniger bekannte Orgelmusik, sowohl historische als auch zeitgenössische, und freue mich, verlorene Werke wiederzuentdecken. Auf meinem YouTube-Kanal teile ich eine einzigartige Sammlung von Orgel- und Klavieraufnahmen, die die Schönheit dieser Instrumente in verschiedenen Stilen zeigen. Wenn Sie Interesse an einer Zusammenarbeit bei musikalischen Projekten haben, melden Sie sich gerne – ich bin immer offen für neue Kontakte."
+            },
+            "instruments": {
+                "title": "Instrumente",
+                "descriptionOne": "Ein Yamaha YDP 164B, ein 88-tastiges Digitalpiano mit vollgewichteten Tasten, die das Spielgefühl eines akustischen Flügels nachahmen."
+            },
+            "thankYou": {
+                "descriptionOne": "Ich möchte allen danken, die mir wirklich zuhören und mich verstehen – besonders durch meine Musik.",
+                "descriptionTwo": "Andrej Koller"
+            },
+            "audio": {
+                "title": "Audio",
+                "infoOne": "Trois Gymnopédies -",
+                "infoTwo": "Gymnopédie No. 3,",
+                "infoThree": " Éric Satie"
+            }
+        }
+    },
+    "projects": {
+        "title": "Projekte",
+        "category": {
+            "solo": "Solo",
+            "ensemble": "Ensemble",
+            "all": "Alle"
+        }
+    },
+    "project": {
+        "category": {
+            "solo": "Solo",
+            "ensemble": "Ensemble",
+            "All": "Alle"
+        },
+        "instrument": {
+            "fortePiano": "Fortepiano",
+            "pipeOrgan": "Orgel"
+        },
+        "notification": {
+            "text": "Dieses Stück befindet sich derzeit in Produktion. Eine Videoaufführung wird bald verfügbar sein."
+        },
+        "gymnopedies": {
+            "title": "Trois Gymnopédies",
+            "description": "Érik Satie komponierte diese drei kurzen, atmosphärischen Kompositionen im 3/4-Takt, die alle ein gemeinsames Thema und eine gemeinsame Struktur aufweisen. Beim Erleben lösen sie eine sentimentale Sehnsucht nach der Vergangenheit oder dem bittersüßen Unbekannten aus. Eine Zeit und ein Ort, an dem man noch nie zuvor gewesen ist."
+        },
+        "oversky": {
+            "title": "Oversky",
+            "description": "Luke Howard – „Oversky“ ist ein atmosphärisches Klavierstück, das sich durch sanfte, schwebende Melodien und eine melancholische, aber dennoch hoffnungsvolle Stimmung auszeichnet. Mit seiner minimalistischen, neoklassischen Komposition ruft es das Bild eines weiten Himmels hervor, in dem zarte Klänge wie vorbeiziehende Wolken dahinziehen."
+        },
+        "lesFeuillesMortes": {
+            "title": "Les Feuilles Mortes",
+            "description": "Jean-Michel Blais' Interpretation von Les Feuilles Mortes fängt die nostalgische Essenz des klassischen französischen Liedes ein und verleiht ihm gleichzeitig seinen charakteristischen zeitgenössischen neoklassischen Stil. Sein zarter Klavieranschlag bringt die melancholische Schönheit fallender Herbstblätter zum Ausdruck und weckt Sehnsucht und Besinnung. Mit sanften, fließenden Melodien und subtilen Dynamikwechseln wirkt das Stück intim und filmisch, als würde es den Zuhörer durch einen ruhigen, goldfarbenen Herbstnachmittag tragen."
+        },
+        "gnossiennes": {
+            "title": "Gnossiennes",
+            "description": "Saties Gnossiennes existieren in einem Reich jenseits traditioneller Form und Zeit. Ohne Taktstriche oder konventionelles Tempo treiben sie wie musikalischer Weihrauch – schwerelos, rätselhaft und nach innen gerichtet. Die Melodien wirken uralt und ungewohnt, als wären sie eher ausgegraben als geschrieben, und die Harmonien wandern mit einer fast rituellen Logik. Stille ist hier nicht bloß eine Pause; sie wird zum Partner der Noten und formt Bedeutung sowohl durch Abwesenheit als auch durch Anwesenheit."
+        },
+        "vexations": {
+            "title": "Vexations",
+            "description": "Vexations ist ein rätselhaftes und eindringliches Werk für Soloklavier. Sein langsames, dissonantes Thema – das 840 Mal wiederholt werden soll – versetzt den Hörer in einen tranceartigen Zustand, in dem die Grenze zwischen Zeit und Gefühl verschwimmt. Das Stück ruft ein Gefühl stiller Introspektion hervor, als würde man endlos durch die Gänge des Geistes wandern und nach etwas Verlorenem oder Unbekanntem suchen."
+        }
+    },
+    "inspiration": {
+        "title": "Inspiration",
+        "descriptionOne": "Dies ist eine Sammlung der Schätze, die mich im Laufe der Zeit begleitet haben: inspirierende Zitate,",
+        "descriptionTwo": "persönliche Zeugnisse und zum Nachdenken anregende Videos."
+    },
+    "gallery": {
+        "title": "Galerie",
+        "category": {
+            "video": "Video",
+            "photo": "Foto",
+            "all": "Alle"
+        }
+    },
+    "contact": {
+        "title": "Kontakt",
+        "label": {
+            "firstName": "Vorname",
+            "lastName": "Nachname",
+            "email": "E-Mail",
+            "telephone": "Telefon",
+            "message": "Nachricht"
+        },
+        "submit": "Senden"
+    }
 }

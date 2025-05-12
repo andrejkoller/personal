@@ -1,18 +1,26 @@
+"use client";
+
 import Image from "next/image";
 import styles from "../page.module.css";
+import { useTranslation } from "@/app/hooks/useTranslation";
+import { use } from "react";
 
-export default function Page() {
+export default function Page({ params }) {
+  const unwrappedParams = use(params);
+  const lang = unwrappedParams?.lang || "en";
+  const t = useTranslation(lang);
+
   return (
     <>
       <div className={styles["project-container"]}>
         <div className={styles["project-content"]}>
           <div className={styles["project-title-container"]}>
             <div className={styles["project-title"]}>
-              <h2>Gymnopédies</h2>
+              <h2>{t?.project.gymnopedies.title}</h2>
             </div>
             <div className={styles["project-details"]}>
-              <p>Solo</p>
-              <p>Fortepiano</p>
+              <p>{t?.project.category.solo}</p>
+              <p>{t?.project.instrument.fortePiano}</p>
             </div>
           </div>
           <div className={styles["project-description"]}>
@@ -26,13 +34,7 @@ export default function Page() {
               />
             </div>
             <div className={styles["project-text"]}>
-              <h4>
-                Érik Satie composed these three brief and atmospheric
-                compositions in 3/4 time, each of which shares a common theme
-                and structure. When experienced, they release a sentimental
-                longing for the past or the bittersweet unknown. A time and
-                place where you have never been before.
-              </h4>
+              <h4>{t?.project.gymnopedies.description}</h4>
             </div>
           </div>
         </div>

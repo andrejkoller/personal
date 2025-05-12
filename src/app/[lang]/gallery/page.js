@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useState, useMemo, useRef } from "react";
+import { useEffect, useState, useMemo, useRef, use } from "react";
 import { Fancybox } from "@fancyapps/ui";
 import Image from "next/image";
 import imagesLoaded from "imagesloaded";
 import styles from "./page.module.css";
 import classNames from "classnames";
+import { useTranslation } from "@/app/hooks/useTranslation";
 
 const galleryItems = [
   {
@@ -25,7 +26,11 @@ const galleryItems = [
   },
 ];
 
-export default function Page() {
+export default function Page({ params }) {
+  const unwrappedParams = use(params);
+  const lang = unwrappedParams?.lang || "en";
+  const t = useTranslation(lang);
+
   const galleryRef = useRef(null);
   const [filter, setFilter] = useState("all");
 
@@ -107,7 +112,7 @@ export default function Page() {
       <div className={styles["gallery-content"]}>
         <div className={styles["gallery-header"]}>
           <div className={styles["gallery-header-title"]}>
-            <h2>Gallery</h2>
+            <h2>{t?.gallery.title}</h2>
           </div>
           <div className={styles["gallery-header-category"]}>
             {["video", "photo", "all"].map((category) => (
@@ -122,11 +127,18 @@ export default function Page() {
                 aria-label={`Show ${category} items`}
               >
                 <h4>
-                  {category === "all"
-                    ? category.charAt(0).toUpperCase() + category.slice(1)
-                    : category.charAt(0).toUpperCase() +
-                      category.slice(1) +
-                      "s"}
+                  {lang === "en"
+                    ? category === "all"
+                      ? category.charAt(0).toUpperCase() + category.slice(1)
+                      : category.charAt(0).toUpperCase() +
+                        category.slice(1) +
+                        "s"
+                    : ""}
+                  {lang === "de"
+                    ? category === "all"
+                      ? t?.gallery.category[category]
+                      : t?.gallery.category[category] + "s"
+                    : ""}
                 </h4>
               </button>
             ))}
