@@ -7,6 +7,7 @@ import imagesLoaded from "imagesloaded";
 import styles from "./page.module.css";
 import classNames from "classnames";
 import { useTranslation } from "@/app/hooks/useTranslation";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 const galleryItems = [
   {
@@ -32,6 +33,7 @@ export default function Page({ params }) {
   const t = useTranslation(lang);
 
   const galleryRef = useRef(null);
+  const masonryRef = useRef(null);
   const [filter, setFilter] = useState("all");
 
   const getYoutubeId = (url) => {
@@ -46,66 +48,54 @@ export default function Page({ params }) {
   }, [filter]);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const gallery = galleryRef.current;
     if (!gallery) return;
 
-    let masonryInstance;
+    let destroyed = false;
 
-    const initMasonryAndFancybox = async () => {
-      const masonry = await import("masonry-layout");
-      masonryInstance = new masonry.default(gallery, {
+    const initGallery = async () => {
+      const Masonry = (await import("masonry-layout")).default;
+
+      masonryRef.current = new Masonry(gallery, {
         itemSelector: ".gallery-item",
         percentPosition: true,
       });
 
-      const imagesPromise = new Promise((resolve) => {
-        imagesLoaded(gallery, { background: false }, () => resolve());
-      });
+      imagesLoaded(gallery, { background: false }, () => {
+        if (masonryRef.current && !destroyed) {
+          masonryRef.current.layout();
+        }
 
-      const iframes = gallery.querySelectorAll("iframe");
-      const iframesPromise = Promise.all(
-        Array.from(iframes).map(
-          (iframe) =>
-            new Promise((resolve) => {
-              iframe.addEventListener("load", resolve);
-            })
-        )
-      );
-
-      await Promise.all([imagesPromise, iframesPromise]);
-
-      const galleryItems = gallery.querySelectorAll(
-        "[data-fancybox='gallery']"
-      );
-
-      if (galleryItems.length > 0) {
+        Fancybox.unbind("[data-fancybox='gallery']");
         Fancybox.bind("[data-fancybox='gallery']", {
-          Thumbs: false,
-          Image: {
-            zoom: true,
-            Panzoom: {
-              maxScale: 2,
-              minScale: 0.5,
-              contain: "inside",
-              fill: false,
-            },
-          },
           Toolbar: {
             display: ["zoom", "close"],
           },
+          animated: false,
+          dragToClose: false,
+          zoom: false,
+          Images: {
+            protected: true,
+          },
         });
-      }
 
-      masonryInstance.layout();
+        console.log("Fancybox bound to items.");
+      });
     };
 
-    initMasonryAndFancybox();
+    initGallery();
 
     return () => {
+      destroyed = true;
       Fancybox.unbind("[data-fancybox='gallery']");
-      if (masonryInstance) masonryInstance.destroy();
+      if (masonryRef.current) {
+        masonryRef.current.destroy();
+        masonryRef.current = null;
+      }
     };
-  }, [filter, filteredGalleryItems]);
+  }, [filter]);
 
   return (
     <div className={styles["gallery-container"]}>

@@ -129,3 +129,24 @@
 .menu-open {
   left: 0vw !important;
 }
+
+@media all and (max-width: 768px) {
+  .menu-container .menu-content .menu-body .menu-link.about-link {
+    left: 55vw;
+  }
+
+  .menu-container .menu-content .menu-body .menu-link.inspiration-link {
+    top: 25vh;
+    left: 0vw;
+  }
+
+  .menu-container .menu-content .menu-body .menu-link.gallery-link {
+    top: 25vh;
+    left: 55vw;
+  }
+
+  .menu-container .menu-content .menu-body .menu-link.contact-link {
+    top: 50vh;
+    left: 0vw;
+  }
+}

@@ -55,7 +55,7 @@
   width: 100%;
   height: 600px;
   background: url("/images/pulling_clouds.jpg") no-repeat top center;
-  background-size: 100%;
+  background-size: cover;
   margin: 100px 0 150px 0;
 }
 
@@ -124,9 +124,8 @@
 }
 
 .about-audio-info-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 1fr);
+  display: flex;
+  flex-direction: row;
   margin: 0 5vw 50px 5vw;
 }
 
@@ -178,4 +177,19 @@
 .line.appear {
   transform: scaleX(1);
   transition: transform 2s ease-out;
+}
+
+@media all and (max-width: 1024px) {
+  .about-container .about-content {
+    width: 100%;
+  }
+
+  .about-container .about-content .about-description {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .about-thanks-container .about-thanks-content {
+    width: 100%;
+  }
 }

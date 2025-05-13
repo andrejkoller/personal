@@ -61,3 +61,12 @@
   bottom: -10px;
   left: 0;
 }
+
+@media all and (max-width: 425px) {
+  .language-switcher-container
+    .language-switcher-content
+    .language-switcher-list {
+    flex-direction: column;
+    gap: 1em;
+  }
+}

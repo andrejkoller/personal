@@ -92,3 +92,25 @@
   width: 100%;
   height: auto;
 }
+
+@media all and (max-width: 1024px) {
+  .gallery-container .gallery-content .gallery-body .gallery-item {
+    width: calc(50% - 1.875rem);
+  }
+}
+
+@media all and (max-width: 768px) {
+  .gallery-container .gallery-content .gallery-body .gallery-item {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media all and (max-width: 425px) {
+  .gallery-container .gallery-content .gallery-header {
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 50px;
+  }
+}

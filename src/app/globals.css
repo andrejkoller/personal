@@ -94,7 +94,8 @@ a:hover {
 }
 
 .header.about {
-  background: url("/images/abtei_im_eichwald.jpg") center / 100% no-repeat;
+  background: url("/images/abtei_im_eichwald.jpg") center no-repeat;
+  background-size: cover;
 }
 
 .footer {
@@ -181,4 +182,16 @@ a:hover {
 ::selection {
   background: var(--selection);
   color: var(--selection-text);
+}
+
+@media all and (max-width: 1024px) {
+  h1 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  h2 {
+    font-size: 50px;
+    line-height: 55px;
+  }
 }

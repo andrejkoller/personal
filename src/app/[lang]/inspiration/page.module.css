@@ -194,3 +194,29 @@
   width: 100%;
   height: auto;
 }
+
+@media all and (max-width: 1024px) {
+  .inspiration-container
+    .inspiration-content
+    .inspiration-body
+    .inspiration-item {
+    width: calc(50% - 1.875rem);
+  }
+}
+
+@media all and (max-width: 768px) {
+  .inspiration-container
+    .inspiration-content
+    .inspiration-body
+    .inspiration-item {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media all and (max-width: 425px) {
+  .inspiration-container .inspiration-content .inspiration-header {
+    margin-bottom: 0;
+  }
+}

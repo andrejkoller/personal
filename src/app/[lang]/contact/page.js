@@ -52,21 +52,12 @@ export default function Page({ params }) {
                   <label htmlFor="message">{t?.contact.label.message} *</label>
                   <textarea id="message" rows="10" required></textarea>
                 </div>
-                <div className={styles["input-submit"]}>
-                  <button type="submit">{t?.contact.submit}</button>
-                </div>
               </div>
             </div>
             <div className={styles["contact-form-third-column"]}>
               <div className={styles["contact-form-third-column-content"]}>
-                <div className={styles["contact-image"]}>
-                  <Image
-                    src={"/images/birch_forest.jpg"}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority
-                    alt="Birch Forest"
-                  />
+                <div className={styles["input-submit"]}>
+                  <button type="submit">{t?.contact.submit}</button>
                 </div>
               </div>
             </div>

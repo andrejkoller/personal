@@ -8,3 +8,9 @@
   z-index: 300;
   transition: transform 0.2s;
 }
+
+@media all and (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+}

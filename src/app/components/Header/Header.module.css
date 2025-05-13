@@ -105,3 +105,9 @@
   font-size: 70px;
   margin-bottom: 240px;
 }
+
+@media all and (max-width: 425px) {
+  .header-container .header-content .header-logo.home h1 {
+    font-size: 32px;
+  }
+}
