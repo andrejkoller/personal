@@ -48,6 +48,14 @@ const projectItems = [
     image: "/images/grey_and_silver_whistler.webp",
     href: "projects/vexations",
   },
+  {
+    title: "Nocturne in E-flat major, Op. 9 No. 2",
+    author: "Frédéric Chopin",
+    category: "solo",
+    instrument: "Fortepiano",
+    image: "/images/sunset.jpg",
+    href: "projects/nocturne-in-e-flat-major",
+  },
 ];
 
 export default function Page({ params }) {
