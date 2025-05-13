@@ -93,11 +93,6 @@ a:hover {
   transition: all 0.5s ease-out;
 }
 
-.header.about {
-  background: url("/images/abtei_im_eichwald.jpg") center no-repeat;
-  background-size: cover;
-}
-
 .footer {
   margin: 0 5vw;
 }
