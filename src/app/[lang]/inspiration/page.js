@@ -315,11 +315,11 @@ export default function Page({ params }) {
                 <div className={styles["art-item"]}>
                   <Image
                     src={item.image}
-                    layout="responsive"
                     width={800}
                     height={600}
                     quality={100}
                     alt={item.title}
+                    priority
                   />
                   <p>{item.artist}</p>
                   <p>{item.title}</p>

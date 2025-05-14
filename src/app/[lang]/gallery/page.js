@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useState, useMemo, useRef, use } from "react";
-import { Fancybox } from "@fancyapps/ui";
 import Image from "next/image";
 import imagesLoaded from "imagesloaded";
 import styles from "./page.module.css";
 import classNames from "classnames";
 import { useTranslation } from "@/app/hooks/useTranslation";
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import PhotoSwipeLightbox from "photoswipe/lightbox";
 
 const galleryItems = [
   {
@@ -34,6 +33,7 @@ export default function Page({ params }) {
 
   const galleryRef = useRef(null);
   const masonryRef = useRef(null);
+  const lightboxRef = useRef(null);
   const [filter, setFilter] = useState("all");
 
   const getYoutubeId = (url) => {
@@ -68,20 +68,18 @@ export default function Page({ params }) {
           masonryRef.current.layout();
         }
 
-        Fancybox.unbind("[data-fancybox='gallery']");
-        Fancybox.bind("[data-fancybox='gallery']", {
-          Toolbar: {
-            display: ["zoom", "close"],
-          },
-          animated: false,
-          dragToClose: false,
-          zoom: false,
-          Images: {
-            protected: true,
-          },
+        if (lightboxRef.current) {
+          lightboxRef.current.destroy();
+        }
+
+        lightboxRef.current = new PhotoSwipeLightbox({
+          gallery: "#" + gallery.id,
+          children: "a[data-pswp]",
+          pswpModule: () => import("photoswipe"),
+          showHideAnimationType: "none",
         });
 
-        console.log("Fancybox bound to items.");
+        lightboxRef.current.init();
       });
     };
 
@@ -89,7 +87,12 @@ export default function Page({ params }) {
 
     return () => {
       destroyed = true;
-      Fancybox.unbind("[data-fancybox='gallery']");
+
+      if (lightboxRef.current) {
+        lightboxRef.current.destroy();
+        lightboxRef.current = null;
+      }
+
       if (masonryRef.current) {
         masonryRef.current.destroy();
         masonryRef.current = null;
@@ -135,7 +138,7 @@ export default function Page({ params }) {
             ))}
           </div>
         </div>
-        <div className={styles["gallery-body"]} ref={galleryRef}>
+        <div id="gallery" className={styles["gallery-body"]} ref={galleryRef}>
           {filteredGalleryItems.map((galleryItem) => (
             <div
               key={galleryItem.src}
@@ -153,7 +156,9 @@ export default function Page({ params }) {
                 <iframe
                   width="560"
                   height="315"
-                  src={`https://www.youtube.com/embed/${getYoutubeId(galleryItem.src)}`}
+                  src={`https://www.youtube.com/embed/${getYoutubeId(
+                    galleryItem.src
+                  )}`}
                   title={galleryItem.title}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -164,15 +169,17 @@ export default function Page({ params }) {
               ) : (
                 <a
                   href={galleryItem.src}
-                  data-fancybox="gallery"
+                  data-pswp
+                  data-pswp-width="800"
+                  data-pswp-height="600"
                   title={galleryItem.title}
                 >
                   <Image
                     src={galleryItem.src}
-                    layout="responsive"
                     width={800}
                     height={600}
                     quality={100}
+                    priority
                     alt={galleryItem.title}
                   />
                 </a>

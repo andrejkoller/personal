@@ -1,4 +1,4 @@
-@import url("@fancyapps/ui/dist/fancybox/fancybox.css");
+@import url("photoswipe/style.css");
 
 :root {
   --background: #080808;
@@ -79,6 +79,12 @@ a {
 a:hover {
   color: var(--video-border-color) !important;
   transition: all 0.5s ease-out;
+}
+
+.pswp img {
+  cursor: default !important;
+  height: auto !important;
+  display: block;
 }
 
 /* Animations */
