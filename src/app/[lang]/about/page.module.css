@@ -54,8 +54,6 @@
   align-items: center;
   width: 100%;
   height: 600px;
-  background: url("/images/pulling_clouds.jpg") no-repeat top center;
-  background-size: cover;
   margin: 100px 0 150px 0;
 }
 
@@ -66,20 +64,6 @@
   align-items: flex-start;
   width: 85vw;
   height: 100%;
-}
-
-.about-instruments-container
-  .about-instruments-content
-  .about-instruments-title
-  h3 {
-  color: var(--selection-text);
-}
-
-.about-instruments-container
-  .about-instruments-content
-  .about-instruments-text
-  p {
-  color: var(--selection-text);
 }
 
 .about-thanks-container {
