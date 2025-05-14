@@ -166,6 +166,10 @@
             "telephone": "Telefon",
             "message": "Nachricht"
         },
+        "message": {
+            "success": "Vielen Dank für Ihre Nachricht! Ich werde mich so schnell wie möglich bei Ihnen melden.",
+            "error": "Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später noch einmal."
+        },
         "submit": "Senden"
     }
 }
