@@ -274,6 +274,51 @@
   transition: all 0.5s ease-out;
 }
 
+.success-message-container,
+.error-message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000000;
+  color: inherit;
+  z-index: 201;
+}
+
+.success-message-container .success-message-content,
+.error-message-container .error-message-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 5vw;
+}
+
+.success-message-container .success-message-content .success-message p,
+.error-message-container .error-message-content .error-message p {
+  font-size: 15px;
+  margin: 0;
+  text-align: center;
+}
+
+.success-message-container
+  .success-message-content
+  .success-message-close
+  button,
+.error-message-container .error-message-content .error-message-close button {
+  font-size: 19px;
+  font-family: var(--font-cormorant);
+  color: inherit;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
 @media all and (max-width: 1024px) {
   .contact-container .contact-content .contact-body .contact-form {
     grid-template-columns: repeat(2, 1fr);
@@ -284,6 +329,12 @@
   .contact-container .contact-content .contact-body .contact-form {
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
+  }
+
+  .success-message-container .success-message-content,
+  .error-message-container .error-message-content {
+    flex-direction: column;
+    align-items: center;
   }
 }
 

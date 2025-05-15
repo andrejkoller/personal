@@ -13,7 +13,7 @@
         }
     },
     "cookieBanner": {
-        "text": "Diese Website verwendet Cookies, um sicherzustellen, dass Sie die bestmögliche Erfahrung auf unserer Website machen.",
+        "text": "Diese Website verwendet Cookies, um sicherzustellen, dass Sie die bestmögliche Erfahrung auf meiner Website machen.",
         "link": "Mehr Informationen",
         "button": "Verstanden!"
     },
@@ -168,8 +168,12 @@
         },
         "message": {
             "success": "Vielen Dank für Ihre Nachricht! Ich werde mich so schnell wie möglich bei Ihnen melden.",
-            "error": "Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später noch einmal."
+            "error": "Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später noch einmal.",
+            "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+            "invalidPhone": "Bitte geben Sie eine gültige Telefonnummer ein.",
+            "emptyFields": "Bitte füllen Sie alle erforderlichen Felder aus."
         },
+        "close": "Schließen",
         "submit": "Senden"
     }
 }

@@ -2,6 +2,7 @@
 
 import styles from "./page.module.css";
 import { useTranslation } from "@/app/hooks/useTranslation";
+import { isValidPhoneNumber } from "libphonenumber-js";
 import { use, useState } from "react";
 
 export default function Page({ params }) {
@@ -29,28 +30,52 @@ export default function Page({ params }) {
       message,
     };
 
-    console.log("Form data:", formData);
-
-    try {
-      const res = await fetch("/api/send-email/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      console.log("Response:", res);
-
-      if (res.ok) {
-        setSuccessMessage(t?.contact.message.success);
-      } else {
-        setErrorMessage(t?.contact.message.error);
+    if (
+      formData.firstName !== "" &&
+      formData.lastName !== "" &&
+      formData.email !== "" &&
+      formData.message !== ""
+    ) {
+      if (!isValidEmail(email)) {
+        setErrorMessage(t?.contact.message.invalidEmail);
+        return;
       }
-    } catch (err) {
-      console.error(t?.contact.message.error, err);
+
+      if (telephone && !isValidPhoneNumber(telephone)) {
+        setErrorMessage(t?.contact.message.invalidPhone);
+        return;
+      }
+
+      try {
+        const res = await fetch("/api/send-email/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (res.ok) {
+          setSuccessMessage(t?.contact.message.success);
+          setFirstName("");
+          setLastName("");
+          setEmail("");
+          setTelephone("");
+          setMessage("");
+        } else {
+          setErrorMessage(t?.contact.message.error);
+        }
+      } catch (err) {
+        console.error(t?.contact.message.error, err);
+      }
+    } else {
+      setErrorMessage(t?.contact.message.emptyFields);
     }
   };
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
 
   return (
     <div className={styles["contact-container"]}>
@@ -63,13 +88,51 @@ export default function Page({ params }) {
         <div className={styles["contact-body"]}>
           <form className={styles["contact-form"]} onSubmit={handleSubmit}>
             {successMessage && (
-              <div className={styles["success-message"]}>
-                <p>{successMessage}</p>
+              <div className={styles["success-message-container"]}>
+                <div className={styles["success-message-content"]}>
+                  <div className={styles["success-message"]}>
+                    <p>{successMessage}</p>
+                  </div>
+                  <div className={styles["success-message-close"]}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSuccessMessage("");
+                        setFirstName("");
+                        setLastName("");
+                        setEmail("");
+                        setTelephone("");
+                        setMessage("");
+                      }}
+                    >
+                      {t?.contact.close}
+                    </button>
+                  </div>
+                </div>
               </div>
             )}
             {errorMessage && (
-              <div className={styles["error-message"]}>
-                <p>{errorMessage}</p>
+              <div className={styles["error-message-container"]}>
+                <div className={styles["error-message-content"]}>
+                  <div className={styles["error-message"]}>
+                    <p>{errorMessage}</p>
+                  </div>
+                  <div className={styles["error-message-close"]}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setErrorMessage("");
+                        setFirstName("");
+                        setLastName("");
+                        setEmail("");
+                        setTelephone("");
+                        setMessage("");
+                      }}
+                    >
+                      {t?.contact.close}
+                    </button>
+                  </div>
+                </div>
               </div>
             )}
             <div className={styles["contact-form-first-column"]}>

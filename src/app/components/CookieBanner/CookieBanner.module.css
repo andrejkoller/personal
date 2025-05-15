@@ -48,3 +48,16 @@
 .cookie-banner-container.visible {
   display: flex;
 }
+
+@media all and (max-width: 768px) {
+  .cookie-banner-container .cookie-banner-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cookie-banner-container .cookie-banner-content .cookie-banner-text {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+}
