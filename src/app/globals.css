@@ -81,6 +81,11 @@ a:hover {
   transition: all 0.5s ease-out;
 }
 
+.header.about {
+  background: url("/images/euneike.jpg") no-repeat center center;
+  background-size: cover;
+}
+
 .pswp img {
   cursor: default !important;
   height: auto !important;

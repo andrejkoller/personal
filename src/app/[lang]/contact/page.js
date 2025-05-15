@@ -3,6 +3,7 @@
 import styles from "./page.module.css";
 import { useTranslation } from "@/app/hooks/useTranslation";
 import { isValidPhoneNumber } from "libphonenumber-js";
+import Image from "next/image";
 import { use, useState } from "react";
 
 export default function Page({ params }) {
@@ -202,6 +203,15 @@ export default function Page({ params }) {
               </div>
             </div>
           </form>
+          <div className={styles["contact-image"]}>
+            <Image
+              src="/images/park_at_night.jpg"
+              alt="Park at night"
+              width={500}
+              height={500}
+              priority
+            />
+          </div>
         </div>
       </div>
     </div>
