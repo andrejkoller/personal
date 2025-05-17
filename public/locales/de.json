@@ -28,8 +28,7 @@
             },
             "about": {
                 "title": "Über mich",
-                "descriptionOne": "Hallo, ich bin Andrej Koller, ein Webentwickler, spezialisiert auf Frontend- und Backend-Entwicklung.",
-                "descriptionTwo": "Neben dem Programmieren spiele ich leidenschaftlich gern Klavier und Orgel und strebe danach, einzigartige und stimmungsvolle Darbietungen zu schaffen. Durch Musik möchte ich andere inspirieren und motivieren, indem ich bedeutungsvolle und aufmunternde Stücke teile."
+                "description": "Hallo, ich bin Andrej Koller, ein leidenschaftlicher Pianist und Organist, der sich der Schaffung einzigartiger und stimmungsvoller Darbietungen verschrieben hat. Durch Musik möchte ich andere inspirieren und ermutigen, indem ich bedeutungsvolle Stücke teile, die tief in der Seele widerhallen."
             }
         }
     },
@@ -37,10 +36,10 @@
         "section": {
             "introduction": {
                 "title": "Über mich",
-                "subtitle": "Eine Brücke zwischen Code, Kreativität und Neugier",
-                "descriptionOne": "Vielen Dank, dass Sie sich die Zeit genommen haben, mehr über mich zu erfahren. Meine Tage sind größtenteils mit Planung und Programmierung ausgefüllt, wobei ich mich auf Webentwicklung und Datenmanagement konzentriere. Ich bin stets bestrebt, mein Wissen zu erweitern, neue Technologien zu entdecken und meine Fähigkeiten zu verfeinern. Wenn Sie sich für die spezifischen Tools und Programmiersprachen interessieren, mit denen ich arbeite, schauen Sie sich gerne mein GitHub-Profil an.",
-                "descriptionTwo": "Wenn Sie neugierig auf meine Projekte sind, empfehle ich Ihnen, meinen GitHub für aktuelle und zukünftige Uploads zu erkunden. Alle relevanten Links finden Sie am Ende jeder Seite.",
-                "descriptionThree": "Neben dem Programmieren spielt Musik eine wichtige Rolle in meinem Leben. Das klassische Klavier- und Orgelspiel ermöglicht es mir, in verschiedene musikalische Welten einzutauchen, die von Komponisten wie Satie, Schumann, Mozart und Chopin geprägt sind. Ich hege eine große Leidenschaft für vergessene und weniger bekannte Orgelmusik, sowohl historische als auch zeitgenössische, und freue mich, verlorene Werke wiederzuentdecken. Auf meinem YouTube-Kanal teile ich eine einzigartige Sammlung von Orgel- und Klavieraufnahmen, die die Schönheit dieser Instrumente in verschiedenen Stilen zeigen. Wenn Sie Interesse an einer Zusammenarbeit bei musikalischen Projekten haben, melden Sie sich gerne – ich bin immer offen für neue Kontakte."
+                "subtitle": "Brücke zwischen Klang, Ausdruck und Emotion",
+                "descriptionOne": "Vielen Dank, dass du dir die Zeit nimmst, mehr über mich zu erfahren. Mein Alltag ist stark von der Musik geprägt – insbesondere durch Klavier und Orgel. Ich widme mich intensiv dem Erforschen neuer Werke, der Verfeinerung meines Spiels und dem Wiederentdecken vergessener Kompositionen, die es verdienen, erneut gehört zu werden. Ob beim Üben klassischer Stücke oder beim freien Improvisieren – ich strebe stets danach, meine Verbindung zur Musik zu vertiefen.",
+                "descriptionTwo": "Wenn du neugierig auf meinen musikalischen Weg bist, lade ich dich herzlich ein, meinen YouTube-Kanal zu besuchen. Dort teile ich regelmäßig Aufnahmen und Interpretationen bekannter und weniger bekannter Werke. Alle relevanten Links findest du am Ende jeder Seite.",
+                "descriptionThree": "Musik spielt eine zentrale Rolle in meinem Leben. Das Spiel auf dem klassischen Klavier und der Orgel erlaubt es mir, in verschiedenste musikalische Welten einzutauchen – geprägt von Komponisten wie Satie, Schumann, Mozart und Chopin. Besonders fasziniert mich vergessene und selten aufgeführte Orgelmusik – sowohl aus vergangenen Zeiten als auch aus der Gegenwart. Es bereitet mir große Freude, solche Werke wieder zum Leben zu erwecken. Über meinen Kanal teile ich eine besondere Auswahl an Orgel- und Klavieraufnahmen, um die Schönheit dieser Instrumente in unterschiedlichsten Stilen zu zeigen. Wenn du Interesse an einer musikalischen Zusammenarbeit hast, zögere nicht, mich zu kontaktieren – ich bin immer offen für neue Begegnungen."
             },
             "instruments": {
                 "title": "Instrumente",

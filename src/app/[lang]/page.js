@@ -86,11 +86,7 @@ export default function Home({ params }) {
             </div>
             <div className={styles["about-description"]}>
               <h2>{t?.home.section.about.title}</h2>
-              <p>
-                {t?.home.section.about.descriptionOne}
-                <br />
-                {t?.home.section.about.descriptionTwo}
-              </p>
+              <p>{t?.home.section.about.description}</p>
               <LinkButton href={`/${lang}/about`} isExternal={false} />
             </div>
           </div>
