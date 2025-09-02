@@ -1,5 +1,5 @@
 import { Cormorant, Gloock, Rubik } from "next/font/google";
-import LayoutClient from "./layoutClient";
+import LayoutClient from "./LayoutClient";
 
 export const metadata = {
   title: "Andrej Koller",
