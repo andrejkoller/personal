@@ -13,7 +13,7 @@ const projectItems = [
     author: "Érik Satie",
     category: "solo",
     instrument: "Fortepiano",
-    image: "/images/paris_place_de_la_republique_at_twighlight.jpg",
+    image: "/images/paris_place_de_la_republique_at_twilight.jpg",
     href: "projects/gymnopedies",
   },
   {
