@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { LinkButton } from "../components/LinkButton/LinkButton";
+import { LinkButton } from "@/components/LinkButton/LinkButton";
 import React, { use, useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import classNames from "classnames";
-import { useTranslation } from "../hooks/useTranslation";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function Home({ params }) {
   const unwrappedParams = use(params);
@@ -23,7 +23,7 @@ export default function Home({ params }) {
       const position = line.getBoundingClientRect();
 
       if (position.top < window.innerHeight && position.bottom >= 0) {
-        line.classList.add(styles["appear"]);
+        line.classList.add(styles.appear);
         setLineAppeared(true);
         window.removeEventListener("scroll", checkPosition);
       }
@@ -42,11 +42,11 @@ export default function Home({ params }) {
   }, []);
 
   return (
-    <div className={styles["home"]}>
-      <section className={styles["project"]}>
-        <div className={styles["project-container"]}>
-          <div className={styles["project-content"]}>
-            <div className={styles["project-image"]}>
+    <div className={styles.home}>
+      <section className={styles.project}>
+        <div className={styles.projectContainer}>
+          <div className={styles.projectContent}>
+            <div className={styles.projectImage}>
               <Image
                 src={"/images/hades.jpg"}
                 alt="Hades"
@@ -55,7 +55,7 @@ export default function Home({ params }) {
                 priority
               />
             </div>
-            <div className={styles["project-description"]}>
+            <div className={styles.projectDescription}>
               <h2>{t?.home.section.project.title}</h2>
               <p>{t?.home.section.project.description}</p>
               <LinkButton
@@ -66,16 +66,16 @@ export default function Home({ params }) {
           </div>
         </div>
       </section>
-      <section className={styles["about"]}>
+      <section className={styles.about}>
         <div
-          className={classNames(styles["line"], {
-            [styles["appear"]]: lineAppeared,
+          className={classNames(styles.line, {
+            [styles.appear]: lineAppeared,
           })}
           ref={lineRef}
         ></div>
-        <div className={styles["about-container"]}>
-          <div className={styles["about-content"]}>
-            <div className={styles["about-image"]}>
+        <div className={styles.aboutContainer}>
+          <div className={styles.aboutContent}>
+            <div className={styles.aboutImage}>
               <Image
                 src={"/images/odysseus.jpg"}
                 alt="Birch Forest"
@@ -84,7 +84,7 @@ export default function Home({ params }) {
                 priority
               />
             </div>
-            <div className={styles["about-description"]}>
+            <div className={styles.aboutDescription}>
               <h2>{t?.home.section.about.title}</h2>
               <p>{t?.home.section.about.description}</p>
               <LinkButton href={`/${lang}/about`} isExternal={false} />

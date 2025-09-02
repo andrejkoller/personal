@@ -1,61 +1,61 @@
-.header-container.home {
+.headerContainer.home {
   height: 100vh;
 }
 
-.header-container {
+.headerContainer {
   padding-top: 25px;
   margin: 0 5vw;
 }
 
-.header-container .header-content {
+.headerContainer .headerContent {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
 }
 
-.header-container .header-content .header-logo {
+.headerContainer .headerContent .headerLogo {
   display: flex;
   flex-direction: row;
   width: fit-content;
   height: fit-content;
 }
 
-.header-container .header-content .header-logo.home h3 {
+.headerContainer .headerContent .headerLogo.home h3 {
   color: var(--foreground);
 }
 
-.header-container .header-content .header-logo.home h1 {
+.headerContainer .headerContent .headerLogo.home h1 {
   font-size: 40px;
   font-family: var(--font-cormorant);
   color: var(--foreground);
   line-height: 33px;
 }
 
-.header-container .header-content .header-logo h3,
-.header-container .header-content .header-logo h1 {
+.headerContainer .headerContent .headerLogo h3,
+.headerContainer .headerContent .headerLogo h1 {
   color: var(--accent);
   font-size: 27px;
   font-variant: normal;
   font-family: var(--font-cormorant);
 }
 
-.header-container .header-content .header-logo h3 {
+.headerContainer .headerContent .headerLogo h3 {
   line-height: 45px;
   font-style: italic;
 }
 
-.header-container .header-content .header-logo h1 {
+.headerContainer .headerContent .headerLogo h1 {
   line-height: 33px;
   font-variant: small-caps;
 }
 
-.header-container .header-content .menu-button-container {
+.headerContainer .headerContent .menuButtonContainer {
   display: flex;
   z-index: 210;
 }
 
-.header-container .header-content .menu-button-container .menu-button-content {
+.headerContainer .headerContent .menuButtonContainer .menuButtonContent {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,11 +66,7 @@
   width: auto;
 }
 
-.header-container
-  .header-content
-  .menu-button-container
-  .menu-button-content
-  button {
+.headerContainer .headerContent .menuButtonContainer .menuButtonContent button {
   cursor: pointer;
   font-size: 24px;
   line-height: 33px;
@@ -84,7 +80,7 @@
   border: none;
 }
 
-.header-container .header-footer-container {
+.headerContainer .headerFooterContainer {
   display: flex;
   width: 100%;
   height: 100%;
@@ -92,7 +88,7 @@
   align-items: flex-end;
 }
 
-.about-header {
+.aboutHeader {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,13 +97,13 @@
   height: 100%;
 }
 
-.about-header h1 {
+.aboutHeader h1 {
   font-size: 70px;
   margin-bottom: 240px;
 }
 
 @media all and (max-width: 425px) {
-  .header-container .header-content .header-logo.home h1 {
+  .headerContainer .headerContent .headerLogo.home h1 {
     font-size: 32px;
   }
 }

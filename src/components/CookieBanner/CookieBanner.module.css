@@ -1,4 +1,4 @@
-.cookie-banner-container {
+.cookieBannerContainer {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -10,7 +10,7 @@
   z-index: 201;
 }
 
-.cookie-banner-container .cookie-banner-content {
+.cookieBannerContainer .cookieBannerContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,7 +18,7 @@
   padding: 0 5vw;
 }
 
-.cookie-banner-container .cookie-banner-content .cookie-banner-text {
+.cookieBannerContainer .cookieBannerContent .cookieBannerText {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -26,16 +26,16 @@
   gap: 2em;
 }
 
-.cookie-banner-container .cookie-banner-content .cookie-banner-text span {
+.cookieBannerContainer .cookieBannerContent .cookieBannerText span {
   font-size: 15px;
 }
 
-.cookie-banner-container .cookie-banner-content .cookie-banner-text a {
+.cookieBannerContainer .cookieBannerContent .cookieBannerText a {
   font-family: var(--font-cormorant);
   font-size: 19px;
 }
 
-.cookie-banner-container .cookie-banner-button button {
+.cookieBannerContainer .cookieBannerButton button {
   font-size: 19px;
   font-family: var(--font-cormorant);
   color: inherit;
@@ -45,17 +45,17 @@
   cursor: pointer;
 }
 
-.cookie-banner-container.visible {
+.cookieBannerContainer.visible {
   display: flex;
 }
 
 @media all and (max-width: 768px) {
-  .cookie-banner-container .cookie-banner-content {
+  .cookieBannerContainer .cookieBannerContent {
     flex-direction: column;
     align-items: center;
   }
 
-  .cookie-banner-container .cookie-banner-content .cookie-banner-text {
+  .cookieBannerContainer .cookieBannerContent .cookieBannerText {
     flex-direction: column;
     align-items: center;
     gap: 0;

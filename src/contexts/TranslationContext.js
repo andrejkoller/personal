@@ -1,6 +1,6 @@
 import { usePathname } from "next/navigation";
 import { createContext, useContext } from "react";
-import { useTranslation } from "../hooks/useTranslation";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export const TranslationContext = createContext();
 

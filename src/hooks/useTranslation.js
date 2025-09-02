@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getDictionary } from "../lib/getDictionary";
+import { getDictionary } from "@/libs/getDictionary";
 
 export function useTranslation(lang = "en") {
   const supportedLangs = ["de", "en", "ru"];

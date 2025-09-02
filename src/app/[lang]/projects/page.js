@@ -5,7 +5,7 @@ import Link from "next/link";
 import { use, useMemo, useState } from "react";
 import styles from "./page.module.css";
 import classNames from "classnames";
-import { useTranslation } from "@/app/hooks/useTranslation";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const projectItems = [
   {
@@ -72,20 +72,20 @@ export default function Page({ params }) {
   }, [filter]);
 
   return (
-    <div className={styles["projects-container"]}>
-      <div className={styles["projects-content"]}>
-        <div className={styles["projects-header"]}>
-          <div className={styles["projects-header-title"]}>
+    <div className={styles.projectsContainer}>
+      <div className={styles.projectsContent}>
+        <div className={styles.projectsHeader}>
+          <div className={styles.projectsHeaderTitle}>
             <h2>{t?.projects.title}</h2>
           </div>
-          <div className={styles["projects-header-category"]}>
+          <div className={styles.projectsHeaderCategory}>
             {["solo", "ensemble", "all"].map((category) => (
               <button
                 key={category}
-                className={classNames(styles["filter-button"], {
-                  [styles["solo"]]: category === "solo",
-                  [styles["ensemble"]]: category === "ensemble",
-                  [styles["all"]]: category === "all",
+                className={classNames(styles.filterButton, {
+                  [styles.solo]: category === "solo",
+                  [styles.ensemble]: category === "ensemble",
+                  [styles.all]: category === "all",
                 })}
                 onClick={() => setFilter(category)}
                 aria-label={`Show ${category} items`}
@@ -95,11 +95,11 @@ export default function Page({ params }) {
             ))}
           </div>
         </div>
-        <div className={styles["projects-body"]}>
+        <div className={styles.projectsBody}>
           {filteredProjectItems.map((projectItem) => (
             <div
               className={classNames(
-                styles["project-item"],
+                styles.projectItem,
                 styles[projectItem.category]
               )}
               key={projectItem.title}
@@ -113,8 +113,8 @@ export default function Page({ params }) {
                 }`,
               }}
             >
-              <div className={styles["project-image-container"]}>
-                <div className={styles["project-image"]}>
+              <div className={styles.projectImageContainer}>
+                <div className={styles.projectImage}>
                   <Link
                     href={`/${lang}/${projectItem.href}`}
                     style={{ position: "relative" }}
@@ -128,7 +128,7 @@ export default function Page({ params }) {
                     />
                   </Link>
                 </div>
-                <div className={styles["project-title"]}>
+                <div className={styles.projectTitle}>
                   <h3>
                     <Link href={`/${lang}/${projectItem.href}`}>
                       <span>{projectItem.title}</span>
@@ -136,9 +136,9 @@ export default function Page({ params }) {
                   </h3>
                 </div>
               </div>
-              <div className={styles["project-details"]}>
-                <p className={styles["author"]}>{projectItem.author}</p>
-                <p className={styles["category"]}>
+              <div className={styles.projectDetails}>
+                <p className={styles.author}>{projectItem.author}</p>
+                <p className={styles.category}>
                   {t?.projects.category[projectItem.category]}
                 </p>
               </div>

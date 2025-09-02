@@ -1,13 +1,11 @@
-.language-switcher-container {
+.languageSwitcherContainer {
   position: absolute;
   left: 5vw;
   bottom: 5vh;
   z-index: 200;
 }
 
-.language-switcher-container
-  .language-switcher-content
-  .language-switcher-list {
+.languageSwitcherContainer .languageSwitcherContent .languageSwitcherList {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +17,7 @@
   list-style: none;
 }
 
-.language-switcher-container .language-switcher-content a {
+.languageSwitcherContainer .languageSwitcherContent a {
   background: none;
   border: none;
   color: var(--foreground);
@@ -34,7 +32,7 @@
   padding: 0;
 }
 
-.language-switcher-container .language-switcher-content a::after {
+.languageSwitcherContainer .languageSwitcherContent a::after {
   content: "";
   position: absolute;
   width: 0;
@@ -45,13 +43,13 @@
   transition: width 0.5s ease;
 }
 
-.language-switcher-container .language-switcher-content a:hover::after {
+.languageSwitcherContainer .languageSwitcherContent a:hover::after {
   width: 100%;
 }
 
-.language-switcher-container
-  .language-switcher-content
-  .language-switcher-list
+.languageSwitcherContainer
+  .languageSwitcherContent
+  .languageSwitcherList
   .active
   span {
   width: 100%;
@@ -63,9 +61,7 @@
 }
 
 @media all and (max-width: 425px) {
-  .language-switcher-container
-    .language-switcher-content
-    .language-switcher-list {
+  .languageSwitcherContainer .languageSwitcherContent .languageSwitcherList {
     flex-direction: column;
     gap: 1em;
   }

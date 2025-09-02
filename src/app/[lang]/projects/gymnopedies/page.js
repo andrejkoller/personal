@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import styles from "../page.module.css";
-import { useTranslation } from "@/app/hooks/useTranslation";
+import { useTranslation } from "@/hooks/useTranslation";
 import { use } from "react";
 
 export default function Page({ params }) {
@@ -11,20 +11,20 @@ export default function Page({ params }) {
   const t = useTranslation(lang);
 
   return (
-    <div className={styles["project"]}>
-      <div className={styles["project-container"]}>
-        <div className={styles["project-content"]}>
-          <div className={styles["project-title-container"]}>
-            <div className={styles["project-title"]}>
+    <div className={styles.project}>
+      <div className={styles.projectContainer}>
+        <div className={styles.projectContent}>
+          <div className={styles.projectTitleContainer}>
+            <div className={styles.projectTitle}>
               <h2>{t?.project.gymnopedies.title}</h2>
             </div>
-            <div className={styles["project-details"]}>
+            <div className={styles.projectDetails}>
               <p>{t?.project.category.solo}</p>
               <p>{t?.project.instrument.fortePiano}</p>
             </div>
           </div>
-          <div className={styles["project-description"]}>
-            <div className={styles["project-image"]}>
+          <div className={styles.projectDescription}>
+            <div className={styles.projectImage}>
               <Image
                 src="/images/paris_place_de_la_republique_at_twilight.jpg"
                 alt="Paris Place de la République at Twilight"
@@ -33,13 +33,13 @@ export default function Page({ params }) {
                 priority
               />
             </div>
-            <div className={styles["project-text"]}>
+            <div className={styles.projectText}>
               <h4>{t?.project.gymnopedies.description}</h4>
             </div>
           </div>
         </div>
       </div>
-      <div className={styles["project-video-container"]}>
+      <div className={styles.projectVideoContainer}>
         <iframe
           width="560"
           height="315"

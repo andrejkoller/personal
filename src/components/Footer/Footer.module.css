@@ -1,11 +1,11 @@
-.footer-container {
+.footerContainer {
   display: flex;
   flex-direction: column;
   height: fit-content;
   padding: 50px 0 50px 0;
 }
 
-.footer-container .footer-content {
+.footerContainer .footerContent {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -13,14 +13,14 @@
   height: 100%;
 }
 
-.footer-container .footer-content p {
+.footerContainer .footerContent p {
   font-size: 14px;
   font-family: var(--font-rubik);
   font-variant: normal;
   line-height: 18px;
 }
 
-.footer-container .footer-content .contact-link a {
+.footerContainer .footerContent .contactLink a {
   font-size: 19px;
   font-family: var(--font-cormorant);
   font-variant: small-caps;

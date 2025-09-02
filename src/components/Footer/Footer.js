@@ -1,15 +1,15 @@
 import Link from "next/link";
 import styles from "./Footer.module.css";
-import { useTranslationContext } from "@/app/context/TranslationContext";
+import { useTranslationContext } from "@/contexts/TranslationContext";
 
 export const Footer = () => {
   const { lang, t } = useTranslationContext();
 
   return (
-    <div className={styles["footer-container"]}>
-      <div className={styles["footer-content"]}>
+    <div className={styles.footerContainer}>
+      <div className={styles.footerContent}>
         <p>Andrej Koller</p>
-        <p className={styles["contact-link"]}>
+        <p className={styles.contactLink}>
           <Link href={`/${lang}/contact`}>{t?.footer.contact}</Link>
         </p>
         <p>

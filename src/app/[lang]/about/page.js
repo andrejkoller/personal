@@ -3,7 +3,7 @@
 import { use, useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import classNames from "classnames";
-import { useTranslation } from "@/app/hooks/useTranslation";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function Page({ params }) {
   const unwrappedParams = use(params);
@@ -21,7 +21,7 @@ export default function Page({ params }) {
       const position = line.getBoundingClientRect();
 
       if (position.top < window.innerHeight && position.bottom >= 0) {
-        line.classList.add(styles["appear"]);
+        line.classList.add(styles.appear);
         setLineAppeared(true);
         window.removeEventListener("scroll", checkPosition);
       }
@@ -41,64 +41,64 @@ export default function Page({ params }) {
 
   return (
     <>
-      <div className={styles["about-container"]}>
-        <div className={styles["about-content"]}>
-          <div className={styles["about-title"]}>
+      <div className={styles.aboutContainer}>
+        <div className={styles.aboutContent}>
+          <div className={styles.aboutTitle}>
             <h4>{t?.about.section.introduction.subtitle}</h4>
           </div>
-          <div className={styles["about-description"]}>
-            <div className={styles["about-description-text"]}>
+          <div className={styles.aboutDescription}>
+            <div className={styles.aboutDescriptionText}>
               <p>{t?.about.section.introduction.descriptionOne}</p>
               <p>{t?.about.section.introduction.descriptionTwo}</p>
             </div>
-            <div className={styles["about-description-text"]}>
+            <div className={styles.aboutDescriptionText}>
               <p>{t?.about.section.introduction.descriptionThree}</p>
             </div>
           </div>
         </div>
       </div>
-      <div className={styles["about-instruments-container"]}>
-        <div className={styles["about-instruments-content"]}>
-          <div className={styles["about-instruments-title"]}>
+      <div className={styles.aboutInstrumentsContainer}>
+        <div className={styles.aboutInstrumentsContent}>
+          <div className={styles.aboutInstrumentsTitle}>
             <h3>{t?.about.section.instruments.title}</h3>
           </div>
-          <div className={styles["about-instruments-text"]}>
+          <div className={styles.aboutInstrumentsText}>
             <p>
-              <span className={styles["about-instrument"]}>
+              <span className={styles.aboutInstrument}>
                 {t?.about.section.instruments.descriptionOne}
               </span>
             </p>
           </div>
         </div>
       </div>
-      <div className={styles["about-thanks-container"]}>
-        <div className={styles["about-thanks-content"]}>
-          <div className={styles["about-thanks-text"]}>
+      <div className={styles.aboutThanksContainer}>
+        <div className={styles.aboutThanksContent}>
+          <div className={styles.aboutThanksText}>
             <div
-              className={classNames(styles["line"], {
-                [styles["appear"]]: lineAppeared,
+              className={classNames(styles.line, {
+                [styles.appear]: lineAppeared,
               })}
               ref={lineRef}
             ></div>
-            <div className={styles["about-thanks-text-content"]}>
+            <div className={styles.aboutThanksTextContent}>
               <p>{t?.about.section.thankYou.descriptionOne}</p>
               <p>{t?.about.section.thankYou.descriptionTwo}</p>
             </div>
             <div
-              className={classNames(styles["line"], {
-                [styles["appear"]]: lineAppeared,
+              className={classNames(styles.line, {
+                [styles.appear]: lineAppeared,
               })}
               ref={lineRef}
             ></div>
           </div>
         </div>
       </div>
-      <div className={styles["about-audio-info-container"]}>
-        <div className={styles["about-audio-info-content"]}>
-          <div className={styles["about-audio-info-title"]}>
+      <div className={styles.aboutAudioInfoContainer}>
+        <div className={styles.aboutAudioInfoContent}>
+          <div className={styles.aboutAudioInfoTitle}>
             <h4>{t?.about.section.audio.title}</h4>
           </div>
-          <div className={styles["about-audio-info-text"]}>
+          <div className={styles.aboutAudioInfoText}>
             <p>
               {t?.about.section.audio.infoOne}
               <br />

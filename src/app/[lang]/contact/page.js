@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./page.module.css";
-import { useTranslation } from "@/app/hooks/useTranslation";
+import { useTranslation } from "@/hooks/useTranslation";
 import { isValidPhoneNumber } from "libphonenumber-js";
 import Image from "next/image";
 import { use, useState } from "react";
@@ -79,22 +79,22 @@ export default function Page({ params }) {
   }
 
   return (
-    <div className={styles["contact-container"]}>
-      <div className={styles["contact-content"]}>
-        <div className={styles["contact-header"]}>
-          <div className={styles["contact-header-title"]}>
+    <div className={styles.contactContainer}>
+      <div className={styles.contactContent}>
+        <div className={styles.contactHeader}>
+          <div className={styles.contactHeaderTitle}>
             <h2>{t?.contact.title}</h2>
           </div>
         </div>
-        <div className={styles["contact-body"]}>
-          <form className={styles["contact-form"]} onSubmit={handleSubmit}>
+        <div className={styles.contactBody}>
+          <form className={styles.contactForm} onSubmit={handleSubmit}>
             {successMessage && (
-              <div className={styles["success-message-container"]}>
-                <div className={styles["success-message-content"]}>
-                  <div className={styles["success-message"]}>
+              <div className={styles.successMessageContainer}>
+                <div className={styles.successMessageContent}>
+                  <div className={styles.successMessage}>
                     <p>{successMessage}</p>
                   </div>
-                  <div className={styles["success-message-close"]}>
+                  <div className={styles.successMessageClose}>
                     <button
                       type="button"
                       onClick={() => {
@@ -113,12 +113,12 @@ export default function Page({ params }) {
               </div>
             )}
             {errorMessage && (
-              <div className={styles["error-message-container"]}>
-                <div className={styles["error-message-content"]}>
-                  <div className={styles["error-message"]}>
+              <div className={styles.errorMessageContainer}>
+                <div className={styles.errorMessageContent}>
+                  <div className={styles.errorMessage}>
                     <p>{errorMessage}</p>
                   </div>
-                  <div className={styles["error-message-close"]}>
+                  <div className={styles.errorMessageClose}>
                     <button
                       type="button"
                       onClick={() => {
@@ -136,9 +136,9 @@ export default function Page({ params }) {
                 </div>
               </div>
             )}
-            <div className={styles["contact-form-first-column"]}>
-              <div className={styles["contact-form-first-column-content"]}>
-                <div className={styles["input-name"]}>
+            <div className={styles.contactFormFirstColumn}>
+              <div className={styles.contactFormFirstColumnContent}>
+                <div className={styles.inputName}>
                   <label htmlFor="first-name">
                     {t?.contact.label.firstName} *
                   </label>
@@ -149,7 +149,7 @@ export default function Page({ params }) {
                     required
                   />
                 </div>
-                <div className={styles["input-name"]}>
+                <div className={styles.inputName}>
                   <label htmlFor="last-name">
                     {t?.contact.label.lastName} *
                   </label>
@@ -160,7 +160,7 @@ export default function Page({ params }) {
                     required
                   />
                 </div>
-                <div className={styles["input-email"]}>
+                <div className={styles.inputEmail}>
                   <label htmlFor="email">{t?.contact.label.email} *</label>
                   <input
                     type="email"
@@ -169,7 +169,7 @@ export default function Page({ params }) {
                     required
                   />
                 </div>
-                <div className={styles["input-telephone"]}>
+                <div className={styles.inputTelephone}>
                   <label htmlFor="telephone">
                     {t?.contact.label.telephone}
                   </label>
@@ -181,9 +181,9 @@ export default function Page({ params }) {
                 </div>
               </div>
             </div>
-            <div className={styles["contact-form-second-column"]}>
-              <div className={styles["contact-form-second-column-content"]}>
-                <div className={styles["input-subject"]}>
+            <div className={styles.contactFormSecondColumn}>
+              <div className={styles.contactFormSecondColumnContent}>
+                <div className={styles.inputSubject}>
                   <label htmlFor="message">{t?.contact.label.message} *</label>
                   <textarea
                     type="text"
@@ -195,15 +195,15 @@ export default function Page({ params }) {
                 </div>
               </div>
             </div>
-            <div className={styles["contact-form-third-column"]}>
-              <div className={styles["contact-form-third-column-content"]}>
-                <div className={styles["input-submit"]}>
+            <div className={styles.contactFormThirdColumn}>
+              <div className={styles.contactFormThirdColumnContent}>
+                <div className={styles.inputSubmit}>
                   <button type="submit">{t?.contact.submit}</button>
                 </div>
               </div>
             </div>
           </form>
-          <div className={styles["contact-image"]}>
+          <div className={styles.contactImage}>
             <Image
               src="/images/park_at_night.jpg"
               alt="Park at night"

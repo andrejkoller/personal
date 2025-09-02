@@ -3,20 +3,20 @@
 import Link from "next/link";
 import styles from "./LanguageSwitcher.module.css";
 import classNames from "classnames";
-import { useTranslationContext } from "@/app/context/TranslationContext";
+import { useTranslationContext } from "@/contexts/TranslationContext";
 
 export const LanguageSwitcher = () => {
   const { lang } = useTranslationContext();
 
   return (
-    <div className={styles["language-switcher-container"]}>
-      <div className={styles["language-switcher-content"]}>
-        <ul className={styles["language-switcher-list"]}>
+    <div className={styles.languageSwitcherContainer}>
+      <div className={styles.languageSwitcherContent}>
+        <ul className={styles.languageSwitcherList}>
           <li>
             <Link
               href={"/"}
-              className={classNames(styles["language-button"], {
-                [styles["active"]]: lang === "en",
+              className={classNames(styles.languageButton, {
+                [styles.active]: lang === "en",
               })}
             >
               English
@@ -26,8 +26,8 @@ export const LanguageSwitcher = () => {
           <li>
             <Link
               href={"/de"}
-              className={classNames(styles["language-button"], {
-                [styles["active"]]: lang === "de",
+              className={classNames(styles.languageButton, {
+                [styles.active]: lang === "de",
               })}
             >
               Deutsch
@@ -37,8 +37,8 @@ export const LanguageSwitcher = () => {
           <li>
             <Link
               href={"/ru"}
-              className={classNames(styles["language-button"], {
-                [styles["active"]]: lang === "ru",
+              className={classNames(styles.languageButton, {
+                [styles.active]: lang === "ru",
               })}
             >
               Русский

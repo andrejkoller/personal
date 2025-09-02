@@ -1,4 +1,4 @@
-.menu-container {
+.menuContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,18 +13,18 @@
   transition: all 1s ease-out;
 }
 
-.menu-container .menu-content {
+.menuContainer .menuContent {
   padding: 25px 5vw 0 5vw;
 }
 
-.menu-container .menu-content .menu-header {
+.menuContainer .menuContent .menuHeader {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 
-.menu-container .menu-content .menu-header .menu-logo h3 {
+.menuContainer .menuContent .menuHeader .menuLogo h3 {
   font-size: 27px;
   font-style: italic;
   font-variant: normal;
@@ -33,23 +33,23 @@
   color: #696969;
 }
 
-.menu-container .menu-content .menu-header .menu-logo h1 {
+.menuContainer .menuContent .menuHeader .menuLogo h1 {
   font-size: 27px;
   font-family: var(--font-cormorant);
   line-height: 33px;
   color: #696969;
 }
 
-.menu-container .menu-content .menu-header .close-button-container {
+.menuContainer .menuContent .menuHeader .closeButtonContainer {
   display: flex;
   z-index: 200;
 }
 
-.menu-container
-  .menu-content
-  .menu-header
-  .menu-button-container
-  .menu-button-content {
+.menuContainer
+  .menuContent
+  .menuHeader
+  .menuButtonContainer
+  .menuButtonContent {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,11 +58,11 @@
   width: auto;
 }
 
-.menu-container
-  .menu-content
-  .menu-header
-  .menu-button-container
-  .menu-button-content
+.menuContainer
+  .menuContent
+  .menuHeader
+  .menuButtonContainer
+  .menuButtonContent
   button {
   cursor: pointer;
   font-size: 110px;
@@ -76,14 +76,14 @@
   border: none;
 }
 
-.menu-container .menu-content .menu-body {
+.menuContainer .menuContent .menuBody {
   height: 80vh;
   margin-top: 25px;
   width: 90vw;
   position: relative;
 }
 
-.menu-container .menu-content .menu-body .menu-link p {
+.menuContainer .menuContent .menuBody .menuLink p {
   text-align: center;
   margin-top: 0;
   margin-bottom: 10px;
@@ -93,59 +93,59 @@
   line-height: 27px;
 }
 
-.menu-container .menu-content .menu-body .menu-link.projects-link,
-.menu-container .menu-content .menu-body .menu-link.about-link,
-.menu-container .menu-content .menu-body .menu-link.inspiration-link,
-.menu-container .menu-content .menu-body .menu-link.gallery-link,
-.menu-container .menu-content .menu-body .menu-link.contact-link {
+.menuContainer .menuContent .menuBody .menuLink.projectsLink,
+.menuContainer .menuContent .menuBody .menuLink.aboutLink,
+.menuContainer .menuContent .menuBody .menuLink.inspirationLink,
+.menuContainer .menuContent .menuBody .menuLink.galleryLink,
+.menuContainer .menuContent .menuBody .menuLink.contactLink {
   position: absolute;
 }
 
-.menu-container .menu-content .menu-body .menu-link.projects-link {
+.menuContainer .menuContent .menuBody .menuLink.projectsLink {
   top: 0;
   left: 0vw;
 }
 
-.menu-container .menu-content .menu-body .menu-link.about-link {
+.menuContainer .menuContent .menuBody .menuLink.aboutLink {
   top: 0;
   left: 25vw;
 }
 
-.menu-container .menu-content .menu-body .menu-link.inspiration-link {
+.menuContainer .menuContent .menuBody .menuLink.inspirationLink {
   top: 0;
   left: 50vw;
 }
 
-.menu-container .menu-content .menu-body .menu-link.gallery-link {
+.menuContainer .menuContent .menuBody .menuLink.galleryLink {
   top: 0;
   left: 75vw;
 }
 
-.menu-container .menu-content .menu-body .menu-link.contact-link {
+.menuContainer .menuContent .menuBody .menuLink.contactLink {
   top: 50vh;
   left: 75vw;
 }
 
-.menu-open {
+.menuOpen {
   left: 0vw !important;
 }
 
 @media all and (max-width: 768px) {
-  .menu-container .menu-content .menu-body .menu-link.about-link {
+  .menuContainer .menuContent .menuBody .menuLink.aboutLink {
     left: 55vw;
   }
 
-  .menu-container .menu-content .menu-body .menu-link.inspiration-link {
+  .menuContainer .menuContent .menuBody .menuLink.inspirationLink {
     top: 25vh;
     left: 0vw;
   }
 
-  .menu-container .menu-content .menu-body .menu-link.gallery-link {
+  .menuContainer .menuContent .menuBody .menuLink.galleryLink {
     top: 25vh;
     left: 55vw;
   }
 
-  .menu-container .menu-content .menu-body .menu-link.contact-link {
+  .menuContainer .menuContent .menuBody .menuLink.contactLink {
     top: 50vh;
     left: 0vw;
   }

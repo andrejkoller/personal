@@ -6,7 +6,7 @@ import { BackgroundMusic } from "../BackgroundMusic/BackgroundMusic";
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 import styles from "./Header.module.css";
 import classNames from "classnames";
-import { useTranslationContext } from "@/app/context/TranslationContext";
+import { useTranslationContext } from "@/contexts/TranslationContext";
 
 export const Header = ({ toggleMenu }) => {
   const { lang, t } = useTranslationContext();
@@ -18,14 +18,14 @@ export const Header = ({ toggleMenu }) => {
 
   return (
     <div
-      className={classNames(styles["header-container"], {
-        [styles["home"]]: isHome || isAbout,
+      className={classNames(styles.headerContainer, {
+        [styles.home]: isHome || isAbout,
       })}
     >
-      <div className={styles["header-content"]}>
+      <div className={styles.headerContent}>
         <div
-          className={classNames(styles["header-logo"], {
-            [styles["home"]]: isHome,
+          className={classNames(styles.headerLogo, {
+            [styles.home]: isHome,
           })}
         >
           <Link href={lang === "en" ? "/" : `/${lang}`} scroll={false}>
@@ -34,12 +34,12 @@ export const Header = ({ toggleMenu }) => {
           </Link>
         </div>
 
-        <div className={styles["menu-button-container"]}>
-          <div className={styles["menu-button-content"]}>
+        <div className={styles.menuButtonContainer}>
+          <div className={styles.menuButtonContent}>
             <button
               id="menuButton"
               onClick={toggleMenu}
-              className={styles["menu-button"]}
+              className={styles.menuButton}
               aria-label="Open navigation menu"
             >
               Menu
@@ -51,19 +51,19 @@ export const Header = ({ toggleMenu }) => {
       </div>
 
       {isAbout && (
-        <div className={styles["about-header"]}>
+        <div className={styles.aboutHeader}>
           <h1>{t?.about.section.introduction.title}</h1>
         </div>
       )}
 
       {isHome && (
-        <div className={styles["language-switcher"]}>
+        <div className={styles.languageSwitcher}>
           <LanguageSwitcher lang={lang} />
         </div>
       )}
 
       {showMusic && (
-        <div className={styles["background-music"]}>
+        <div className={styles.backgroundMusic}>
           <BackgroundMusic t={t} />
         </div>
       )}

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import SiriWave from "siriwave";
 import styles from "./BackgroundMusic.module.css";
 import classNames from "classnames";
-import { useTranslationContext } from "@/app/context/TranslationContext";
+import { useTranslationContext } from "@/contexts/TranslationContext";
 
 export const BackgroundMusic = () => {
   const { t } = useTranslationContext();
@@ -100,35 +100,29 @@ export const BackgroundMusic = () => {
   }, []);
 
   return (
-    <div className={styles["background-music-container"]}>
-      <div className={styles["background-music-content"]}>
+    <div className={styles.backgroundMusicContainer}>
+      <div className={styles.backgroundMusicContent}>
         <button
-          className={classNames(styles["play-button"], {
-            [styles["hidden"]]: isPlaying,
-            [styles["visible"]]: !isPlaying,
+          className={classNames(styles.playButton, {
+            [styles.hidden]: isPlaying,
+            [styles.visible]: !isPlaying,
           })}
           ref={playButtonRef}
           onClick={handlePlayClick}
         >
           <span>{t?.backgroundMusic.listen}</span>
-          <span
-            className={styles["siri-wave"]}
-            ref={siriWave1ContainerRef}
-          ></span>
+          <span className={styles.siriWave} ref={siriWave1ContainerRef}></span>
         </button>
         <button
-          className={classNames(styles["pause-button"], {
-            [styles["hidden"]]: !isPlaying,
-            [styles["visible"]]: isPlaying,
+          className={classNames(styles.pauseButton, {
+            [styles.hidden]: !isPlaying,
+            [styles.visible]: isPlaying,
           })}
           ref={pauseButtonRef}
           onClick={handlePauseClick}
         >
           <span>{t?.backgroundMusic.pause}</span>
-          <span
-            className={styles["siri-wave"]}
-            ref={siriWave2ContainerRef}
-          ></span>
+          <span className={styles.siriWave} ref={siriWave2ContainerRef}></span>
         </button>
       </div>
       <audio id="backgroundMusic" ref={audioRef} loop>

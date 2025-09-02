@@ -1,4 +1,4 @@
-.inspiration-container {
+.inspirationContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,7 +6,7 @@
   margin: 0 5vw;
 }
 
-.inspiration-container .inspiration-content {
+.inspirationContainer .inspirationContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +15,7 @@
   height: 100%;
 }
 
-.inspiration-container .inspiration-content .inspiration-header {
+.inspirationContainer .inspirationContent .inspirationHeader {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -25,65 +25,62 @@
   margin: 0 0 100px 0;
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-header
-  .inspiration-header-title
+.inspirationContainer
+  .inspirationContent
+  .inspirationHeader
+  .inspirationHeaderTitle
   h2 {
   margin: 50px 0 10px 0;
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-header
-  .inspiration-header-title
+.inspirationContainer
+  .inspirationContent
+  .inspirationHeader
+  .inspirationHeaderTitle
   p {
   font-size: 17px;
   font-family: var(--font-rubik);
   line-height: 27px;
 }
 
-.inspiration-container .inspiration-content .inspiration-body {
+.inspirationContainer .inspirationContent .inspirationBody {
   min-height: 80vh;
   width: 100%;
   margin: 0 0 150px 0;
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-body
-  .inspiration-item {
+.inspirationContainer .inspirationContent .inspirationBody .inspirationItem {
   width: calc(33.33333% - 1.875rem);
   box-sizing: border-box;
   margin: 0 15px 25px 15px;
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-body
-  .inspiration-item
-  .quote-item,
-.art-item,
-.video-item {
+.inspirationContainer
+  .inspirationContent
+  .inspirationBody
+  .inspirationItem
+  .quoteItem,
+.artItem,
+.videoItem {
   padding: 25px;
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-body
-  .inspiration-item
-  .quote-item
+.inspirationContainer
+  .inspirationContent
+  .inspirationBody
+  .inspirationItem
+  .quoteItem
   p:nth-child(1) {
   font-size: 17px;
   font-family: var(--font-rubik);
   line-height: 27px;
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-body
-  .inspiration-item
-  .quote-item
+.inspirationContainer
+  .inspirationContent
+  .inspirationBody
+  .inspirationItem
+  .quoteItem
   p:nth-child(2) {
   font-size: 21px;
   font-family: var(--font-cormorant);
@@ -91,12 +88,12 @@
   margin-top: 20px;
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-body
-  .inspiration-item
-  .quote-item.short
-  P:nth-child(1) {
+.inspirationContainer
+  .inspirationContent
+  .inspirationBody
+  .inspirationItem
+  .quoteItem.short
+  p:nth-child(1) {
   font-size: 40px;
   line-height: 44px;
   font-family: var(--font-cormorant);
@@ -104,12 +101,12 @@
   color: var(--foreground);
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-body
-  .inspiration-item
-  .quote-item.short
-  P:nth-child(2) {
+.inspirationContainer
+  .inspirationContent
+  .inspirationBody
+  .inspirationItem
+  .quoteItem.short
+  p:nth-child(2) {
   font-size: 21px;
   line-height: 33px;
   font-family: var(--font-cormorant);
@@ -117,11 +114,11 @@
   margin-top: 20px;
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-body
-  .inspiration-item
-  .art-item
+.inspirationContainer
+  .inspirationContent
+  .inspirationBody
+  .inspirationItem
+  .artItem
   p {
   font-size: 21px;
   font-family: var(--font-cormorant);
@@ -129,86 +126,76 @@
   margin: 0;
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-body
-  .inspiration-item
-  .art-item
+.inspirationContainer
+  .inspirationContent
+  .inspirationBody
+  .inspirationItem
+  .artItem
   p:nth-child(2) {
   margin-top: 10px;
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-body
-  .inspiration-item
-  .art-item
+.inspirationContainer
+  .inspirationContent
+  .inspirationBody
+  .inspirationItem
+  .artItem
   image {
   height: 100%;
   width: 100%;
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-body
-  .inspiration-item
-  .art-item,
-.video-item {
+.inspirationContainer
+  .inspirationContent
+  .inspirationBody
+  .inspirationItem
+  .artItem,
+.videoItem {
   border: 1px solid var(--accent);
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-body
-  .inspiration-item
-  .video-item
+.inspirationContainer
+  .inspirationContent
+  .inspirationBody
+  .inspirationItem
+  .videoItem
   p {
   margin-top: 10px;
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-body
-  .inspiration-item
+.inspirationContainer
+  .inspirationContent
+  .inspirationBody
+  .inspirationItem
   iframe {
   width: 100%;
   height: revert-layer;
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-body
-  .inspiration-item
-  p {
+.inspirationContainer .inspirationContent .inspirationBody .inspirationItem p {
   font-size: 21px;
   font-family: var(--font-cormorant);
   line-height: 33px;
   margin: 0;
 }
 
-.inspiration-container
-  .inspiration-content
-  .inspiration-body
-  .inspiration-item
+.inspirationContainer
+  .inspirationContent
+  .inspirationBody
+  .inspirationItem
   img {
   width: 100%;
   height: auto;
 }
 
 @media all and (max-width: 1024px) {
-  .inspiration-container
-    .inspiration-content
-    .inspiration-body
-    .inspiration-item {
+  .inspirationContainer .inspirationContent .inspirationBody .inspirationItem {
     width: calc(50% - 1.875rem);
   }
 }
 
 @media all and (max-width: 768px) {
-  .inspiration-container
-    .inspiration-content
-    .inspiration-body
-    .inspiration-item {
+  .inspirationContainer .inspirationContent .inspirationBody .inspirationItem {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
@@ -216,7 +203,7 @@
 }
 
 @media all and (max-width: 425px) {
-  .inspiration-container .inspiration-content .inspiration-header {
+  .inspirationContainer .inspirationContent .inspirationHeader {
     margin-bottom: 0;
   }
 }

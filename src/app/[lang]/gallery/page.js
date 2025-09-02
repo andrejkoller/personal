@@ -5,7 +5,7 @@ import Image from "next/image";
 import imagesLoaded from "imagesloaded";
 import styles from "./page.module.css";
 import classNames from "classnames";
-import { useTranslation } from "@/app/hooks/useTranslation";
+import { useTranslation } from "@/hooks/useTranslation";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 
 const galleryItems = [
@@ -101,20 +101,20 @@ export default function Page({ params }) {
   }, [filter]);
 
   return (
-    <div className={styles["gallery-container"]}>
-      <div className={styles["gallery-content"]}>
-        <div className={styles["gallery-header"]}>
-          <div className={styles["gallery-header-title"]}>
+    <div className={styles.galleryContainer}>
+      <div className={styles.galleryContent}>
+        <div className={styles.galleryHeader}>
+          <div className={styles.galleryHeaderTitle}>
             <h2>{t?.gallery.title}</h2>
           </div>
-          <div className={styles["gallery-header-category"]}>
+          <div className={styles.galleryHeaderCategory}>
             {["video", "photo", "all"].map((category) => (
               <button
                 key={category}
-                className={classNames(styles["filter-button"], {
-                  [styles["video"]]: category === "video",
-                  [styles["photo"]]: category === "photo",
-                  [styles["all"]]: category === "all",
+                className={classNames(styles.filterButton, {
+                  [styles.video]: category === "video",
+                  [styles.photo]: category === "photo",
+                  [styles.all]: category === "all",
                 })}
                 onClick={() => setFilter(category)}
                 aria-label={`Show ${category} items`}
@@ -138,13 +138,13 @@ export default function Page({ params }) {
             ))}
           </div>
         </div>
-        <div id="gallery" className={styles["gallery-body"]} ref={galleryRef}>
+        <div id="gallery" className={styles.galleryBody} ref={galleryRef}>
           {filteredGalleryItems.map((galleryItem) => (
             <div
               key={galleryItem.src}
-              className={classNames(styles["gallery-item"], "gallery-item", {
-                [styles["video"]]: galleryItem.category === "video",
-                [styles["photo"]]: galleryItem.category === "photo",
+              className={classNames(styles.galleryItem, "gallery-item", {
+                [styles.video]: galleryItem.category === "video",
+                [styles.photo]: galleryItem.category === "photo",
               })}
               style={{
                 border: `1px solid ${

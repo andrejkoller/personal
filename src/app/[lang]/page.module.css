@@ -6,7 +6,7 @@
   padding: 100px 0;
 }
 
-.home .project .project-container {
+.home .project .projectContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@
   height: 90vh;
 }
 
-.home .project .project-container .project-content {
+.home .project .projectContainer .projectContent {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -22,23 +22,23 @@
   height: 100%;
 }
 
-.home .project .project-container .project-content .project-image {
+.home .project .projectContainer .projectContent .projectImage {
   display: contents;
   width: 100%;
 }
 
-.home .project .project-container .project-content .project-image img {
+.home .project .projectContainer .projectContent .projectImage img {
   filter: brightness(0.5);
   min-width: 50%;
   min-height: 100%;
   width: 100%;
 }
 
-.home .project .project-container .project-content .project-description {
+.home .project .projectContainer .projectContent .projectDescription {
   width: 100%;
 }
 
-.home .project .project-container .project-content .project-description h2 {
+.home .project .projectContainer .projectContent .projectDescription h2 {
   margin-top: 200px;
   margin-bottom: 25px;
   margin-left: -100px;
@@ -46,7 +46,7 @@
   position: relative;
 }
 
-.home .project .project-container .project-content .project-description p {
+.home .project .projectContainer .projectContent .projectDescription p {
   font-size: 17px;
   font-family: var(--font-rubik);
   line-height: 27px;
@@ -57,10 +57,10 @@
 
 .home
   .project
-  .project-container
-  .project-content
-  .project-description
-  .link-button-container {
+  .projectContainer
+  .projectContent
+  .projectDescription
+  .linkButtonContainer {
   padding: 25px 0 0 50px;
   display: flex;
   justify-content: flex-start;
@@ -75,7 +75,7 @@
   height: 100vh;
 }
 
-.home .about .about-container {
+.home .about .aboutContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -83,18 +83,18 @@
   height: 100%;
 }
 
-.home .about .about-container .about-content {
+.home .about .aboutContainer .aboutContent {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   height: 100%;
 }
 
-.home .about .about-container .about-content .about-image {
+.home .about .aboutContainer .aboutContent .aboutImage {
   width: 75%;
 }
 
-.home .about .about-container .about-content .about-image img {
+.home .about .aboutContainer .aboutContent .aboutImage img {
   width: 100%;
   height: 100%;
   object-position: center center;
@@ -103,7 +103,7 @@
   position: relative;
 }
 
-.home .about .about-container .about-content .about-description {
+.home .about .aboutContainer .aboutContent .aboutDescription {
   display: flex;
   flex-direction: column;
   width: 25%;
@@ -111,12 +111,12 @@
   left: -120px;
 }
 
-.home .about .about-container .about-content .about-description h2 {
+.home .about .aboutContainer .aboutContent .aboutDescription h2 {
   margin-top: 200px;
   margin-bottom: 25px;
 }
 
-.home .about .about-container .about-content .about-description p {
+.home .about .aboutContainer .aboutContent .aboutDescription p {
   font-size: 17px;
   font-family: var(--font-rubik);
   line-height: 27px;
@@ -125,10 +125,10 @@
 
 .home
   .about
-  .about-container
-  .about-content
-  .about-description
-  .link-button-container {
+  .aboutContainer
+  .aboutContent
+  .aboutDescription
+  .linkButtonContainer {
   padding: 25px 0 0 50px;
   display: flex;
   justify-content: flex-start;
@@ -151,39 +151,39 @@
 }
 
 @media all and (max-width: 1024px) {
-  .home .project .project-container {
+  .home .project .projectContainer {
     height: 100%;
   }
 
-  .home .project .project-container .project-content {
+  .home .project .projectContainer .projectContent {
     flex-direction: column;
   }
 
-  .home .project .project-container .project-content .project-description h2 {
+  .home .project .projectContainer .projectContent .projectDescription h2 {
     margin-top: 25px;
     margin-left: 0;
   }
 
-  .home .about .about-container .about-content {
+  .home .about .aboutContainer .aboutContent {
     flex-direction: column;
     justify-content: flex-start;
   }
 
-  .home .about .about-container .about-content .about-image {
+  .home .about .aboutContainer .aboutContent .aboutImage {
     width: 100%;
   }
 
-  .home .about .about-container .about-content .about-description {
+  .home .about .aboutContainer .aboutContent .aboutDescription {
     width: 100%;
     bottom: 60px;
     left: unset;
   }
 
-  .home .about .about-container .about-content .about-description h2 {
+  .home .about .aboutContainer .aboutContent .aboutDescription h2 {
     margin-top: 0;
   }
 
-  .home .about .about-container .about-content .about-description p {
+  .home .about .aboutContainer .aboutContent .aboutDescription p {
     margin: 0;
   }
 }

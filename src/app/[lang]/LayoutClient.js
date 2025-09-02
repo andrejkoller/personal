@@ -1,13 +1,13 @@
 "use client";
 
-import { Header } from "../components/Header/Header";
-import { Menu } from "../components/Menu/Menu";
-import { Cursor } from "../components/Cursor/Cursor";
-import { Footer } from "../components/Footer/Footer";
-import { CookieBanner } from "../components/CookieBanner/CookieBanner";
+import { Header } from "@/components/Header/Header";
+import { Menu } from "@/components/Menu/Menu";
+import { Cursor } from "@/components/Cursor/Cursor";
+import { Footer } from "@/components/Footer/Footer";
+import { CookieBanner } from "@/components/CookieBanner/CookieBanner";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { TranslationProvider } from "../context/TranslationContext";
+import { TranslationProvider } from "@/contexts/TranslationContext";
 
 export default function LayoutClient({ children, propLang }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

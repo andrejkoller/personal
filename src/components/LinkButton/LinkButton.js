@@ -3,9 +3,9 @@ import styles from "./LinkButton.module.css";
 
 export const LinkButton = ({ href, isExternal }) => {
   return (
-    <div className={styles["link-button-container"]}>
-      <div className={styles["link-button-content"]}>
-        <h4 className={styles["link-button"]}>
+    <div className={styles.linkButtonContainer}>
+      <div className={styles.linkButtonContent}>
+        <h4 className={styles.linkButton}>
           <Link href={href} target={isExternal ? "_blank" : "_self"}>
             +
           </Link>

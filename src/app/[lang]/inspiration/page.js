@@ -5,7 +5,7 @@ import { use, useEffect, useRef } from "react";
 import imagesLoaded from "imagesloaded";
 import styles from "./page.module.css";
 import classNames from "classnames";
-import { useTranslation } from "@/app/hooks/useTranslation";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function Page({ params }) {
   const unwrappedParams = use(params);
@@ -280,10 +280,10 @@ export default function Page({ params }) {
   });
 
   return (
-    <div className={styles["inspiration-container"]}>
-      <div className={styles["inspiration-content"]}>
-        <div className={styles["inspiration-header"]}>
-          <div className={styles["inspiration-header-title"]}>
+    <div className={styles.inspirationContainer}>
+      <div className={styles.inspirationContent}>
+        <div className={styles.inspirationHeader}>
+          <div className={styles.inspirationHeaderTitle}>
             <h2>{t?.inspiration.title}</h2>
             <p>
               {t?.inspiration.descriptionOne}
@@ -292,27 +292,24 @@ export default function Page({ params }) {
             </p>
           </div>
         </div>
-        <div className={styles["inspiration-body"]} ref={inspirationRef}>
+        <div className={styles.inspirationBody} ref={inspirationRef}>
           {inspirationItems.map((item, index) => (
             <div
               key={index}
-              className={classNames(
-                styles["inspiration-item"],
-                "inspiration-item"
-              )}
+              className={classNames(styles.inspirationItem, "inspiration-item")}
             >
               {item.category === "quote" && (
                 <div
-                  className={classNames(styles["quote-item"], {
-                    [styles["short"]]: item.short,
+                  className={classNames(styles.quoteItem, {
+                    [styles.short]: item.short,
                   })}
                 >
                   <p>{item.quote}</p>
-                  <p className={styles["quote-author"]}>{item.author}</p>
+                  <p className={styles.quoteAuthor}>{item.author}</p>
                 </div>
               )}
               {item.category === "art" && (
-                <div className={styles["art-item"]}>
+                <div className={styles.artItem}>
                   <Image
                     src={item.image}
                     width={800}
@@ -327,7 +324,7 @@ export default function Page({ params }) {
                 </div>
               )}
               {item.category === "video" && (
-                <div className={styles["video-item"]}>
+                <div className={styles.videoItem}>
                   <iframe
                     width="560"
                     height="315"

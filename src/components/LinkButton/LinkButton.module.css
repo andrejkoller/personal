@@ -1,10 +1,10 @@
-.link-button-container {
+.linkButtonContainer {
   z-index: 200;
   padding-left: 60px;
   padding-top: 20px;
 }
 
-.link-button-container .link-button-content {
+.linkButtonContainer .linkButtonContent {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,7 @@
   width: fit-content;
 }
 
-.link-button-container .link-button-content h4 {
+.linkButtonContainer .linkButtonContent h4 {
   cursor: pointer;
   font-size: 80px;
   font-weight: 400;

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import styles from "./Menu.module.css";
 import classNames from "classnames";
-import { useTranslationContext } from "@/app/context/TranslationContext";
+import { useTranslationContext } from "@/contexts/TranslationContext";
 
 export const Menu = ({ isMenuOpen, toggleMenu }) => {
   const { lang, t } = useTranslationContext();
@@ -11,54 +11,54 @@ export const Menu = ({ isMenuOpen, toggleMenu }) => {
     {
       href: "projects",
       label: `${t?.menu.label.projects}`,
-      stylingClass: "projects-link",
+      stylingClass: "projectsLink",
     },
     {
       href: "about",
       label: `${t?.menu.label.about}`,
-      stylingClass: "about-link",
+      stylingClass: "aboutLink",
     },
     {
       href: "inspiration",
       label: `${t?.menu.label.inspiration}`,
-      stylingClass: "inspiration-link",
+      stylingClass: "inspirationLink",
     },
     {
       href: "gallery",
       label: `${t?.menu.label.gallery}`,
-      stylingClass: "gallery-link",
+      stylingClass: "galleryLink",
     },
     {
       href: "contact",
       label: `${t?.menu.label.contact}`,
-      stylingClass: "contact-link",
+      stylingClass: "contactLink",
     },
   ];
 
   return (
     <div
       id="menu"
-      className={classNames(styles["menu-container"], {
-        [styles["menu-open"]]: isMenuOpen,
+      className={classNames(styles.menuContainer, {
+        [styles.menuOpen]: isMenuOpen,
       })}
       role="dialog"
       aria-modal="true"
     >
-      <div className={styles["menu-content"]}>
+      <div className={styles.menuContent}>
         {/* Header */}
-        <div className={styles["menu-header"]}>
-          <div className={styles["menu-logo"]}>
+        <div className={styles.menuHeader}>
+          <div className={styles.menuLogo}>
             <Link href={lang === "en" ? "/" : `/${lang}`} scroll={false}>
               <h3>Pianorgan</h3>
               <h1>Andrej Koller</h1>
             </Link>
           </div>
 
-          <div className={styles["menu-button-container"]}>
-            <div className={styles["menu-button-content"]}>
+          <div className={styles.menuButtonContainer}>
+            <div className={styles.menuButtonContent}>
               <button
                 id="closeButton"
-                className={styles["menu-button"]}
+                className={styles.menuButton}
                 onClick={toggleMenu}
                 aria-label="Close menu"
               >
@@ -71,14 +71,11 @@ export const Menu = ({ isMenuOpen, toggleMenu }) => {
         </div>
 
         {/* Navigation */}
-        <nav className={styles["menu-body"]} aria-label="Main menu">
+        <nav className={styles.menuBody} aria-label="Main menu">
           {links.map((link) => (
             <div
               key={link.href}
-              className={classNames(
-                styles["menu-link"],
-                styles[link.stylingClass]
-              )}
+              className={classNames(styles.menuLink, styles[link.stylingClass])}
             >
               <p>
                 <Link href={`/${lang}/${link.href}`}>{link.label}</Link>

@@ -1,11 +1,9 @@
 import { Cormorant, Gloock, Rubik } from "next/font/google";
-import "../globals.css";
-import LayoutClient from "./LayoutClient";
+import LayoutClient from "./layoutClient";
 
 export const metadata = {
   title: "Andrej Koller",
-  description:
-    "Personal website of Andrej Koller, a web developer and musician.",
+  description: "Andrej Koller - a passionate musician and developer",
 };
 
 export async function generateStaticParams() {
@@ -30,13 +28,14 @@ const gloock = Gloock({
   variable: "--font-gloock",
 });
 
-export default async function RootLayout({ children }) {
+export default async function Layout({ children, params }) {
+  const { lang } = await params;
   const fontVars = `${cormorant.variable || ""} ${rubik.variable || ""} ${gloock.variable || ""}`;
 
   return (
-    <html lang="en">
+    <html lang={lang}>
       <body className={fontVars}>
-        <LayoutClient>{children}</LayoutClient>
+        <LayoutClient propLang={lang}>{children}</LayoutClient>
       </body>
     </html>
   );
