@@ -91,7 +91,6 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 28px;
-  height: 80vh;
   min-height: max-content;
 }
 
@@ -149,6 +148,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
+  margin-top: 44px;
 }
 
 .projectsContainer .projectsContent .projectsBody .projectDetails .author {

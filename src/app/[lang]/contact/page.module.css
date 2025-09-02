@@ -109,6 +109,7 @@
   .contactFormFirstColumnContent
   input {
   border-bottom: 1px solid #88837e;
+  border-radius: 0px;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -207,6 +208,7 @@
   .inputSubject
   textarea {
   border: 1px solid #88837e;
+  border-radius: 0px;
   background: none;
   outline: none;
   resize: none;
