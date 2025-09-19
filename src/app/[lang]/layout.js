@@ -3,7 +3,7 @@ import LayoutClient from "./LayoutClient";
 
 export const metadata = {
   title: "Andrej Koller",
-  description: "Andrej Koller - a passionate musician and developer",
+  description: "Musical projects of Andrej Koller.",
 };
 
 export async function generateStaticParams() {
