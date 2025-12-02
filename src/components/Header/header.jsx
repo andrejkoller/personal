@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BackgroundMusic } from "../BackgroundMusic/BackgroundMusic";
-import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
-import styles from "./Header.module.css";
+import { BackgroundMusic } from "../background-music/background-music";
+import { LanguageSwitcher } from "../language-switcher/language-switcher";
+import styles from "./header.module.css";
 import classNames from "classnames";
-import { useTranslationContext } from "@/contexts/TranslationContext";
+import { useTranslationContext } from "@/contexts/translation-context";
 
 export const Header = ({ toggleMenu }) => {
   const { lang, t } = useTranslationContext();

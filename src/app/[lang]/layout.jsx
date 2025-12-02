@@ -1,5 +1,5 @@
 import { Cormorant, Gloock, Rubik } from "next/font/google";
-import LayoutClient from "./LayoutClient";
+import ClientLayout from "./layout-client";
 
 export const metadata = {
   title: "Andrej Koller",
@@ -35,7 +35,7 @@ export default async function Layout({ children, params }) {
   return (
     <html lang={lang}>
       <body className={fontVars}>
-        <LayoutClient propLang={lang}>{children}</LayoutClient>
+        <ClientLayout propLang={lang}>{children}</ClientLayout>
       </body>
     </html>
   );

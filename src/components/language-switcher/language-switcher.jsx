@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import styles from "./LanguageSwitcher.module.css";
+import styles from "./language-switcher.module.css";
 import classNames from "classnames";
-import { useTranslationContext } from "@/contexts/TranslationContext";
+import { useTranslationContext } from "@/contexts/translation-context";
 
 export const LanguageSwitcher = () => {
   const { lang } = useTranslationContext();

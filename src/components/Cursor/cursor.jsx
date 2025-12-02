@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import styles from "./Cursor.module.css";
+import styles from "./cursor.module.css";
 import { usePathname } from "next/navigation";
 
 export const Cursor = () => {

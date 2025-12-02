@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { LinkButton } from "@/components/LinkButton/LinkButton";
+import { LinkButton } from "@/components/link-button/link-button";
 import React, { use, useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import classNames from "classnames";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useTranslation } from "@/hooks/use-translation";
 
 export default function Home({ params }) {
   const unwrappedParams = use(params);

@@ -2,9 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import SiriWave from "siriwave";
-import styles from "./BackgroundMusic.module.css";
+import styles from "./background-music.module.css";
 import classNames from "classnames";
-import { useTranslationContext } from "@/contexts/TranslationContext";
+import { useTranslationContext } from "@/contexts/translation-context";
 
 export const BackgroundMusic = () => {
   const { t } = useTranslationContext();

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./LinkButton.module.css";
+import styles from "./link-button.module.css";
 
 export const LinkButton = ({ href, isExternal }) => {
   return (

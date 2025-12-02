@@ -5,7 +5,7 @@ import { use, useEffect, useRef } from "react";
 import imagesLoaded from "imagesloaded";
 import styles from "./page.module.css";
 import classNames from "classnames";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useTranslation } from "@/hooks/use-translation";
 
 export default function Page({ params }) {
   const unwrappedParams = use(params);

@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./page.module.css";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useTranslation } from "@/hooks/use-translation";
 import { isValidPhoneNumber } from "libphonenumber-js";
 import Image from "next/image";
 import { use, useState } from "react";

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import styles from "./Footer.module.css";
-import { useTranslationContext } from "@/contexts/TranslationContext";
+import styles from "./footer.module.css";
+import { useTranslationContext } from "@/contexts/translation-context";
 
 export const Footer = () => {
   const { lang, t } = useTranslationContext();

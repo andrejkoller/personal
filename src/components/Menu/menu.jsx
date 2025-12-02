@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import styles from "./Menu.module.css";
+import styles from "./menu.module.css";
 import classNames from "classnames";
-import { useTranslationContext } from "@/contexts/TranslationContext";
+import { useTranslationContext } from "@/contexts/translation-context";
 
 export const Menu = ({ isMenuOpen, toggleMenu }) => {
   const { lang, t } = useTranslationContext();

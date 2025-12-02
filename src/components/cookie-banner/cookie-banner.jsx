@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "./CookieBanner.module.css";
+import styles from "./cookie-banner.module.css";
 import classNames from "classnames";
 import Link from "next/link";
-import { useTranslationContext } from "@/contexts/TranslationContext";
+import { useTranslationContext } from "@/contexts/translation-context";
 
 export const CookieBanner = () => {
   const { t } = useTranslationContext();

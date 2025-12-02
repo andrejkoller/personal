@@ -3,7 +3,7 @@
 import { use, useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import classNames from "classnames";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useTranslation } from "@/hooks/use-translation";
 
 export default function Page({ params }) {
   const unwrappedParams = use(params);

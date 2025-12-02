@@ -5,7 +5,7 @@ import Link from "next/link";
 import { use, useMemo, useState } from "react";
 import styles from "./page.module.css";
 import classNames from "classnames";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useTranslation } from "@/hooks/use-translation";
 
 const projectItems = [
   {
