@@ -1,4 +1,4 @@
-# Short description
+## Short description
 
 A modern, multilingual personal portfolio website built with Next.js 14+ and the App Router. Features a responsive design, internationalization support, and a functional contact form with email notifications.
 
