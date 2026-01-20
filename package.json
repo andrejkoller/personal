@@ -11,23 +11,23 @@
   "dependencies": {
     "classnames": "^2.5.1",
     "imagesloaded": "^5.0.0",
-    "libphonenumber-js": "^1.12.8",
+    "libphonenumber-js": "^1.12.34",
     "masonry-layout": "^4.2.2",
-    "next": "15.3.1",
-    "nodemailer": "^7.0.3",
+    "next": "16.1.4",
+    "nodemailer": "^7.0.12",
     "photoswipe": "^5.4.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "rellax": "^1.12.1",
     "siriwave": "^2.4.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@typescript-eslint/eslint-plugin": "^8.32.0",
-    "@typescript-eslint/parser": "^8.32.0",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.1",
-    "eslint-config-prettier": "^10.1.2",
-    "prettier": "^3.5.3"
+    "@eslint/eslintrc": "^3.3.3",
+    "@typescript-eslint/eslint-plugin": "^8.53.1",
+    "@typescript-eslint/parser": "^8.53.1",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "16.1.4",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.0"
   }
 }
