@@ -1,20 +1,20 @@
 ## Short description
 
-A modern, multilingual personal portfolio website built with Next.js 14+ and the App Router. Features a responsive design, internationalization support, and a functional contact form with email notifications.
+A modern, multilingual personal portfolio website built with Next.js 16 and the App Router. Features a responsive design, internationalization support, and a functional contact form with email notifications.
 
 ## ✨ Features
 
 - Multilingual Support: English, German and Russian language options
 - Responsive Design: Optimized for desktop, tablet, and mobile devices
 - Contact Form: Functional contact form with email validation and SendGrid integration
-- Modern Tech Stack: Built with Next.js 14+, React 18+, and CSS Modules
+- Modern Tech Stack: Built with Next.js 16, React 19, and CSS Modules
 - International Phone Validation: Supports phone number validation for multiple countries
 - Dynamic Routing: Language-based routing with Next.js App Router
 
 ## 🛠️ Technologies Used
 
-- Framework: Next.js 14+ (App Router)
-- Frontend: React 18+, CSS Modules
+- Framework: Next.js 16 (App Router)
+- Frontend: React 19, CSS Modules
 - Email Service: SendGrid with Nodemailer
 - Validation: libphonenumber-js for international phone numbers
 - Image Optimization: Next.js Image component
