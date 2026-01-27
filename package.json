@@ -13,7 +13,7 @@
     "imagesloaded": "^5.0.0",
     "libphonenumber-js": "^1.12.34",
     "masonry-layout": "^4.2.2",
-    "next": "16.1.4",
+    "next": "16.1.5",
     "nodemailer": "^7.0.12",
     "photoswipe": "^5.4.4",
     "react": "^19.2.3",
