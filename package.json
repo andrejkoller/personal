@@ -11,7 +11,7 @@
   "dependencies": {
     "classnames": "^2.5.1",
     "imagesloaded": "^5.0.0",
-    "libphonenumber-js": "^1.12.37",
+    "libphonenumber-js": "^1.12.38",
     "masonry-layout": "^4.2.2",
     "next": "16.1.6",
     "nodemailer": "^8.0.1",
